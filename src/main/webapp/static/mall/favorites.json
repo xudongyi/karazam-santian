@@ -1,0 +1,25 @@
+{
+  "data": {
+    "results": [
+      {
+        "id": "A9BE7E4A-D2F1-4611-ABB8-EE29C1BEDF9D",
+        "productId": "C77243BD-E373-488C-B6C4-EDE5139EEF1F",
+        "namePc": "瓷娃娃腿真皮钉珠包",
+        "nameMobile": "瓷娃娃腿真皮钉珠包",
+        "molistImage": [
+          "https://img.paituo.com/upload/image/2015/12/11/cf3453ae-0b74-484c-8cb2-496a629638f8.jpg"
+        ],
+        "pcdetailheadImage": [
+          "https://img.paituo.com/upload/image/2015/12/11/2366fa60-7791-439a-b0dc-3d3c3711f9ea.jpg"
+        ],
+        "modetailheadImage": [
+          "https://img.paituo.com/upload/image/2015/12/11/ebd7cf87-e42d-413f-b01f-67953f5b317a.jpg"
+        ],
+        "pointsSpend": 11200
+      }
+    ],
+    "totalSize": 1
+  },
+  "error": [],
+  "success": true
+}

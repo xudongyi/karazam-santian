@@ -1,0 +1,696 @@
+.shadow,.shadowInHoliday {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0
+}
+
+#signIn .prize,.shadow {
+    display: none
+}
+
+#signIn .signInAlert .sign-in .shining-yellow,#signIn .bg-head1 .shining,#signIn .bg-head1 .tree-diamon .flash {
+    animation-iteration-count: infinite;
+    animation-timing-function: linear
+}
+
+.shadow {
+    position: fixed;
+    background-color: #000;
+    background-color: rgba(0,0,0,.7);
+    filter: alpha(opacity=60);
+    z-index: 998
+}
+
+.shadowInHoliday {
+    background-color: #000;
+    background: rgba(0,0,0,.6);
+    filter: alpha(opacity=70);
+    position: absolute;
+    text-align: center;
+    z-index: 90;
+    color: #fff
+}
+
+#signIn {
+    background-color: #ff7b6e
+}
+
+#signIn .color-gray {
+    color: #d4d4d4
+}
+
+#signIn .btn-close,#signIn .close {
+    cursor: pointer
+}
+
+#signIn .bg-body,#signIn .bg-head1 {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 0
+}
+
+#signIn .bg-head1 {
+    background-image: url(images/signin/bg_head2.png);
+    height: 632px;
+    width: 100%;
+    position: absolute;
+    overflow: hidden
+}
+
+#signIn .bg-head1 .title {
+    color: #472701;
+    font-size: 18px;
+    position: relative;
+    z-index: 10;
+    text-align: center
+}
+
+#signIn .bg-head1 .title h1 {
+    font-size: 57px;
+    margin-top: 20px;
+    margin-bottom: 0
+}
+
+#signIn .bg-head1 .shining {
+    background-image: url(images/signin/shining.png);
+    height: 1920px;
+    width: 100%;
+    animation-name: rotate;
+    animation-duration: 30s;
+    position: absolute;
+    top: -600px;
+    background-position: 50% 0
+}
+
+#signIn .bg-head1 .tree {
+    background-image: url(images/signin/tree_normal.png);
+    height: 599px;
+    width: 100%;
+    position: absolute;
+    background-position: 50% 0;
+    z-index: 1;
+    top: 0
+}
+
+#signIn .bg-head1 .tree-diamon {
+    background-image: url(images/signin/tree_diamon.png)
+}
+
+#signIn .bg-head1 .tree-diamon .flash {
+    animation-name: shine;
+    animation-duration: .5s;
+    position: absolute;
+    animation-direction: alternate;
+    width: 80px;
+    height: 80px;
+    background-image: url(images/signin/flash1.png)
+}
+
+#signIn .bg-head1 .tree-diamon .flashes {
+    position: relative;
+    width: 800px;
+    height: 200px;
+    margin-left: -400px;
+    left: 50%
+}
+
+#signIn .bg-head1 .tree-diamon .flash1 {
+    top: 138px;
+    left: 344px
+}
+
+#signIn .bg-head1 .tree-diamon .flash2 {
+    top: -7px;
+    left: 21px;
+    animation-delay: .2s
+}
+
+#signIn .bg-head1 .tree-diamon .flash3 {
+    top: 97px;
+    left: 170px;
+    animation-delay: .4s
+}
+
+#signIn .bg-head1 .tree-diamon .flash4 {
+    top: -15px;
+    left: 194px;
+    animation-delay: .6s
+}
+
+#signIn .bg-head1 .tree-diamon .flash5 {
+    top: 2px;
+    left: 606px;
+    animation-delay: .8s
+}
+
+#signIn .bg-head1 .tree-diamon .flash6 {
+    top: 0;
+    left: 700px;
+    animation-delay: 1s
+}
+
+#signIn .bg-head1 .tree-diamon .flash7 {
+    top: 93px;
+    left: 600px;
+    animation-delay: 1.2s
+}
+
+#signIn .btn-group {
+    width: 180px;
+    height: 52px;
+    margin-left: -90px;
+    position: relative;
+    left: 50%;
+    z-index: 10;
+    top: 222px
+}
+
+#signIn .btn-group a {
+    display: block
+}
+
+#signIn .calendar {
+    width: 1200px;
+    height: 655px;
+    margin: auto;
+    background-image: url(images/signin/bg_calendar.png)
+}
+
+#signIn .calendar .title {
+    color: #333;
+    font-size: 20px;
+    padding: 20px 130px
+}
+
+#signIn .calendar .content {
+    padding: 50px
+}
+
+#signIn .calendar .content .content-left {
+    float: left
+}
+
+#signIn .calendar .content .content-left .calendar-body {
+    text-align: center;
+    width: 701px
+}
+
+#signIn .calendar .content .content-left .calendar-body th {
+    height: 55px;
+    line-height: 55px;
+    padding-left: 0;
+    color: #333;
+    background-color: #e7c743;
+    border: 1px solid #e7c743
+}
+
+#signIn .calendar .content .content-left .calendar-body tbody tr {
+    border-bottom: 0
+}
+
+#signIn .calendar .content .content-left .calendar-body tbody tr:hover {
+    background-color: inherit
+}
+
+#signIn .calendar .content .content-left .calendar-body tbody tr td {
+    background-color: #fff;
+    border: 1px solid #ebebeb;
+    height: 75px;
+    line-height: 75px;
+    padding: 0;
+    white-space: nowrap
+}
+
+#signIn .calendar .content .content-right {
+    float: right;
+    width: 380px;
+    height: 505px;
+    background-color: #fff;
+    overflow: hidden
+}
+
+#signIn .calendar .content .content-right .tab {
+    border-bottom: 1px solid #fff
+}
+
+#signIn .calendar .content .content-right .tab li {
+    display: table-cell;
+    width: 1%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #333;
+    cursor: pointer;
+    background-color: #ffd529
+}
+
+#signIn .calendar .content .content-right .tab li.active {
+    background-color: #fff
+}
+
+#signIn .calendar .content .content-right .l0 {
+    display: block
+}
+
+#signIn .calendar .content .content-right .list thead tr th {
+    text-align: left;
+    background-color: #ffffff
+}
+
+#signIn .calendar .content .content-right .list tbody tr {
+    border-bottom: 0
+}
+
+#signIn .calendar .content .content-right .list tbody tr td {
+    height: 42px;
+    line-height: 42px;
+    background-color: #fff;
+    text-align: left;
+    font-size: 14px;
+    white-space: nowrap
+}
+
+#signIn .color-red {
+    color: #fe4431
+}
+
+#signIn .rule {
+    background-image: url(images/signin/bg_rule.png);
+    height: 326px;
+    width: 1200px;
+    background-repeat: no-repeat;
+    margin: auto;
+    padding: 85px 0 10px 50px
+}
+
+#signIn .rule p {
+    color: #ff8106;
+    line-height: 25px
+}
+
+#signIn .bg1 {
+    background-image: url(images/signin/bg_head1.png);
+    height: 631px;
+    position: relative
+}
+
+#signIn .bg2 {
+    background-image: url(images/signin/bg2.jpg);
+    height: 766px;
+    position: relative;
+    background-size: cover;
+    padding-top: 70px
+}
+
+#signIn .bg3 {
+    background-image: url(images/signin/bg3.jpg);
+    height: 411px
+}
+
+#signIn .signInAlert .qa {
+    display: none;
+    width: 1200px;
+    position: fixed;
+    height: 650px;
+    margin-top: -325px;
+    margin-left: -600px;
+    top: 50%;
+    left: 50%;
+    background-color: #fff;
+    border-radius: 10px;
+    z-index: 999
+}
+
+#signIn .signInAlert .qa .title {
+    background-color: #ffd529;
+    font-size: 24px;
+    height: 65px;
+    line-height: 65px;
+    padding-left: 105px;
+    color: #333;
+    border-radius: 10px 10px 0 0
+}
+
+#signIn .signInAlert .qa .content {
+    padding: 0 105px
+}
+
+#signIn .signInAlert .qa .content .q {
+    font-size: 28px;
+    color: #333;
+    height: 102px;
+    line-height: 102px;
+    text-align: center
+}
+
+#signIn .signInAlert .qa .content .a li {
+    cursor: pointer;
+    background-color: #eee;
+    height: 100px;
+    line-height: 100px;
+    margin-bottom: 10px;
+    padding: 0 45px
+}
+
+#signIn .signInAlert .qa .content .a li .option {
+    font-size: 60px;
+    color: #666;
+    display: inline-block;
+    margin-right: 20px
+}
+
+#signIn .signInAlert .qa .content .a li .answer {
+    font-size: 35px;
+    color: #999
+}
+
+#signIn .signInAlert .qa .content .a li:hover {
+    background-color: #ccc
+}
+
+#signIn .signInAlert .qa-result {
+    display: none;
+    width: 460px;
+    height: 300px;
+    background-color: #fff;
+    margin-left: -230px;
+    margin-top: -150px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1000
+}
+
+#signIn .signInAlert .qa-result .close {
+    float: right;
+    margin: 15px;
+    background-image: url(images/signin/close.png);
+    width: 30px;
+    height: 30px
+}
+
+#signIn .signInAlert .qa-result .btn {
+    color: #fff;
+    width: 200px;
+    line-height: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #ff4106;
+    font-size: 18px;
+    position: absolute;
+    bottom: 30px;
+    margin-left: -100px;
+    left: 50%
+}
+
+#signIn .signInAlert .qa-result .message {
+    width: 150px;
+    position: absolute;
+    font-size: 20px;
+    text-align: center;
+    margin-left: -75px;
+    left: 50%;
+    top: 50px
+}
+
+#signIn .signInAlert .qa-result.answer-wrong .face {
+    background-image: url(images/signin/wrong.png);
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    margin-top: -40px;
+    margin-left: -40px;
+    left: 50%;
+    top: 50%
+}
+
+#signIn .signInAlert .qa-result.answer-wrong .message {
+    color: #666
+}
+
+#signIn .signInAlert .qa-result.answer-right .face {
+    background-image: url(images/signin/right.png);
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    margin-top: -40px;
+    margin-left: -40px;
+    left: 50%;
+    top: 50%
+}
+
+#signIn .signInAlert .qa-result.answer-right .message {
+    color: #ff4106
+}
+
+#signIn .signInAlert .sign-in {
+    display: none
+}
+
+#signIn .signInAlert .sign-in .shining-yellow {
+    background-image: url(images/signin/shining_yellow.png);
+    width: 760px;
+    height: 760px;
+    margin-left: -380px;
+    margin-top: -380px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    animation-name: rotate;
+    animation-duration: 10s;
+    z-index: 1000
+}
+
+#signIn .signInAlert .sign-in .prize {
+    background-image: url(images/signin/bg_prize.png);
+    width: 390px;
+    height: 515px;
+    margin-left: -195px;
+    margin-top: -257.5px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1001
+}
+
+#signIn .signInAlert .sign-in .prize .close {
+    float: right;
+    margin-top: -10px;
+    background-image: url(images/signin/close.png);
+    width: 30px;
+    height: 30px
+}
+
+#signIn .signInAlert .sign-in .prize.no-prize .title {
+    background-image: url(images/signin/title_no_prize.png)
+}
+
+#signIn .signInAlert .sign-in .prize.no-prize .button {
+    background-image: url(images/signin/btn_alert_false.png);
+    bottom: 50px;
+    width: 220px;
+    margin-left: -110px;
+    left: 50%;
+    cursor: pointer
+}
+
+#signIn .signInAlert .sign-in .prize.no-prize .prize-img img {
+    left: 55px
+}
+
+#signIn .signInAlert .sign-in .prize .title {
+    background-image: url(images/signin/title_prize.png);
+    width: 294px;
+    height: 18px;
+    position: absolute;
+    top: 90px;
+    margin-left: -147px;
+    left: 50%
+}
+
+#signIn .signInAlert .sign-in .prize .prize-img {
+    width: 221px;
+    margin-left: -110.5px;
+    left: 50%;
+    position: absolute;
+    top: 120px;
+    background-color: #fff;
+    border-radius: 5px;
+    height: 150px
+}
+
+#signIn .signInAlert .sign-in .prize .prize-img img {
+    position: relative;
+    left: 30px;
+    top: 20px
+}
+
+#signIn .signInAlert .sign-in .prize .prize-img .prize-name {
+    color: #ff8d6a;
+    text-align: center;
+    margin-top: 25px
+}
+
+#signIn .signInAlert .sign-in .prize .prize-img .prize-name .value {
+    font-size: 24px
+}
+
+#signIn .signInAlert .sign-in .prize .prize-img .prize-name .type {
+    font-size: 16px
+}
+
+#signIn .signInAlert .sign-in .prize .explain {
+    width: 300px;
+    height: 60px;
+    border-radius: 10px;
+    color: #fff;
+    position: absolute;
+    top: 280px;
+    margin-left: -150px;
+    left: 50%;
+    padding: 10px;
+    font-size: 12px;
+    text-align: center
+}
+
+#signIn .signInAlert .sign-in .prize .signProgress {
+    width: 252px;
+    position: absolute;
+    top: 350px;
+    margin-left: -126px;
+    left: 50%
+}
+
+#signIn .signInAlert .sign-in .prize .signProgress .bar {
+    width: 252px;
+    border-top: 1px solid #fff
+}
+
+#signIn .signInAlert .sign-in .prize .signProgress .dot {
+    width: 400px;
+    margin-left: -22px;
+    margin-top: -6px
+}
+
+#signIn .signInAlert .sign-in .prize .signProgress .dot li {
+    display: inline-block;
+    width: 40px
+}
+
+#signIn .signInAlert .sign-in .prize .signProgress .dot li p {
+    margin: auto;
+    text-align: center
+}
+
+#signIn .signInAlert .sign-in .prize .signProgress .dot li .t {
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%
+}
+
+#signIn .signInAlert .sign-in .prize .signProgress .dot li .b {
+    color: #fff;
+    margin-top: 10px
+}
+
+#signIn .signInAlert .sign-in .prize .signProgress .dot .done .t {
+    background-color: #ffe03a
+}
+
+#signIn .signInAlert .sign-in .prize .signProgress .dot .done .b {
+    color: #ffe03a
+}
+
+#signIn .signInAlert .sign-in .prize .signProgress .dot .done .last {
+    background-image: url(images/signin/icon_prize_y.png)!important
+}
+
+#signIn .signInAlert .sign-in .prize .signProgress .dot .t-last .last {
+    background-image: url(images/signin/icon_prize.png);
+    width: 30px;
+    height: 27px;
+    margin-top: -11px;
+    margin-left: -5px
+}
+
+#signIn .signInAlert .sign-in .prize .signProgress .dot .t-last .b {
+    margin-top: 5px;
+    text-align: left;
+    padding-left: 7px
+}
+
+#signIn .signInAlert .sign-in .prize .button {
+    background-image: url(images/signin/btn_alert_true.png);
+    width: 200px;
+    height: 48px;
+    margin-left: -100px;
+    left: 50%;
+    position: absolute;
+    bottom: 30px
+}
+
+#signIn .signInAlert .sign-in .prize .share {
+    display: none;
+    position: absolute;
+    bottom: 15px;
+    margin-left: -150px;
+    left: 50%
+}
+
+#signIn .signInAlert .sign-in .prize .share p {
+    display: inline-block;
+    vertical-align: middle
+}
+
+#signIn .signInAlert .sign-in .prize .share a {
+    display: block;
+    color: #5e5e5e;
+    text-decoration: underline;
+    text-align: right
+}
+
+#signIn .signInAlert .sign-in .prize .share a:hover .ewm {
+    display: table
+}
+
+#signIn .signInAlert .sign-in .prize .share a .ewm {
+    padding: 10px;
+    background-color: #fff;
+    position: absolute;
+    display: none;
+    left: 200px
+}
+
+#signIn .signInAlert .sign-in .prize .share a .ewm span {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 10px;
+    font-size: 12px
+}
+
+#signIn .signInAlert .sign-in .prize .share a .ewm img {
+    display: table-cell
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes shine {
+    10% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}

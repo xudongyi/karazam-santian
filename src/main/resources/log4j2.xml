@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="off">
+    <properties>
+        <property name="LOG_HOME">/santian/logs/p2p</property>
+        <!-- 日志备份目录 -->
+        <property name="BACKUP_HOME">backup</property>
+        <property name="SERVER_NAME">karazam.p2p.web</property>
+        <!-- 日志切割的最小单位 -->
+        <property name="EVERY_FILE_SIZE">1M</property>
+        <!-- 日志输出级别 -->
+        <property name="OUTPUT_LOG_LEVEL">DEBUG</property>
+    </properties>
+    <appenders>
+        <!-- 输出到控制台，下面分别是 debug、info、error 级别的配置 -->
+        <Console name="console_debug" target="SYSTEM_OUT">
+            <ThresholdFilter level="DEBUG" onMatch="ACCEPT" onMismatch="DENY" />
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} [%level] [%l] - %msg%n" />
+        </Console>
+        <Console name="console_info" target="SYSTEM_OUT">
+            <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY" />
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} [%level] [%l] - %msg%n" />
+        </Console>
+        <Console name="console_error" target="SYSTEM_OUT">
+            <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY" />
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} [%level] [%l] - %msg%n" />
+        </Console>
+
+        <RollingFile name="app_debug"
+                     fileName="${LOG_HOME}/debug.log"
+                     filePattern="${LOG_HOME}/debug_${BACKUP_HOME}/debug.%d{yyyy-MM-dd}.log">
+            <Filters>
+                <ThresholdFilter level="info" onMatch="DENY" onMismatch="NEUTRAL"/>
+                <ThresholdFilter level="debug" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="${EVERY_FILE_SIZE}" />
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+            </Policies>
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} [%level] [%l] - %msg%n"/>
+        </RollingFile>
+        <RollingFile name="app_info"
+                     fileName="${LOG_HOME}/info.log"
+                     filePattern="${LOG_HOME}/info_${BACKUP_HOME}/info.%d{yyyy-MM-dd}.log">
+            <Filters>
+                <ThresholdFilter level="warn" onMatch="DENY" onMismatch="NEUTRAL"/>
+                <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="${EVERY_FILE_SIZE}" />
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+            </Policies>
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} [%level] [%l] - %msg%n"/>
+        </RollingFile>
+        <RollingFile name="app_error"
+                     fileName="${LOG_HOME}/error.log"
+                     filePattern="${LOG_HOME}/error_${BACKUP_HOME}/error.%d{yyyy-MM-dd}.log">
+            <Filters>
+                <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="${EVERY_FILE_SIZE}" />
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+            </Policies>
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} [%level] [%l] - %msg%n"/>
+        </RollingFile>
+
+        <!-- 日志分析 -->
+        <RollingRandomAccessFile name="app_log"
+                                 fileName="${LOG_HOME}/${SERVER_NAME}.log"
+                                 filePattern="${LOG_HOME}/${BACKUP_HOME}/${SERVER_NAME}.%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="%d{yyyy.MM.dd HH:mm:ss.SSS} [%level] [%l] - %msg%xEx%n" />
+            <Policies>
+                <SizeBasedTriggeringPolicy size="${EVERY_FILE_SIZE}" />
+                <TimeBasedTriggeringPolicy interval="1"  modulate="true" />
+            </Policies>
+        </RollingRandomAccessFile>
+    </appenders>
+
+    <loggers>
+        <logger name="org.springframework" level="ERROR" />
+        <!--<logger name="org.slf4j" level="ERROR" />-->
+        <logger name="org.hibernate" level="ERROR" />
+        <logger name="tk.mybatis" level="ERROR" />
+        <logger name="org.apache.shiro" level="ERROR" />
+        <logger name="com.klzan" level="${OUTPUT_LOG_LEVEL}" additivity="false">
+            <appender-ref ref="console_info" />
+            <appender-ref ref="app_debug" />
+            <appender-ref ref="app_info" />
+            <appender-ref ref="app_error" />
+            <appender-ref ref="app_log" />
+        </logger>
+    </loggers>
+</configuration>

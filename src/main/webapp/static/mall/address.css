@@ -1,0 +1,891 @@
+.account-layout-wrap {
+    width: 1000px;
+    margin: 0 auto
+}
+
+.account-layout-wrap h1 {
+    font-size: 16px;
+    color: #323232;
+    font-weight: 300;
+    margin: 0
+}
+
+.account-layout-wrap .account-nav {
+    position: relative;
+    height: auto
+}
+
+.account-layout-wrap .account-nav .line-slide {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    border-bottom: 2px solid #ff6825
+}
+
+.account-layout-wrap .account-nav ul {
+    margin: 0;
+    height: 50px;
+    border-bottom: 2px solid #e6e6e6
+}
+
+.account-layout-wrap .account-nav ul li {
+    margin: 0;
+    float: left;
+    width: 100px;
+    line-height: 48px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px
+}
+
+.account-layout-wrap .account-nav ul li a {
+    display: block
+}
+
+.account-layout-wrap .account-nav ul li.active, .account-layout-wrap .account-nav ul li:hover {
+    color: #ff6825
+}
+
+.account-layout-wrap .bluelink {
+    color: #5b9fe2
+}
+
+.account-layout-wrap .bluelink:hover {
+    color: #ff6825
+}
+
+.mytyj-wrapper a {
+    color: #5b9fe2;
+    text-decoration: none
+}
+
+.jifen_part .jifen_detail_area .jifen_con_common tr td a.n_look:hover, .jifen_part .noattention p a:hover, .jifen_part .nodeal_bg p a:hover {
+    text-decoration: underline
+}
+
+.mytyj-wrapper a:hover {
+    color: #ff6825
+}
+
+.mytyj-wrapper .page-bar .more {
+    background-color: transparent
+}
+
+.mytyj-wrapper .reg-title {
+    padding-top: 15px
+}
+
+.mytyj-wrapper .reg-title h1 {
+    font-size: 30px;
+    color: #323232;
+    font-weight: 300
+}
+
+.mytyj-wrapper .detail-info a {
+    float: right;
+    margin-top: 34px
+}
+
+.mytyj-wrapper .detail-info .incom {
+    margin-top: 20px
+}
+
+.mytyj-wrapper .detail-info .incom .incom-desc {
+    font-size: 16px;
+    color: #323232
+}
+
+.mytyj-wrapper .detail-info .incom span {
+    color: #ff6825
+}
+
+.mytyj-wrapper .detail-info .incom span.number {
+    font-size: 34px;
+    margin-right: 5px
+}
+
+.mytyj-wrapper .detail-info .detail-tb table {
+    width: 100%
+}
+
+.mytyj-wrapper .detail-info .detail-tb table td {
+    width: 300px;
+    height: 40px
+}
+
+.mytyj-wrapper .record-tb {
+    margin-top: 30px;
+    background-color: #fff
+}
+
+.mytyj-wrapper .record-tb table {
+    width: 100%;
+    border-top: 2px solid #e6e6e6
+}
+
+.mytyj-wrapper .gain-record, .mytyj-wrapper .invest-record {
+    border-top: 1px solid #ddd;
+    padding-bottom: 40px
+}
+
+.mytyj-wrapper .record-tb table thead tr {
+    background-color: #f4f4f4;
+    height: 35px;
+    text-align: center
+}
+
+.mytyj-wrapper .record-tb table tbody tr {
+    text-align: center;
+    height: 74px;
+    border-bottom: 1px solid #e6e6e6
+}
+
+.mytyj-wrapper .record-tb table tbody tr:hover {
+    background: #f9f9f9
+}
+
+.mytyj-wrapper .record-tb table tbody tr.empty:hover {
+    background-color: #fff
+}
+
+.mytyj-wrapper .record-tb table tbody tr.empty td {
+    position: relative;
+    height: 370px
+}
+
+.mytyj-wrapper .record-tb table tbody tr.empty td .mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0
+}
+
+.mytyj-wrapper .record-tb table tbody tr.empty td img {
+    width: 30px;
+    height: 30px
+}
+
+.mytyj-wrapper .record-tb table tbody .outdate {
+    color: #a5a5a5
+}
+
+.mytyj-wrapper .gain-record {
+    margin-top: 28px
+}
+
+.mytyj-wrapper .gain-record .guide {
+    position: relative;
+    height: 158px;
+    text-align: center
+}
+
+.mytyj-wrapper .gain-record .guide p {
+    padding-top: 40px;
+    font-size: 14px
+}
+
+.mytyj-wrapper .gain-record .guide a.link-btn {
+    position: absolute;
+    display: block;
+    width: 126px;
+    height: 34px;
+    line-height: 34px;
+    color: #fff;
+    left: 50%;
+    margin-left: -66px;
+    margin-top: 10px;
+    background-color: #ff6825;
+    border-radius: 3px
+}
+
+.mytyj-wrapper .gain-record .guide a.link-btn:hover {
+    background-color: #ff4200
+}
+
+.mytyj-wrapper .invest-record table tr td p {
+    margin: 0
+}
+
+.mytyj-wrapper .invest-record table tr td .state {
+    color: #ff6825
+}
+
+.mytyj-wrapper .invest-record table tr td .desc {
+    font-size: 12px;
+    color: #a5a5a5
+}
+
+.mytyj-wrapper .invest-record table tr td a.link-btn {
+    display: inline-block;
+    width: 84px;
+    height: 32px;
+    line-height: 30px;
+    color: #ff6825;
+    border: 1px solid #ff6825;
+    border-radius: 3px
+}
+
+.mytyj-wrapper .invest-record table tr td a.link-btn:hover {
+    background-color: #ff6825;
+    color: #fff
+}
+
+.guest-you-like {
+    padding: 40px 0
+}
+
+.guest-you-like ul.tuijian {
+    margin-left: -26px;
+    margin-top: 4px
+}
+
+.guest-you-like ul.tuijian li {
+    position: relative;
+    width: 316px;
+    height: 164px;
+    margin-top: 26px;
+    margin-left: 26px;
+    padding-top: 14px;
+    border: 1px solid #e6e6e6;
+    background-color: #fff;
+    float: left
+}
+
+.guest-you-like ul.tuijian li p {
+    margin: 0;
+    line-height: 30px;
+    text-align: center
+}
+
+.guest-you-like ul.tuijian li p span.rate {
+    font-size: 34px
+}
+
+.guest-you-like ul.tuijian li p.green {
+    color: #64c92b
+}
+
+.guest-you-like ul.tuijian li a.invest {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    background-color: #ff6825;
+    color: #fff;
+    cursor: pointer;
+    transition: all .2s
+}
+
+.jifen_part .height_20, .jifen_part .line_jifen {
+    height: 20px
+}
+
+.guest-you-like ul.tuijian li a.invest:hover {
+    background-color: #ff4200
+}
+
+.guest-you-like ul.tuijian li:hover p.left-amount {
+    display: none
+}
+
+.guest-you-like ul.tuijian li:hover a.invest {
+    display: block
+}
+
+.jifen_part {
+    padding: 0 20px
+}
+
+.jifen_part p {
+    margin: 0
+}
+
+.jifen_part p.jifen_h {
+    font-weight: 700;
+    line-height: 44px
+}
+
+.jifen_part .my-jifen {
+    margin-top: 20px
+}
+
+.jifen_part .my-jifen h2 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 16px;
+    color: #323232
+}
+
+.jifen_part .my-jifen p {
+    margin-top: 20px
+}
+
+.jifen_part .my-jifen .jifen-value {
+    font-size: 34px
+}
+
+.jifen_part .my-jifen a.bluelink {
+    margin-left: 30px;
+    color: #5b9fe2
+}
+
+.jifen_part .my-jifen a.bluelink:hover {
+    color: #ff6825
+}
+
+.jifen_part .my-jifen p.butn a.btn {
+    width: 126px;
+    margin-right: 12px
+}
+
+.jifen_part .my-jifen p.butn a.le {
+    color: #fff;
+    background: #ff6825
+}
+
+.jifen_part .my-jifen p.butn a.le:hover {
+    color: #fff;
+    background: #ff4200
+}
+
+.jifen_part .my-jifen p.butn a.ri {
+    border: 1px solid #ff6825;
+    color: #ff6825
+}
+
+.jifen_part .my-jifen p.butn a.ri:hover {
+    color: #fff;
+    background: #ff6825
+}
+
+.jifen_part h2.account-tit span.jifen_tip {
+    padding-left: 26px;
+    background: url(images/address/lihe.png) 0 center no-repeat
+}
+
+.jifen_part .jifen_detail_area {
+    padding-top: 20px;
+    display: none
+}
+
+.jifen_part .jifen_detail_area .jifen_kinds {
+    line-height: 34px
+}
+
+.jifen_part .jifen_detail_area .jifen_kinds select {
+    width: 150px;
+    display: inline-block;
+    height: 34px;
+    line-height: 34px;
+    margin-right: 30px
+}
+
+.jifen_part .jifen_detail_area .jifen_kinds a.chooseKinds {
+    display: inline-block;
+    margin-left: 24px
+}
+
+.jifen_part .jifen_detail_area .jifen_kinds a.active {
+    color: #ff6825
+}
+
+.jifen_part .jifen_detail_area .jifen_con_common tr td {
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e5e5;
+    vertical-align: middle
+}
+
+.jifen_part .jifen_detail_area .jifen_con_common tr td .jifen_item {
+    width: 400px
+}
+
+.jifen_part .jifen_detail_area .jifen_con_common tr td .jifen_item .jifen_img {
+    float: left;
+    width: 82px;
+    padding: 0 10px
+}
+
+.jifen_part .jifen_detail_area .jifen_con_common tr td .jifen_item .jifen_img img {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #e6e6e6;
+    display: inline-block
+}
+
+.jifen_part .jifen_detail_area .jifen_con_common tr td .jifen_item .jifen_xijie {
+    float: left;
+    text-align: left;
+    width: 240px;
+    padding-top: 20px;
+    color: #323232
+}
+
+.jifen_part .jifen_detail_area .jifen_con_common tr td .deleta_con_jifen {
+    cursor: pointer
+}
+
+.jifen_part .jifen_detail_area .jifen_con_common tr td a.n_look {
+    color: #5b9fe2
+}
+
+.jifen_part .jifen_detail_area .jifen_con_common tr.sec-top {
+    height: 20px
+}
+
+.jifen_part .jifen_detail_area .jifen_con_common tr.sec-top td {
+    border: none;
+    padding: 0
+}
+
+.jifen_part .jifen_detail_area .jifen_con_common tr.tr-th td {
+    padding: 0;
+    font-size: 12px;
+    text-align: left;
+    border-bottom: 1px solid #f6f6f6
+}
+
+.jifen_part .jifen_detail_area .jifen_con_common tr.tr-th td p {
+    line-height: 36px;
+    background: #f6f6f6;
+    color: #888;
+    padding-left: 10px
+}
+
+.jifen_part .jifen_detail_area .jifen_con_common tr.tr-th td p span {
+    display: inline-block
+}
+
+.jifen_part .jifen_detail_area .jifen_con_common tr.tr-th td p span.fir {
+    width: 166px
+}
+
+.jifen_part .jifen_detail_area .jifen_con_common tr.tr-th td p span.las {
+    color: #333
+}
+
+.jifen_part .jifen_detail_area .jifen_con_common td.fir {
+    font-weight: 700
+}
+
+.jifen_part .jifen_detail_area .detail_table thead tr th {
+    font-weight: 400;
+    padding: 8px 10px;
+    text-align: left;
+    background: 0 0;
+    border-bottom: none
+}
+
+.jifen_part .jifen_detail_area .detail_table tbody tr td {
+    padding: 8px 10px;
+    text-align: left
+}
+
+.jifen_part .jifen_detail_area .attention_table {
+    border: 1px solid #e5e5e5
+}
+
+.jifen_part .jifen_detail_area .attention_table thead tr th {
+    padding: 8px 10px;
+    text-align: center;
+    border-bottom: none;
+    background: #f4f4f4;
+    font-weight: 400
+}
+
+.jifen_part .jifen_detail_area .attention_table .attention_list tbody tr td:first-child {
+    border-left: none
+}
+
+.jifen_part .jifen_detail_area .attention_table .attention_list tbody tr td:last-child {
+    border-right: none
+}
+
+.jifen_part .jifen_detail_area .jifen_add_topaddress {
+    line-height: 42px
+}
+
+.jifen_part .jifen_detail_area .jifen_add_topaddress span.left_add_adress {
+    width: 190px;
+    margin-right: 14px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    background: url(images/address/addsmall.png) 36px center no-repeat;
+    padding-left: 52px;
+    cursor: pointer
+}
+
+.jifen_part .jifen_detail_area .jifen_add_topaddress span.left_add_adress:hover {
+    background-color: #f5f5f5;
+    color: #ff6825
+}
+
+.jifen_part .jifen_detail_area .jifen_add_item .address_item_list {
+    position: relative;
+    border: 1px solid #ddd;
+    padding: 18px 28px 10px 60px;
+    margin-top: 20px
+}
+
+.jifen_part .jifen_detail_area .jifen_add_item .address_item_list .normalIcon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 60px;
+    width: 60px;
+    background: url(images/address/normalAddr.png) no-repeat
+}
+
+.jifen_part .jifen_detail_area .jifen_add_item .address_item_list ul.address_alist {
+    margin: 0
+}
+
+.jifen_part .jifen_detail_area .jifen_add_item .address_item_list ul.address_alist li {
+    line-height: 26px
+}
+
+.jifen_part .jifen_detail_area .jifen_add_item .address_item_list ul.address_alist li span.left {
+    display: inline-block;
+    width: 60px;
+    text-align: right;
+    color: #888
+}
+
+.jifen_part .jifen_detail_area .jifen_add_item .address_item_list ul.address_alist li span.right {
+    color: #333
+}
+
+.jifen_part .jifen_detail_area .jifen_add_item .address_item_list p.add_operation {
+    color: #5b9fe2;
+    text-align: right
+}
+
+.jifen_part .jifen_detail_area .jifen_add_item .address_item_list p.add_operation span {
+    display: inline-block;
+    margin-left: 20px;
+    cursor: pointer
+}
+
+.jifen_part .jifen_detail_area .jifen_add_footer {
+    padding: 30px 0 30px 400px;
+    margin-top: 20px;
+    border: 1px dashed #ddd;
+    color: #888;
+    font-size: 18px;
+    cursor: pointer
+}
+
+.jifen_part .noattention p, .jifen_part .nodeal_bg p {
+    font-size: 16px;
+    line-height: 40px;
+    text-align: center
+}
+
+.jifen_part .jifen_detail_area .jifen_add_footer span {
+    line-height: 40px;
+    padding-left: 20px;
+    cursor: pointer;
+    display: block;
+    width: 140px;
+    background: url(images/address/addbig.png) 0 center no-repeat
+}
+
+.jifen_part .jifen_detail_area .jifen_add_footer:hover {
+    background: #f5f5f5
+}
+
+.jifen_part .jifen_detail_area .jifen_add_footer:hover span {
+    color: #ff6825
+}
+
+.jifen_part .nodeal_bg {
+    display: none;
+    background: url(images/address/nodeal.png) center 80px no-repeat;
+    padding-top: 190px;
+    color: #a5a5a5
+}
+
+.jifen_part .noattention {
+    display: none;
+    background: url(images/address/noattention.png) center 80px no-repeat;
+    padding-top: 190px;
+    color: #a5a5a5
+}
+
+.jifen_common_mask {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99998;
+    filter: alpha(opacity=50);
+    opacity: .5;
+    background: #000;
+    width: 100%;
+    height: 100%
+}
+
+.jifen_common_attention, .jifen_common_delete, .jifen_error_network {
+    display: none;
+    width: 400px;
+    height: 186px;
+    z-index: 99999;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -200px;
+    margin-top: -93px;
+    background: #fff;
+    color: #fff
+}
+
+.jifen_common_attention a.jifen_close, .jifen_common_delete a.jifen_close, .jifen_error_network a.jifen_close {
+    position: absolute;
+    right: 13px;
+    top: 6px;
+    display: block;
+    width: 28px;
+    height: 28px;
+    background: url(images/address/close.png) center center no-repeat
+}
+
+.jifen_common_attention a.jifen_close:hover, .jifen_common_delete a.jifen_close:hover, .jifen_error_network a.jifen_close:hover {
+    background: url(images/address/closehover.png) center center no-repeat
+}
+
+.jifen_common_attention h2, .jifen_common_delete h2, .jifen_error_network h2 {
+    font-size: 14px;
+    line-height: 40px;
+    background: #f4f4f4;
+    padding-left: 20px;
+    margin: 0;
+    color: #5e5e5e
+}
+
+.jifen_common_attention .tip_error, .jifen_common_delete .tip_error, .jifen_error_network .tip_error {
+    line-height: 80px;
+    text-align: center;
+    color: #323232;
+    font-size: 16px
+}
+
+.jifen_common_attention p.btn_adress, .jifen_common_delete p.btn_adress, .jifen_error_network p.btn_adress {
+    text-align: center
+}
+
+.jifen_common_attention p.btn_adress span, .jifen_common_delete p.btn_adress span, .jifen_error_network p.btn_adress span {
+    display: inline-block;
+    width: 54px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 12px
+}
+
+.jifen_common_attention p.btn_adress span.le, .jifen_common_delete p.btn_adress span.le, .jifen_error_network p.btn_adress span.le {
+    background: #ff6825;
+    margin-right: 12px
+}
+
+.jifen_common_attention p.btn_adress span.ri, .jifen_common_delete p.btn_adress span.ri, .jifen_error_network p.btn_adress span.ri {
+    border: 1px solid #e6e6e6;
+    background: #f4f4f4;
+    color: #323232
+}
+
+.jifen_common_add {
+    display: none;
+    width: 690px;
+    height: 320px;
+    z-index: 99999;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -345px;
+    margin-top: -160px;
+    background: #fff;
+    color: #fff
+}
+
+.jifen_common_add a.jifen_close {
+    position: absolute;
+    right: 13px;
+    top: 6px;
+    display: block;
+    width: 28px;
+    height: 28px;
+    background: url(images/address/close-1.png) center center no-repeat
+}
+
+.jifen_common_add a.jifen_close:hover {
+    background: url(images/address/closehover-1.png) center center no-repeat
+}
+
+.jifen_common_add h2 {
+    font-size: 14px;
+    line-height: 40px;
+    background: #f4f4f4;
+    padding-left: 20px;
+    margin: 0;
+    color: #5e5e5e
+}
+
+.jifen_common_add ul.addlist {
+    padding: 40px 0 0 80px
+}
+
+.jifen_common_add ul.addlist li {
+    padding-bottom: 20px;
+    line-height: 24px;
+    font-size: 12px
+}
+
+.jifen_common_add ul.addlist li span.l {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    color: #5e5e5e;
+    padding-right: 10px
+}
+
+.jifen_common_add ul.addlist li span.foo {
+    text-align: left;
+    padding-left: 6px;
+    color: #5e5e5e
+}
+
+.jifen_common_add ul.addlist li span.aderror {
+    padding-left: 10px;
+    color: #f64000
+}
+
+.jifen_common_add ul.addlist li input.common_inp {
+    width: 168px;
+    color: #999;
+    padding-left: 6px;
+    line-height: 24px;
+    height: 24px;
+    display: inline-block
+}
+
+.jifen_common_add ul.addlist li input.jifencheck {
+    position: relative;
+    top: 2px
+}
+
+.jifen_common_add ul.addlist li select {
+    display: inline-block;
+    width: 114px;
+    line-height: 24px;
+    margin-right: 20px;
+    color: #999
+}
+
+.jifen_common_add ul.addlist li a.saveAdress {
+    color: #fff;
+    display: inline-block;
+    width: 178px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background: #ff6825
+}
+
+.jifen_common_add ul.addlist li a.saveAdress:hover {
+    color: #fff
+}
+
+.jifen_common_add ul.addlist li input.consigneeDetail {
+    width: 168px;
+    float: left
+}
+
+.jifen_common_add ul.addlist li.speail-common-list span.aderror {
+    position: absolute;
+    top: 22px;
+    left: 90px
+}
+
+li.speail-common-list {
+    position: relative;
+    color: #5e5e5e
+}
+
+li.speail-common-list span.l {
+    float: left
+}
+
+li.speail-common-list .common-cu {
+    width: 100px;
+    display: inline-block;
+    float: left;
+    line-height: 22px;
+    height: 24px;
+    margin-right: 6px;
+    border: 1px solid #a9a9a9;
+    background: #fff;
+    padding-left: 6px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer
+}
+
+li.speail-common-list .common-cu span.name-city, li.speail-common-list .common-cu span.name-county, li.speail-common-list .common-cu span.name-province {
+    display: inline-block;
+    width: 90px;
+    overflow: hidden;
+    white-space: nowrap
+}
+
+li.speail-common-list .common-cu span.up-down {
+    display: block;
+    height: 22px;
+    width: 20px;
+    background: #fff;
+    text-align: center;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0
+}
+
+li.speail-common-list .common-cu span.up-down i {
+    top: 0;
+    color: #a5a5a5;
+    font-size: 16px
+}
+
+li.speail-common-list .common-cu ul.city-cu-list, li.speail-common-list .common-cu ul.county-cu-list, li.speail-common-list .common-cu ul.province-list {
+    position: absolute;
+    display: none;
+    z-index: 4;
+    top: 22px;
+    left: -1px;
+    line-height: 22px;
+    width: 100px;
+    border: 1px solid #a9a9a9;
+    background: #fff;
+    max-height: 280px;
+    overflow-y: auto
+}
+
+li.speail-common-list .common-cu ul.city-cu-list li, li.speail-common-list .common-cu ul.county-cu-list li, li.speail-common-list .common-cu ul.province-list li {
+    padding: 0 2px 0 6px;
+    overflow: hidden;
+    height: 22px;
+    cursor: pointer
+}
+
+li.speail-common-list .common-cu ul.city-cu-list li:hover, li.speail-common-list .common-cu ul.county-cu-list li:hover, li.speail-common-list .common-cu ul.province-list li:hover {
+    background: #eee
+}
+
+li.speail-common-list .common-cu ul.city-cu-list li.change-cu-card, li.speail-common-list .common-cu ul.county-cu-list li.change-cu-card, li.speail-common-list .common-cu ul.province-list li.change-cu-card {
+    color: #5b9fe2
+}

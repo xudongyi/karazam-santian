@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  ~ Copyright (c) 2016 klzan.com. All rights reserved.
+  ~ Support: http://www.klzan.com
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.klzan.p2p.mapper.PostsContentMapper">
+    <select id="findList" resultType="com.klzan.p2p.model.PostsContent" parameterType="com.klzan.p2p.vo.posts.PostsContentVo">
+        SELECT
+            c.*,
+            t.id categoryId,
+            t.slug category,
+            t.title categoryDes,
+            t.type
+        FROM
+            karazam_posts_content c
+        LEFT JOIN karazam_posts_mapping m ON m.content_id = c.id
+        LEFT JOIN karazam_posts_taxonomy t ON t.id = m.taxonomy_id
+        WHERE c.deleted=0
+        <if test="taxonomyType != null and taxonomyType != ''">
+            AND t.type = #{taxonomyType}
+        </if>
+        <if test="taxonomyType == null or taxonomyType == ''">
+            AND t.type = 'category'
+        </if>
+        <if test="taxonomyId != null and taxonomyId != ''">
+            AND (t.id = #{taxonomyId} OR t.parent_ids like '%${taxonomyId}%')
+        </if>
+        <if test="taxonomyDisplay != null">
+            AND t.display = #{taxonomyDisplay}
+        </if>
+        <if test="status != null and status != ''">
+            AND c.status = #{status}
+        </if>
+        <if test="expire !=null">
+            AND (CASE WHEN c.expire is not null THEN c.expire>#{expire} ELSE 1=1 END)
+        </if>
+        ORDER BY c.id DESC
+        <if test="listSize != null and listSize != ''">
+            LIMIT 0, #{listSize}
+        </if>
+    </select>
+
+    <select id="findByCriteria" resultType="com.klzan.p2p.model.PostsContent" parameterType="com.klzan.p2p.vo.posts.PostsContentVo">
+        SELECT
+            c.*,
+            t.id categoryId,
+            t.slug category,
+            t.title categoryDes,
+            t.type
+        FROM karazam_posts_content c
+        LEFT JOIN karazam_posts_mapping m ON m.content_id = c.id
+        LEFT JOIN karazam_posts_taxonomy t ON t.id = m.taxonomy_id
+        WHERE c.deleted=0
+        <if test="taxonomyType != null and taxonomyType != ''">
+            AND t.type = #{taxonomyType}
+        </if>
+        <if test="slug != null and slug != ''">
+            AND c.slug = #{slug}
+        </if>
+        <if test="id !=null">
+            AND c.id != #{id}
+        </if>
+        <if test="expire !=null">
+            AND (CASE WHEN c.expire is not null THEN c.expire>#{expire} ELSE 1=1 END)
+        </if>
+    </select>
+    <select id="existSlug" resultType="com.klzan.p2p.model.PostsContent" parameterType="com.klzan.p2p.vo.posts.PostsContentVo">
+        SELECT
+            c.*,
+            t.id categoryId,
+            t.slug category,
+            t.title categoryDes,
+            t.type
+        FROM karazam_posts_content c
+        LEFT JOIN karazam_posts_mapping m ON m.content_id = c.id
+        LEFT JOIN karazam_posts_taxonomy t ON t.id = m.taxonomy_id
+        WHERE c.deleted=0
+        <if test="slug != null and slug != ''">
+            AND c.slug = #{slug}
+        </if>
+        <if test="id !=null">
+            AND c.id != #{id}
+        </if>
+
+    </select>
+</mapper>

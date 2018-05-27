@@ -1,0 +1,287 @@
+/**
+ * Created by suhao on 2017/4/19.
+ */
+var types = {
+    codes : ['MORTGAGE', 'GUARANTEE', 'CREDIT', 'TRANSFER'],
+    des : ['抵押贷', '质押贷', '车商贷', '债权转让']
+};
+var dataConf = {
+    url: {
+        MORTGAGE: ctx + '/investment/data?type=MORTGAGE',
+        GUARANTEE: ctx + '/investment/data?type=GUARANTEE',
+        CREDIT: ctx + '/investment/data?type=CREDIT',
+        TRANSFER: ctx + '/transfer/data'
+    },
+    tpl: {
+        MORTGAGE: 'projectTpl',
+        GUARANTEE: 'projectTpl',
+        CREDIT: 'projectTpl',
+        TRANSFER: 'transferTpl'
+    }
+};
+var showSizes = [3, 4, 4, 4];
+var showPercents = [4, 3, 3, 3];
+var data = {
+    des : '',
+    showPercent : 4,
+    rows : []
+};
+var baseParams = {};
+var searchParams = {
+    typeSearch : {
+        MORTGAGE: {
+            type : 'MORTGAGE'
+        },
+        GUARANTEE:{
+            type : 'GUARANTEE'
+        },
+        CREDIT:{
+            type : 'CREDIT'
+        },
+        TRANSFER: {
+            type : 'TRANSFER'
+        }
+    },
+    timeSearch : {
+        between_1_to_3 : {
+            scope:'BETWEEN_1MONTH_AND_3MONTH'
+        },
+        between_4_to_12 : {
+            filter_GEI_period : 4,
+                filter_LEI_period : 12,
+            scope:'BETWEEN_3MONTH_AND_12MONTH'
+        },
+        over_12 : {
+            filter_GEI_period : 13,
+            scope:'OVER_12MONTH'
+        }
+    },
+    filedSort : {
+        sort : 'id',
+        order : 'asc'
+    }
+};
+var isSort = false;
+var typeSearch;
+var periodScope;
+$(function () {
+    var $progre = $("#progre"),$period = $("#period"),$rate = $("#rate");
+    $.each(types.codes, function (index, value) {
+        if (type == '') {
+            getPageProjects(index, value, {});
+        } else {
+            if (type == value) {
+                getPageProjects(index, value, {});
+            } else {
+                $('#' + value.toLowerCase() + 'Projects').hide();
+                $('#' + value.toLowerCase() + 'Pagination').hide();
+            }
+        }
+    });
+
+    $('.typeSearch').on('click', function () {
+        var $this = $(this);
+        $this.addClass('cbp-filter-item-active').siblings('.typeSearch').removeClass('cbp-filter-item-active');
+        typeSearch = $this.attr('typeSearch');
+            type = typeSearch;
+        if (typeSearch != '') {
+        }
+        $.each(types.codes, function (index, value) {
+            if (type == '') {
+                getPageProjects(index, value, searchParams.typeSearch[typeSearch]);
+            } else {
+                if (type == value) {
+                    getPageProjects(index, value, searchParams.typeSearch[typeSearch]);
+                } else {
+                    $('#' + value.toLowerCase() + 'Projects').hide();
+                    $('#' + value.toLowerCase() + 'Pagination').hide();
+                }
+            }
+        });
+    });
+
+    $('.periodSearch').on('click', function () {
+        var $this = $(this);
+        $this.addClass('cbp-filter-item-active').siblings('.periodSearch').removeClass('cbp-filter-item-active');
+        periodScope = $this.attr('periodScope');
+        $.each(types.codes, function (index, value) {
+            if (type == '') {
+                getPageProjects(index, value, searchParams.timeSearch[periodScope]);
+            } else {
+                if (type == value) {
+                    getPageProjects(index, value, searchParams.timeSearch[periodScope]);
+                } else {
+                    $('#' + value.toLowerCase() + 'Projects').hide();
+                    $('#' + value.toLowerCase() + 'Pagination').hide();
+                }
+            }
+        });
+    });
+
+    $('.projectHasNoneSort').on('click', function () {
+        isSort = false;
+        $(this).addClass('cbp-filter-item-active').find('i').removeClass('fa-sort-numeric-asc').addClass('fa-sort-numeric-desc');
+        if (searchParams.filedSort.order == 'asc') {
+            $(this).siblings('.fieldSort').find('i').removeClass('fa-sort-numeric-asc fa-sort-numeric-desc');
+            $(this).siblings('.fieldSort').removeClass('cbp-filter-item-active');
+            searchParams.filedSort.order = 'desc';
+        } else {
+            $(this).addClass('cbp-filter-item-active').find('i').removeClass('fa-sort-numeric-desc').addClass('fa-sort-numeric-asc');
+            $(this).siblings('.fieldSort').find('i').removeClass('fa-sort-numeric-asc fa-sort-numeric-desc');
+            $(this).siblings('.fieldSort').removeClass('cbp-filter-item-active');
+            searchParams.filedSort.order = 'asc';
+        }
+        $.each(types.codes, function (index, value) {
+            if (type == '') {
+                getPageProjects(index, value, searchParams.timeSearch[periodScope]);
+            } else {
+                if (type == value) {
+                    getPageProjects(index, value, searchParams.timeSearch[periodScope]);
+                } else {
+                    $('#' + value.toLowerCase() + 'Projects').hide();
+                    $('#' + value.toLowerCase() + 'Pagination').hide();
+                }
+            }
+        });
+    });
+
+    $('.projectInterestRateSort').on('click', function () {
+        isSort = true;
+        searchParams.filedSort.sort = 'realInterestRate';
+        if (searchParams.filedSort.order == 'asc') {
+            $(this).addClass('cbp-filter-item-active').find('i').removeClass('fa-sort-numeric-asc').addClass('fa-sort-numeric-desc');
+            $(this).siblings('.fieldSort').find('i').removeClass('fa-sort-numeric-asc fa-sort-numeric-desc');
+            $(this).siblings('.fieldSort').removeClass('cbp-filter-item-active');
+            searchParams.filedSort.order = 'desc';
+        } else {
+            $(this).addClass('cbp-filter-item-active').find('i').removeClass('fa-sort-numeric-desc').addClass('fa-sort-numeric-asc');
+            $(this).siblings('.fieldSort').find('i').removeClass('fa-sort-numeric-asc fa-sort-numeric-desc');
+            $(this).siblings('.fieldSort').removeClass('cbp-filter-item-active');
+            searchParams.filedSort.order = 'asc';
+        }
+        $.each(types.codes, function (index, value) {
+            if (type == '') {
+                getPageProjects(index, value, searchParams.timeSearch[periodScope]);
+            } else {
+                if (type == value) {
+                    getPageProjects(index, value, searchParams.timeSearch[periodScope]);
+                } else {
+                    $('#' + value.toLowerCase() + 'Projects').hide();
+                    $('#' + value.toLowerCase() + 'Pagination').hide();
+                }
+            }
+        });
+    });
+
+    $('.projectPeriodSort').on('click', function () {
+        isSort = true;
+        searchParams.filedSort.sort = 'psort';
+        if (searchParams.filedSort.order == 'asc') {
+            $(this).addClass('cbp-filter-item-active').find('i').removeClass('fa-sort-numeric-asc').addClass('fa-sort-numeric-desc');
+            $(this).siblings('.fieldSort').find('i').removeClass('fa-sort-numeric-asc fa-sort-numeric-desc');
+            $(this).siblings('.fieldSort').removeClass('cbp-filter-item-active');
+            searchParams.filedSort.order = 'desc';
+        } else {
+            $(this).addClass('cbp-filter-item-active').find('i').removeClass('fa-sort-numeric-desc').addClass('fa-sort-numeric-asc');
+            $(this).siblings('.fieldSort').find('i').removeClass('fa-sort-numeric-asc fa-sort-numeric-desc');
+            $(this).siblings('.fieldSort').removeClass('cbp-filter-item-active');
+            searchParams.filedSort.order = 'asc';
+        }
+        $.each(types.codes, function (index, value) {
+            if (type == '') {
+                getPageProjects(index, value, searchParams.timeSearch[periodScope]);
+            } else {
+                if (type == value) {
+                    getPageProjects(index, value, searchParams.timeSearch[periodScope]);
+                } else {
+                    $('#' + value.toLowerCase() + 'Projects').hide();
+                    $('#' + value.toLowerCase() + 'Pagination').hide();
+                }
+            }
+        });
+    });
+
+    // 倒计时
+    $.each($('.counting-down'), function (index) {
+        console.log(index);
+    });
+
+});
+
+var getPageProjects = function (index, code, searchParams) {
+    var typeUpper = code.toUpperCase();
+    var typeLower = code.toLowerCase();
+    baseParams = {
+        page: 1,
+        rows: showSizes[index]
+    };
+    var params = $.extend(baseParams, searchParams);
+    var sort = '';
+    if (isSort) {
+        sort = '&sort=' + this.searchParams.filedSort.sort + '&order=' + this.searchParams.filedSort.order;
+    }
+    $.getJSON(dataConf.url[typeUpper] + sort,
+        params,
+        function (res) {
+            data.showPercent = showPercents[index];
+            data.rows = res.rows;
+            data.des = types.des[index];
+            var total = res.total;
+            var tpl = document.getElementById(dataConf.tpl[typeUpper]);
+            laytpl(tpl.innerHTML).render(data, function (string) {
+                $('#' + typeLower + 'Projects').html(string);
+                if (total == 0) {
+                    $('#' + typeLower + 'Projects').hide();
+                    $('#' + typeLower + 'Pagination').hide();
+                } else {
+                    $('#' + typeLower + 'Projects').show();
+                    $('#' + typeLower + 'Pagination').show();
+                }
+            });
+            laypage({
+                skin: '#50a846',
+                cont: typeLower + 'Pagination'
+                , pages: res.pages
+                , jump: function (e) { //触发分页后的回调
+                    $.getJSON(dataConf.url[typeUpper] + sort,
+                        $.extend(params, {page: e.curr}),
+                        function (rest) {
+                            e.pages = e.last = rest.pages; //重新获取总页数，一般不用写
+                            // //解析数据
+                            data.showPercent = showPercents[index];
+                            data.rows = rest.rows;
+                            data.des = types.des[index];
+                            laytpl(tpl.innerHTML).render(data, function (stringt) {
+                                $('#' + typeLower + 'Projects').html(stringt);
+                            countingDown(nowTime);
+                        });
+                    });
+                }
+            });
+        }
+    );
+};
+
+function countingDown(nowTime) {
+    var intervalId = window.setInterval(function() {
+        $(".countdown").each(function(index, obj) {
+            var $obj = $(obj);
+            var timeDifference = new Date($obj.attr("startTime"))/1000 - nowTime;
+            if (timeDifference > 1) {
+                var days = Math.floor((timeDifference / 3600) / 24);
+                var hours = Math.floor((timeDifference / 3600) % 24);
+                var minutes = Math.floor((timeDifference / 60) % 60);
+                var seconds = Math.floor(timeDifference % 60);
+                // $obj.text((days < 10 ? "0" + days : days) + "天-" + (hours < 10 ? "0" + hours : hours) + "时-" + (minutes < 10 ? "0" + minutes : minutes) + "分-" + (seconds < 10 ? "0" + seconds : seconds) + "秒");
+                if (hours > 1) {
+                    $obj.text(datetimeFormatter(new Date($obj.attr("startTime"))));
+                } else {
+                    $obj.text((hours < 10 ? "0" + hours : hours) + "时-" + (minutes < 10 ? "0" + minutes : minutes) + "分-" + (seconds < 10 ? "0" + seconds : seconds) + "秒");
+                }
+            } else {
+                $obj.text("立即投标").removeClass('btn-warning').addClass('btn-theme');
+            }
+        });
+        nowTime++;
+    }, 1000);
+}

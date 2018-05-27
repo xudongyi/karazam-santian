@@ -1,0 +1,177 @@
+@charset "utf-8";
+/* Css reset start */
+
+html {
+    -webkit-text-size-adjust: 100%;
+    font-size: 14px;
+}
+
+body {
+    font-family: "Microsoft Yahei";
+    color: #333;
+    font-size: 1rem;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    /*border: 0px;*/
+
+    /*background-size: cover;*/
+    /*filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../images/appdown/bg_img.jpg", sizingMethod=scale);*/
+    /*-ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../images/appdown/bg_img.jpg", sizingMethod=scale);*/
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+}
+
+body, div {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media screen and (min-width: 320px) {
+    html {
+        font-size: 62.5%;
+    }
+}
+
+@media screen and (min-width: 360px) {
+    html {
+        font-size: 70.3125%;
+    }
+}
+
+@media screen and (min-width: 400px) {
+    html {
+        font-size: 78.125%;
+    }
+}
+
+@media screen and (min-width: 440px) {
+    html {
+        font-size: 85.9375%;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    html {
+        font-size: 93.75%;
+    }
+}
+
+@media screen and (min-width: 520px) {
+    html {
+        font-size: 101.5625%;
+    }
+}
+
+@media screen and (min-width: 560px) {
+    html {
+        font-size: 109.375%;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    html {
+        font-size: 117.1875%;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    html {
+        font-size: 125%;
+    }
+}
+
+@media screen and (min-width: 680px) {
+    html {
+        font-size: 132.8125%;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    html {
+        font-size: 140.625%;
+    }
+}
+
+@media screen and (min-width: 760px) {
+    html {
+        font-size: 148.4375%;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    html {
+        font-size: 156.25%;
+    }
+}
+.tip {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    background: #000 url(../images/appdown/tips-link-android.png) no-repeat top right;
+    background-size: 291px auto;
+    opacity: 0.8;
+    display: none;
+}
+
+.cont_mes {
+    text-align: center;
+    font-size: 12px;
+    color: #000000;
+}
+
+.i_cont {
+    padding-top: 16px;
+    margin-bottom: 3px;
+}
+
+.cont_mes img {
+    width: 125px;
+    height: 33px;
+}
+
+.cont_mes {
+    text-align: center;
+    font-size: 12px;
+    color: #000000;
+}
+
+.foot_tips {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 13px;
+    color: #909090;
+    font-size: 9px;
+}
+
+.inv-fbtn {
+    text-align: center;
+    width: 100%;
+    height: 47px;
+    position: absolute;
+    bottom: 7%;
+}
+
+.ui_red_btn {
+    width: 250px;
+    height: 44px;
+    line-height: 44px;
+    background: #ee4634;
+    display: block;
+    margin: 0 auto;
+    border: 0;
+    border-radius: 3px;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+}

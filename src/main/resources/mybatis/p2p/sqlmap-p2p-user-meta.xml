@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  ~ Copyright (c) 2016 klzan.com. All rights reserved.
+  ~ Support: http://www.klzan.com
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.klzan.p2p.mapper.UserMetaMapper">
+    <select id="findMetasByType" resultType="com.klzan.p2p.vo.user.UserMetaVo" parameterType="java.lang.String">
+        SELECT
+          *
+        FROM karazam_user_meta m
+        WHERE m.deleted=0
+        <if test="userId != null ">
+            AND m.user_id = #{userId}
+        </if>
+        <if test="metaType != null ">
+            AND m.meta_type = #{metaType}
+        </if>
+    </select>
+</mapper>

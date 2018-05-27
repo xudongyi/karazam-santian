@@ -1,0 +1,60 @@
+#------------ Common ------------
+locale=zh_CN
+url_escaping_charset=UTF-8
+
+#------------ JDBC ------------
+jdbc.driver=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://rm-m5eh880s73eib0n20.mysql.rds.aliyuncs.com:3306/karazam_santian?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=ENCRYPT(yqHOvJKpMrBUc5GJ5vm68g==)
+jdbc.password=ENCRYPT(ojqwevWHvRsmekMZrZgybw==)
+
+#------------ druid datasource ------------
+druid.initialSize=10
+druid.minIdle=10
+druid.maxActive=50
+druid.maxWait=60000
+druid.timeBetweenEvictionRunsMillis=60000
+druid.minEvictableIdleTimeMillis=300000
+druid.validationQuery=SELECT 'x'
+druid.testWhileIdle=true
+druid.testOnBorrow=false
+druid.testOnReturn=false
+druid.poolPreparedStatements=true
+druid.maxPoolPreparedStatementPerConnectionSize=20
+druid.maxOpenPreparedStatements=20
+druid.filters=wall,stat
+
+#------------ Hibernate ------------
+hibernate.dialect=org.hibernate.dialect.MySQLDialect
+hibernate.cache.use_second_level_cache=false
+hibernate.cache.region.factory_class=org.hibernate.cache.impl.NoCachingRegionFactory
+hibernate.cache.use_query_cache=false
+hibernate.jdbc.fetch_size=50
+hibernate.jdbc.batch_size=30
+
+#------------ CHINACLEARING CONFIG ------------
+pay.chinaclearing.institution_id=003386
+pay.chinaclearing.sync_url=http://www.isantian.com/china-clearing/notice/sync/
+pay.chinaclearing.project_url=http://www.isantian.com/investment/
+pay.chinaclearing.plat_payment_account_name=\u6df1\u5733\u5e02\u4e09\u7530\u96cd\u6cd3\u4e92\u8054\u7f51\u91d1\u878d\u670d\u52a1\u6709\u9650\u516c\u53f8
+pay.chinaclearing.plat_payment_account_number=600033860001
+
+#------------ Task ------------
+task.core_pool_size=10
+task.max_pool_size=20
+task.queue_capacity=30
+task.keep_alive_seconds=60
+
+#------------ sftp ------------
+sftp.user.name=ENCRYPT(HNB2HuP1vjk=)
+sftp.user.password=ENCRYPT(yqHOvJKpMrCoPl26iVEi6w==)
+sftp.host=47.104.71.208
+sftp.port=22
+sftp.upload.dir=upload
+
+#------------ jpush ------------
+message.jpush.app_key=18d8617df1ec1eff2717902e
+message.jpush.master_secret=126b3bf69a71f21a74777b96
+
+#------------ file_server ------------
+url.file_server=http://www.isantian.com/attach/

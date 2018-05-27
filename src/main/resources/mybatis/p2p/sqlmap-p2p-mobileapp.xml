@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  ~ Copyright (c) 2016 klzan.com. All rights reserved.
+  ~ Support: http://www.klzan.com
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mobileapp">
+    <select id="findPage" resultType="com.klzan.mobile.vo.MobileAppVo" parameterType="java.util.Map">
+        <![CDATA[
+            SELECT
+                m.id id,
+                m.version_no versionNo,
+                m.version_name versionName,
+                m.package_name packageName,
+                m.app_type appType,
+                m.app_url appUrl,
+                m.change_log changeLog
+            FROM
+                karazam_mobile_app m
+            WHERE
+                m.app_type = #{appType}
+            ORDER BY m.id DESC
+        ]]>
+    </select>
+</mapper>

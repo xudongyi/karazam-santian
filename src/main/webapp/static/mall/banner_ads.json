@@ -1,0 +1,78 @@
+{
+  "topBanner": [
+    {
+      "id": "605C7251-869A-4712-8A94-91572B7E43A4",
+      "title": "婴儿枕",
+      "category": "SCROLL_IMAGE",
+      "imageUrl": "",
+      "orginal": 0,
+      "beginTime": "2016-11-24 12:59",
+      "salveImages": [],
+      "endTime": "2019-02-28 23:59",
+      "uri": "images/paituo-FJr-YZ-21-153-A5F9FBE21E5646959AAAFF2F83B02113.jpg",
+      "channelCategory": "SCARLET"
+    },
+    {
+      "id": "CD742EC8-E7DA-4AC3-A8B0-4C357697CE23",
+      "title": "台湾冰碗",
+      "category": "SCROLL_IMAGE",
+      "imageUrl": "",
+      "orginal": 1,
+      "beginTime": "2016-03-07 19:39",
+      "salveImages": [],
+      "endTime": "2021-08-31 19:34",
+      "uri": "images/paituo-FJr-YZ-21-151-91BBC25371E24E74BFF106C8D486A088.jpg",
+      "channelCategory": "SCARLET"
+    },
+    {
+      "id": "2B47347D-E803-49E6-8040-C58CFE8FADAC",
+      "title": "猫王小王子",
+      "category": "SCROLL_IMAGE",
+      "imageUrl": "",
+      "orginal": 3,
+      "beginTime": "2016-02-14 16:50",
+      "salveImages": [],
+      "endTime": "2019-09-30 23:59",
+      "uri": "images/paituo-A856C0F422EE4E048227E512DE9BB86D.jpg",
+      "channelCategory": "SCARLET"
+    }
+  ],
+  "top_ads": [
+    {
+      "id": "36A6AE46-AF5E-45E2-B1FF-2504978DDB84",
+      "title": "周末红包",
+      "category": "COMMON_IMAGE",
+      "imageUrl": "",
+      "orginal": 2,
+      "beginTime": "2015-12-02 14:58",
+      "salveImages": [],
+      "endTime": "2020-01-01 14:56",
+      "uri": "images/paituo-F76E74F1AE5544A9B55CE45301728AB6.png",
+      "channelCategory": "SCARLET"
+    },
+    {
+      "id": "58A9DCB4-15C6-4562-8183-D9D9AC370301",
+      "title": "积分商城介绍",
+      "category": "COMMON_IMAGE",
+      "imageUrl": "",
+      "orginal": 3,
+      "beginTime": "2016-03-11 15:55",
+      "salveImages": [],
+      "endTime": "2018-03-01 15:53",
+      "uri": "images/paituo-8EAB6859D0364BDB88C4545E3965191C.png",
+      "channelCategory": "SCARLET"
+    },
+    {
+      "id": "1850BF4B-DF62-4F1E-8888-E2D07EB5D732",
+      "title": "vip介绍",
+      "category": "COMMON_IMAGE",
+      "imageUrl": "",
+      "orginal": 4,
+      "beginTime": "2015-12-02 14:57",
+      "salveImages": [],
+      "endTime": "2022-04-02 14:55",
+      "uri": "images/paituo-4B653D51C16646F8A342E68F4B6E7F8A.jpg",
+      "channelCategory": "SCARLET"
+    }
+  ]
+}

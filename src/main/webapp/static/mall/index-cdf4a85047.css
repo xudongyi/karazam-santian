@@ -1,0 +1,617 @@
+.box, .box-big {
+    position: relative;
+    margin-top: 20px;
+    margin-left: 22px;
+    border: 1px solid #e6e6e6;
+    float: left;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear
+}
+
+.box .follow, .box-big .follow {
+    position: absolute;
+    padding: 0;
+    border: none;
+    width: 22px;
+    height: 22px;
+    top: 25px;
+    right: 25px;
+    font-size: 18px;
+    background: 0 0;
+    color: #a5a5a5;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease
+}
+
+.box .buy a, .box-big .info a.bug {
+    border: 1px solid #ff6825;
+    text-align: center
+}
+
+.box .follow:hover, .box-big .follow:hover {
+    color: #ff6825;
+    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -o-transform: scale(1.5)
+}
+
+.box .orange, .box-big .orange {
+    color: #ff6825
+}
+
+.box .follow[disabled=disabled], .box-big .follow[disabled=disabled] {
+    color: #ff6825;
+    cursor: not-allowed
+}
+
+.box .p-img, .box-big .p-img {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center
+}
+
+.box .buy a, .box-big:hover .follow, .box:hover .follow {
+    display: block
+}
+
+.box-big:hover, .box:hover {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .2)
+}
+
+.box {
+    width: 282px;
+    height: 330px
+}
+
+.box .p-img {
+    width: 280px;
+    height: 240px
+}
+
+.box .p-img a img {
+    max-width: 280px;
+    max-height: 240px
+}
+
+.box .info {
+    position: relative;
+    padding: 10px 20px;
+    overflow: hidden
+}
+
+.box .info a.title {
+    font-size: 16px;
+    color: #323232
+}
+
+.box .info a.title:hover {
+    color: #ff6825
+}
+
+.box .info .mt10 {
+    margin-top: 10px
+}
+
+.box .info .mt17 {
+    margin-top: 17px
+}
+
+.box .info p.price {
+    font-size: 14px;
+    float: left
+}
+
+.box .info p.left-count {
+    font-size: 14px;
+    color: #a5a5a5;
+    float: right
+}
+
+.box .buy {
+    position: absolute;
+    right: 18px;
+    bottom: -30px;
+    background-color: #fff;
+    opacity: 0;
+    filter: alpha(opacity=0)
+}
+
+.box .buy a {
+    width: 110px;
+    height: 30px;
+    font-size: 14px;
+    line-height: 30px;
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease
+}
+
+.box .buy a:hover {
+    background-color: #ff6825;
+    color: #fff
+}
+
+.box:hover p.left-count {
+    display: none
+}
+
+.box-big {
+    width: 587px;
+    height: 490px
+}
+
+.box-big .p-img {
+    width: 585px;
+    height: 380px
+}
+
+.box-big .p-img img {
+    display: inline-block;
+    max-width: 585px;
+    max-height: 380px
+}
+
+.box-big .info {
+    position: relative;
+    width: 587px;
+    height: 110px;
+    padding: 10px 20px
+}
+
+.box-big .info p.title a.name {
+    font-size: 18px;
+    color: #323232
+}
+
+.box-big .info p.title a.name:hover {
+    color: #ff6825
+}
+
+.box-big .info p.title span.price {
+    margin-left: 20px;
+    font-size: 18px
+}
+
+.box-big .info p.title span.unit {
+    font-size: 14px
+}
+
+.box-big .info p.desc {
+    width: 280px;
+    float: 14px;
+    color: #5e5e5e
+}
+
+.box-big .info a.bug {
+    display: block;
+    position: absolute;
+    width: 120px;
+    height: 36px;
+    top: 6px;
+    right: 20px;
+    font-size: 14px;
+    line-height: 36px;
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease
+}
+
+.box-big .info a.bug:hover {
+    background-color: #ff6825;
+    color: #fff
+}
+
+.box-big .info p.left-count {
+    position: absolute;
+    bottom: 25px;
+    right: 30px;
+    font-size: 14px;
+    color: #a5a5a5
+}
+
+p.nodata {
+    font-size: 16px;
+    color: #323232;
+    margin-left: 22px;
+    padding-top: 120px;
+    padding-bottom: 20px;
+    text-align: center
+}
+
+p.nodata i.bg {
+    position: relative;
+    display: inline-block;
+    top: 10px;
+    width: 44px;
+    height: 40px;
+    margin-right: 20px;
+    background: url(//img3.paituo.com/public/dist/20170606162417/images/mall/nodata_bg-1def681cdd.png) center center no-repeat
+}
+
+.page-bar {
+    float: right;
+    margin-top: 30px
+}
+
+.page-bar .btn-page {
+    width: 29px;
+    height: 28px;
+    float: left;
+    margin-left: 4px;
+    border: 1px solid #ebebeb;
+    border-radius: 2px;
+    background-color: #fbfbfb;
+    font-size: 14px;
+    color: #a5a5a5;
+    text-align: center;
+    line-height: 28px;
+    cursor: pointer
+}
+
+.page-bar .disabled {
+    background-color: #ddd
+}
+
+.page-bar .next, .page-bar .pre {
+    width: 31px
+}
+
+.page-bar .current, .page-bar .more {
+    border: none;
+    background-color: #fff;
+    font-weight: 700;
+    color: #323232
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%
+}
+
+.AeroWindow {
+    position: absolute;
+    overflow: hidden;
+    display: block
+}
+
+.AeroWindow .winBtns .win-closebtn {
+    height: 28px;
+    width: 28px;
+    display: block;
+    top: 6px;
+    right: 20px;
+    line-height: 28px;
+    text-align: center;
+    position: absolute
+}
+
+.AeroWindow .winBtns .win-closebtn:hover {
+    background-color: #ccc;
+    border-radius: 100%
+}
+
+.AeroWindow .titles {
+    background-color: #f4f4f4;
+    padding-left: 20px;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    cursor: default
+}
+
+.AeroWindow .tb-mm-container .tb-mm-dialog {
+    width: auto;
+    height: auto
+}
+
+.tb-mm-dialog .d-icons {
+    width: 64px;
+    height: 64px;
+    display: block;
+    margin: 5px
+}
+
+.tb-mm-dialog .d-btn.d-ok {
+    color: #fff;
+    background-color: #ff6825
+}
+
+.tb-mm-dialog .d-btn.d-cancel {
+    background-color: #f4f4f4;
+    border: 1px solid #e6e6e6
+}
+
+.tb-mm-dialog .d-btns {
+    width: 100%;
+    text-align: center
+}
+
+.AeroWindow .tb-mm-container .d-btn {
+    text-align: center;
+    text-decoration: none;
+    height: 30px;
+    line-height: 30px;
+    width: 66px;
+    display: inline-block;
+    font-size: 14px
+}
+
+.AeroWindow .tb-mm-container {
+    margin: 20px 20px 40px
+}
+
+.AeroWindow .dialog-content {
+    text-align: center;
+    min-width: 400px;
+    font-size: 14px;
+    padding: 15px 0 30px
+}
+
+.AeroWindow .dialog-content p {
+    font-size: 12px;
+    padding: 10px 0 0
+}
+
+.AeroWindow .tb-mm-content.loading {
+    background: url(images/loading.gif) center center no-repeat #fff !important
+}
+
+.AeroWindow .tb-mm-container .d-btn {
+    margin-left: 0
+}
+
+.banner {
+    width: 100%;
+    height: 242px
+}
+
+.banner .text {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 60px 30px 0
+}
+
+.banner .text p.subtit, .banner .text p.tit {
+    color: #fff
+}
+
+.banner .text p.tit {
+    font-size: 32px
+}
+
+.banner .text p.subtit {
+    font-size: 24px
+}
+
+.head-bar {
+    width: 1200px;
+    height: 42px;
+    background-color: #f6f6f6
+}
+
+.head-bar .sort {
+    float: left;
+    cursor: pointer
+}
+
+.head-bar .sort .sort-type {
+    position: relative;
+    width: 92px;
+    height: 42px;
+    line-height: 42px;
+    font-size: 12px;
+    color: #323232;
+    text-align: center;
+    float: left
+}
+
+.head-bar .sort .sort-type .fa {
+    color: #323232
+}
+
+.head-bar .sort .sort-type:hover, .head-bar .sort .sort-type:hover .fa {
+    color: #ff6825
+}
+
+.head-bar .sort .sort-type:hover .point-down, .head-bar .sort .sort-type:hover .point-up {
+    color: #323232
+}
+
+.head-bar .sort .sort-type .point-down, .head-bar .sort .sort-type .point-up {
+    position: absolute;
+    left: 62px
+}
+
+.head-bar .sort .sort-type .point-up {
+    top: 12px
+}
+
+.head-bar .sort .sort-type .point-down {
+    top: 18px
+}
+
+.head-bar .sort .current, .head-bar .sort .current .fa {
+    color: #ff6825
+}
+
+.head-bar .sort .current .point-down, .head-bar .sort .current .point-up {
+    color: #323232
+}
+
+.head-bar .sort .current[data-type='4'] .point-down, .head-bar .sort .current[data-type='5'] .point-up, .head-bar .sort .sort-type[data-type='4'] .point-down, .head-bar .sort .sort-type[data-type='5'] .point-up {
+    color: #ff6825
+}
+
+.head-bar .search-box {
+    height: 42px;
+    padding: 9px;
+    margin-left: -10px;
+    float: left;
+    border: 1px solid #f6f6f6
+}
+
+.head-bar .search-box input {
+    width: 58px;
+    height: 23px;
+    line-height: 23px;
+    border: 1px solid #e6e6e6;
+    padding: 0 5px
+}
+
+.head-bar .search-box button {
+    display: none;
+    position: relative;
+    top: -1px;
+    height: 23px;
+    line-height: 23px;
+    padding: 0 10px;
+    background-color: #ff6825;
+    font-size: 12px;
+    color: #fff;
+    border: none
+}
+
+.head-bar .search-box button:hover {
+    background-color: #ff4200
+}
+
+.head-bar .search-box:hover {
+    border: 1px solid #e6e6e6;
+    background-color: #fff
+}
+
+.head-bar .search-box:hover button {
+    display: inline-block
+}
+
+.head-bar .find-count {
+    height: 42px;
+    margin-right: 30px;
+    line-height: 42px;
+    font-size: 12px;
+    color: #323232;
+    float: right
+}
+
+.head-bar .find-count .bold {
+    font-weight: 700
+}
+
+.head-bar .find-count .next-page, .head-bar .find-count .pre-page {
+    cursor: pointer
+}
+
+.head-bar .find-count .next-page:hover, .head-bar .find-count .pre-page:hover {
+    color: #ff6825
+}
+
+.hot {
+    padding: 0 2px;
+    margin-top: 100px
+}
+
+.hot .hot-title {
+    text-align: center
+}
+
+.hot .hot-title span {
+    font-size: 30px;
+    color: #323232
+}
+
+.hot .hot-title .line {
+    position: relative;
+    width: 500px;
+    height: 1px;
+    border-top: 1px solid #e6e6e6;
+    top: 24px
+}
+
+.hot .hot-title .left {
+    float: left
+}
+
+.hot .hot-title .right {
+    float: right
+}
+
+.hot .hot-list {
+    margin-top: 30px;
+    margin-left: -22px;
+    padding-bottom: 50px
+}
+
+.benefits-list, .my-points {
+    margin-top: 20px
+}
+
+.banner {
+    background: url(images/in/banner-0c9f5fc728.jpg) center center no-repeat
+}
+
+.classify {
+    position: relative;
+    height: 65px;
+    border-bottom: 1px solid #e6e6e6
+}
+
+.classify .item {
+    width: 200px;
+    height: 65px;
+    line-height: 65px;
+    float: left;
+    text-align: center;
+    font-size: 14px;
+    color: #323232;
+    cursor: pointer
+}
+
+.classify .current, .classify .item:hover {
+    color: #ff6825
+}
+
+.classify .classify-bottom-line {
+    position: absolute;
+    width: 200px;
+    height: 1px;
+    border-bottom: 1px solid #ff6825;
+    bottom: -1px
+}
+
+.benefits-list .list {
+    margin-left: -22px;
+    padding: 0 3px
+}
+
+.my-points {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 30px;
+    border: 1px solid #e6e6e6;
+    color: #323232
+}
+
+.my-points .ml50 {
+    margin-left: 50px
+}
+
+.my-points span {
+    position: relative;
+    top: -4px
+}
+
+.my-points span.mypoint {
+    font-size: 20px;
+    top: -2px
+}

@@ -1,0 +1,371 @@
+#layout-account .account-body .account-layout-wrap {
+    width: 996px;
+    margin: 0 auto;
+}
+
+.account-layout .acc-panel {
+    background: #fff;
+    width: 996px;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.account-layout .acc-panel .acc-title {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    border-bottom: 1px solid #F5F5F5;
+}
+
+.account-layout .acc-panel .acc-title-text {
+    font-size: 16px;
+    color: #323232;
+}
+
+.account-layout .acc-body {
+    padding-bottom: 30px;
+}
+
+.account-layout .acc-body .acc-content {
+    padding: 25px 20px 30px;
+}
+
+.account-layout .jifen-top {
+    margin-left: 20px;
+}
+
+.account-layout .jifen-top .small-title {
+    color: #999;
+    line-height: 40px;
+}
+
+.account-layout .jifen-top .number {
+    font-size: 36px;
+    color: #333;
+}
+
+.account-layout .jifen-top .unit {
+    color: #999;
+}
+
+.account-layout .jifen-top a.blue-link {
+    margin-left: 30px;
+    color: #5b9fe2;
+}
+
+a {
+    outline: 0;
+    color: #5b9fe2;
+    text-decoration: none;
+    -webkit-transition: color .2s, background-color .2s;
+    transition: color .2s, background-color .2s;
+}
+
+.account-layout .jifen-top .block {
+    margin-top: 20px;
+}
+
+.account-layout .jifen-top a.earn-jifen {
+    color: #fff;
+    background: #ff6825;
+}
+
+.account-layout .jifen-top a.ff-btn {
+    width: 126px;
+    height: 34px;
+    margin-right: 12px;
+}
+
+.ff-btn {
+    padding: 6px 12px;
+    width: 156px;
+    font-size: 16px;
+    line-height: 22px;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: 0 0;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    transition: color .4s, background .4s;
+}
+
+.fa-fw, .fa-li, .ff-btn {
+    text-align: center;
+}
+
+.fa, .fa-stack, .ff-btn, label {
+    display: inline-block;
+}
+
+.ff-btn, a, button {
+    cursor: pointer;
+}
+
+.account-layout .jifen-top a.use-jifen {
+    border: 1px solid #ff6825;
+    color: #ff6825;
+    background: 0 0;
+}
+
+.account-layout .jifen-top a.ff-btn {
+    width: 126px;
+    height: 34px;
+    margin-right: 12px;
+}
+
+.account-layout .acc-body .acc-tab {
+    position: relative;
+    height: auto;
+}
+
+.account-layout .acc-body .acc-tab ul {
+    margin: 0;
+    height: 50px;
+}
+
+.account-layout .acc-body .acc-tab ul.tab-col-3 li {
+    width: 33.33333%;
+}
+
+.account-layout .acc-body .acc-tab ul li.active {
+    color: #323232;
+    background: #FFF;
+    border-top: 2px solid #ff6200;
+}
+
+.account-layout .acc-body .acc-tab ul li {
+    margin: 0;
+    float: left;
+    width: 100px;
+    line-height: 48px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    background: #FAFAFA;
+    color: #666;
+}
+
+.account-layout .acc-body .acc-content {
+    padding: 25px 20px 30px;
+}
+
+.account-layout .acc-body .acc-categories .cate-line {
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+}
+
+.account-layout .acc-body .acc-categories .cate-line .cate-head {
+    display: inline-block;
+    width: 50px;
+    text-align: right;
+    position: absolute;
+}
+
+.account-layout .acc-body .acc-categories ul {
+    display: inline-block;
+    margin-left: 60px;
+}
+
+.account-layout .acc-body .acc-categories ul li.selected {
+    color: #ff6200;
+}
+
+.account-layout .acc-body .acc-categories ul li {
+    float: left;
+    width: 90px;
+    text-align: center;
+    cursor: pointer;
+    color: #999;
+}
+
+.account-layout .acc-no-data {
+    font-size: 18px;
+    color: #ccc;
+}
+
+.account-layout .acc-loading, .account-layout .acc-no-data {
+    height: 260px;
+    line-height: 260px;
+    text-align: center;
+}
+
+.orange {
+    color: #ff6825;
+}
+
+.account-layout .acc-table {
+    color: #333
+}
+
+.account-layout .acc-table tbody tr td a {
+    color: #5E5E5E
+}
+
+.account-layout .acc-table tbody tr td p {
+    line-height: 30px;
+    color: #999;
+    font-size: 12px
+}
+
+.account-layout .acc-table tbody tr td .item-img {
+    float: left;
+    padding-right: 10px
+}
+
+.account-layout .acc-table tbody tr td .item-text {
+    float: left;
+    text-align: left;
+    width: 210px;
+    color: #333;
+    padding-top: 10px
+}
+
+.account-layout .acc-table tbody tr td .deleta_con_jifen {
+    cursor: pointer
+}
+
+.account-layout .acc-table tbody tr td a.n_look {
+    color: #5b9fe2
+}
+
+.account-layout .acc-table tbody tr td a.n_look:hover {
+    text-decoration: underline
+}
+
+.account-layout .acc-table tbody tr.sec-top {
+    height: 20px
+}
+
+.account-layout .acc-table tbody tr.sec-top td {
+    border: none;
+    padding: 0;
+    height: 20px
+}
+
+.account-layout .acc-table tbody tr.tr-th td {
+    padding: 0;
+    font-size: 12px;
+    text-align: left;
+    border-bottom: 1px solid #fff;
+    height: 40px
+}
+
+.account-layout .acc-table tbody tr.tr-th td p {
+    line-height: 36px;
+    background: #f6f6f6;
+    color: #888;
+    padding-left: 10px
+}
+
+.account-layout .acc-table tbody tr.tr-th td p span {
+    display: inline-block
+}
+
+.account-layout .acc-table tbody tr.tr-th td p span.fir {
+    width: 166px
+}
+
+.account-layout .acc-table tbody tr.tr-th td p span.las {
+    color: #333
+}
+
+.account-layout .table-all a:hover, .account-layout .table-attention .orange, .account-layout .table-attention a:hover {
+    color: #ff6200
+}
+
+.account-layout .table-all img {
+    width: 98px;
+    height: 98px;
+    border: 1px solid #F3F3F3;
+    display: inline-block
+}
+
+.account-layout .table-attention img {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #F3F3F3;
+    display: inline-block
+}
+
+.account-layout .table-attention tbody tr td .item-text {
+    padding-top: 22px
+}
+
+.account-layout .jifen-top a.use-jifen:hover {
+    color: #fff;
+    background: #ff6825;
+}
+
+table thead {
+    background-color: #f6f6f6;
+}
+
+.account-layout .acc-body .acc-table thead tr th:first-child {
+    text-align: left;
+}
+
+.account-layout .acc-body .acc-table thead tr th {
+    height: 40px;
+    background: #FAFAFA;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.account-layout .acc-body .acc-table thead tr th:last-child {
+    text-align: right;
+}
+
+table thead th {
+    vertical-align: middle;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+table tbody tr td:first-child {
+    text-align: left;
+    padding-left: 20px;
+}
+
+table td, table th {
+    padding-left: 30px;
+    text-align: center;
+}
+
+table tbody tr td:last-child {
+    text-align: right;
+    padding-right: 20px;
+}
+
+.account-layout .acc-body .acc-table tbody tr {
+    height: 50px;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.account-layout .acc-body .acc-table tbody tr td {
+    vertical-align: middle;
+    padding: 15px 20px;
+}
+
+.wrapper table tbody tr td:first-child {
+    text-align: left;
+    padding-left: 20px;
+}
+
+table {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.account-layout .grey {
+    color: #999
+}

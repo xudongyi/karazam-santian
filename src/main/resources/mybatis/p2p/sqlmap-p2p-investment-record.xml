@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  ~ Copyright (c) 2016 klzan.com. All rights reserved.
+  ~ Support: http://www.klzan.com
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.klzan.p2p.mapper.InvestmentRecordMapper">
+    <select id="findByProjectId" resultType="com.klzan.p2p.vo.investment.InvestmentRecordSimpleVo" parameterType="java.util.Map">
+        SELECT
+            i.id id,
+            u.login_name investor,
+            i.create_date buyTime,
+            i.amount amount,
+            i.operation_method operationMethodStr
+        FROM
+            karazam_investment_record i
+        LEFT JOIN karazam_user u ON u.id = i.investor
+        WHERE
+            i.deleted = 0
+        <if test="projectId != null">
+            AND i.borrowing = #{projectId}
+        </if>
+        <if test="state != null">
+            AND i.state = #{state}
+        </if>
+        <if test="investor != null">
+            AND i.investor = #{investor}
+        </if>
+        <if test="isTransfer != null">
+            AND i.is_transfer = #{isTransfer}
+        </if>
+        <if test="states != null and states.size != 0">
+            AND
+            <foreach collection="states" item="state" index="index"  open="(" separator="OR" close=")">
+                i.state = #{state}
+            </foreach>
+        </if>
+        ORDER BY
+            i.create_date DESC
+    </select>
+    <select id="findDetailByProjectId" resultType="com.klzan.p2p.vo.investment.InvestmentRecordVo" parameterType="java.util.Map">
+        SELECT
+            i.*,
+            u.login_name investor,
+            i.amount amount,
+            i.operation_method operationMethodStr,
+            b.id borrowing,
+            b.title title,
+            b.period borrowingPeriod,
+            b.period_unit borrowingPeriodUnit,
+            b.repayment_method borrowingRepaymentMethod,
+            b.interest_rate + b.reward_interest_rate borrowingInterestRate
+        FROM
+            karazam_investment_record i
+        LEFT JOIN karazam_user u ON u.id = i.investor
+        LEFT JOIN karazam_borrowing b ON b.id = i.borrowing
+        WHERE
+            i.deleted = 0
+        <if test="projectId != null">
+            AND i.borrowing = #{projectId}
+        </if>
+        <if test="state != null">
+            AND i.state = #{state}
+        </if>
+        <if test="investor != null">
+            AND i.investor = #{investor}
+        </if>
+        <if test="startDate != null">
+            and i.create_date &gt;= #{startDate}
+        </if>
+        <if test="endDate != null">
+            and i.create_date &lt;= #{endDate}
+        </if>
+        <if test="operationMethod != null and operationMethod !=''">
+            AND i.operation_method = #{operationMethod}
+        </if>
+        <if test="states != null and states.size != 0">
+            AND
+            <foreach collection="states" item="state" index="index"  open="(" separator="OR" close=")">
+                i.state = #{state}
+            </foreach>
+        </if>
+        ORDER BY
+            i.create_date DESC
+    </select>
+    <!--获取投资来源分布信息-->
+    <select id="findSource" resultType="com.klzan.p2p.vo.investment.InvestmentSourceVo" parameterType="java.util.Map">
+        select
+        count(case when a.Device_Type='ANDROID' then 'ANDROID' end) as android,
+        count(case when a.Device_Type='IOS' then 'IOS' end) as ios,
+        count(case when a.Device_Type='WAP' then 'WAP' end) as wap,
+        count(case when a.Device_Type='WECHAT' then 'WECHAT' end) as wechat,
+        count(case when a.Device_Type='PC' then 'PC' end) as pc,
+        count(case when a.Device_Type='UNKNOWN' then 'UNKNOWN' end) as unknown
+        from karazam_investment_record a
+        WHERE a.deleted = FALSE and a.state='success'
+    </select>
+</mapper>

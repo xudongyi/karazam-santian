@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 扫描组件（扫描所有需要注入的组件） -->
+    <context:component-scan base-package="com.klzan">
+        <!-- 例外 -->
+        <!-- type：类型 -->
+        <!-- expression：表达式 -->
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+    </context:component-scan>
+
+    <bean id="springUtils" class="com.klzan.core.util.SpringUtils"/>
+
+    <import resource="classpath:spring-jdbc.xml" />
+    <!-- Spring 异步event需要开启task -->
+    <import resource="classpath:spring-task.xml"/>
+    <import resource="classpath:spring-cache.xml" />
+    <import resource="classpath:spring-shiro.xml"/>
+
+    <!-- 国际化的消息资源文件（本系统中主要用于显示/错误消息定制） -->
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <!-- 在web环境中一定要定位到classpath 否则默认到当前web应用下找  -->
+                <value>classpath:messages</value>
+            </list>
+        </property>
+        <property name="useCodeAsDefaultMessage" value="false"/>
+        <property name="defaultEncoding" value="UTF-8"/>
+        <property name="cacheSeconds" value="60"/>
+    </bean>
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize"><value>52428800</value></property>
+        <property name="defaultEncoding"><value>UTF-8</value></property>
+    </bean>
+
+    <bean id="distributeLock" class=" com.klzan.core.lock.LocalDistributeLock" />
+
+    <!-- 配置Kaptcha验证码引擎 -->
+    <bean id="captchaProducer" class="com.google.code.kaptcha.impl.DefaultKaptcha">
+        <property name="config">
+            <bean class="com.google.code.kaptcha.util.Config">
+                <constructor-arg>
+                    <props>
+                        <prop key="kaptcha.textproducer.char.string">ABCDEFGHIJKLMNOPQRSTUVWXYZ3456789</prop>
+                        <prop key="kaptcha.textproducer.char.length">4</prop>
+                        <prop key="kaptcha.textproducer.font.names">Arial, Bell MT, Credit valley, nyala</prop>
+                        <prop key="kaptcha.textproducer.font.size">34</prop>
+                        <prop key="kaptcha.noise.impl">com.google.code.kaptcha.impl.NoNoise</prop>
+                        <prop key="kaptcha.image.width">120</prop>
+                        <prop key="kaptcha.image.height">42</prop>
+                        <prop key="kaptcha.border">no</prop>
+                        <prop key="kaptcha.background.clear.from">255,255,255</prop>
+                    </props>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+
+    <bean name="setting" class="com.klzan.core.setting.WebSetting" />
+    <bean name="springObjectFactory" class="com.klzan.core.SpringObjectFactory" />
+    <bean name="environment" class="org.springframework.web.context.support.StandardServletEnvironment" />
+    <bean name="requestContextHolder" class="com.klzan.core.RequestContextHolder" />
+    <bean name="freemarkerSetting" class="com.klzan.core.setting.FreemarkerSetting" />
+    <bean class="com.klzan.plugin.pay.cpcn.ChinaClearingConfig">
+        <property name="institutionId" value="${pay.chinaclearing.institution_id}" />
+        <property name="pageUrl" value="${pay.chinaclearing.sync_url}" />
+        <property name="projectUrl" value="${pay.chinaclearing.project_url}" />
+        <property name="platPaymentAccountName" value="${pay.chinaclearing.plat_payment_account_name}" />
+        <property name="platPaymentAccountNumber" value="${pay.chinaclearing.plat_payment_account_number}" />
+    </bean>
+    <bean class="com.klzan.p2p.common.push.JpushConfig">
+        <property name="appKey" value="${message.jpush.app_key}" />
+        <property name="masterSecret" value="${message.jpush.master_secret}" />
+    </bean>
+
+    <beans profile="dev">
+        <bean class="com.klzan.core.util.PropertiesUtils">
+            <property name="locations">
+                <list>
+                    <value>classpath*:config/dev/site-config.propertites</value>
+                    <value>classpath*:config/dev/site-template.propertites</value>
+                </list>
+            </property>
+        </bean>
+    </beans>
+    <beans profile="test">
+        <bean class="com.klzan.core.util.PropertiesUtils">
+            <property name="locations">
+                <list>
+                    <value>classpath*:config/test/site-config.propertites</value>
+                    <value>classpath*:config/test/site-template.propertites</value>
+                </list>
+            </property>
+        </bean>
+    </beans>
+    <beans profile="prod">
+        <bean class="com.klzan.core.util.PropertiesUtils">
+            <property name="locations">
+                <list>
+                    <value>classpath*:config/prod/site-config.propertites</value>
+                    <value>classpath*:config/prod/site-template.propertites</value>
+                </list>
+            </property>
+        </bean>
+    </beans>
+
+</beans>

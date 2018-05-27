@@ -1,0 +1,16 @@
+{
+  "code": 0,
+  "message": "\u8bf7\u6c42\u6210\u529f",
+  "data": {
+    "userId": "7671E6CC-3F3E-4680-B94A-853E8197B04A",
+    "level": "1",
+    "levelName": "\u666e\u901a\u4f1a\u5458",
+    "freezePoints": 0,
+    "availablePoints": 0,
+    "totalPoints": 0,
+    "upgradePoints": 0,
+    "upgradeNeedPoints": 1000,
+    "nextLevelPoints": 1000,
+    "nextLevelName": "\u767d\u91d1\u4f1a\u5458"
+  }
+}

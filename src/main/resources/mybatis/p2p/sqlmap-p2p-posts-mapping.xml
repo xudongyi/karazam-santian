@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  ~ Copyright (c) 2016 klzan.com. All rights reserved.
+  ~ Support: http://www.klzan.com
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.klzan.p2p.mapper.PostsMappingMapper">
+    <select id="findBycriteria" resultType="com.klzan.p2p.model.PostsMapping" parameterType="java.util.Map">
+        SELECT
+          m.*
+        FROM karazam_posts_mapping m
+        LEFT JOIN karazam_posts_taxonomy t ON t.id = m.taxonomy_id
+        WHERE m.deleted=0
+        <if test="contentId !=null ">
+            AND m.content_id = #{contentId}
+        </if>
+        <if test="taxonomyType !=null and taxonomyType!=''">
+            AND t.type = #{taxonomyType}
+        </if>
+    </select>
+</mapper>

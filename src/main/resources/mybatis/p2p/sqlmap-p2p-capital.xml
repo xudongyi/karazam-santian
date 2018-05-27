@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  ~ Copyright (c) 2016 klzan.com. All rights reserved.
+  ~ Support: http://www.klzan.com
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.klzan.p2p.mapper.CapitalMapper">
+        <select id="findCapital" resultType="com.klzan.p2p.vo.capital.CapitalVo" parameterType="java.util.Map">
+            SELECT
+            c.id        id,
+            c.user_id   userId,
+            u.name      name,
+            c.type      typeStr,
+            c.method    methodStr,
+            c.create_date         createDate,
+            ifnull(c.credit,0)    credit,
+            ifnull(c.debit,0)     debit,
+            ifnull(c.frozen,0)    frozen,
+            ifnull(c.unfrozen,0)  unfrozen,
+            ifnull(c.balance,0)   balance,
+            c.order_no  orderNo,
+            c.operator  operator,
+            c.memo      memo,
+            u.mobile mobile,
+            c.ip        ip
+            from karazam_capital c
+            left join karazam_user u on u.id = c.user_id
+            where c.deleted=false
+            <if test="createDateBegin !=null ">
+                AND c.create_date &gt;= '${createDateBegin}'
+            </if>
+            <if test="createDateEnd !=null ">
+                AND  c.create_date &lt;= '${createDateEnd}'
+            </if>
+            <if test="mobile !=null ">
+                AND u.mobile LIKE '%${mobile}%'
+            </if>
+            <if test="type !=null ">
+                AND c.type = '${type}'
+            </if>
+            <if test="method !=null ">
+                AND c.method = '${method}'
+            </if>
+            ORDER BY c.id DESC
+        </select>
+        <select id="userFund" resultType="com.klzan.p2p.vo.capital.UserFinanceVo" parameterType="java.util.Map">
+                select
+                uf.id id,
+                uf.user_id userId,
+                ifnull(uf.borrowing_amts,0) borrowingAmts,
+                ifnull(uf.investment_amts,0) investmentAmts,
+                ifnull(uf.credit,0) credit,
+                ifnull(uf.debit,0) debit,
+                ifnull(uf.experience,0) experience,
+                ifnull(uf.recharge_amts,0) rechargeAmts,
+                ifnull(uf.withdrawal_amts,0) withdrawalAmts,
+                ifnull(uf.balance,0) balance,
+                ifnull(uf.frozen,0) frozen,
+                u.login_name userName,
+                u.mobile mobile,
+                u.create_date createDate,
+                ui.real_name realName,
+                ui.id_no idNo
+                from karazam_user_finance uf
+                left join karazam_user u on uf.user_id=u.id
+                left join karazam_user_info ui on uf.user_id=ui.user_id
+                where uf.deleted=false
+                <if test="mobile !=null ">
+                        AND u.mobile LIKE '%${mobile}%'
+                </if>
+                <if test="startCreateDate !=null ">
+                    AND u.create_date &gt; '${startCreateDate}'
+                </if>
+                <if test="endCreateDate !=null ">
+                    AND u.create_date &lt; '${endCreateDate}'
+                </if>
+                ORDER BY uf.id DESC
+        </select>
+</mapper>

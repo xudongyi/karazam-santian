@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  ~ Copyright (c) 2016 klzan.com. All rights reserved.
+  ~ Support: http://www.klzan.com
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.klzan.p2p.mapper.LinksMapper">
+    <select id="findList" resultType="com.klzan.p2p.vo.links.LinksVo" parameterType="java.util.Map">
+        SELECT
+          l.name        name,
+          l.type        typeStr,
+          l.logo        logo,
+          l.url         url,
+          l.target      target,
+          l.description description,
+          l.visible     visible
+        FROM karazam_links l
+        WHERE l.deleted=0
+        <if test="type !=null ">
+            AND l.type = #{type}
+        </if>
+        ORDER BY l.sort ASC
+    </select>
+</mapper>

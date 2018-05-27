@@ -1,0 +1,541 @@
+.dialog, .dialog-bg {
+    display: none;
+    position: fixed;
+    top: 0
+}
+
+.page-bar {
+    float: right;
+    margin-top: 30px
+}
+
+.page-bar .btn-page {
+    width: 29px;
+    height: 28px;
+    float: left;
+    margin-left: 4px;
+    border: 1px solid #ebebeb;
+    border-radius: 2px;
+    background-color: #fbfbfb;
+    font-size: 14px;
+    color: #a5a5a5;
+    text-align: center;
+    line-height: 28px;
+    cursor: pointer
+}
+
+.page-bar .disabled {
+    background-color: #ddd
+}
+
+.page-bar .next, .page-bar .pre {
+    width: 31px
+}
+
+.page-bar .current, .page-bar .more {
+    border: none;
+    background-color: #fff;
+    font-weight: 700;
+    color: #323232
+}
+
+.prodIntro, .prodIntro .prodInfo .price-info {
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6
+}
+
+.dialog-bg {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    background-color: #000;
+    opacity: .5;
+    filter: alpha(opacity=50);
+    z-index: 9998
+}
+
+.dialog {
+    width: 400px;
+    height: 186px;
+    left: 50%;
+    background-color: #fff;
+    margin-top: -93px;
+    margin-left: -200px;
+    z-index: 9999
+}
+
+.dialog .dialog-head {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background-color: #f4f4f4;
+    line-height: 40px;
+    padding: 0 20px;
+    font-size: 14px;
+    color: #5e5e5e
+}
+
+.dialog .dialog-head .close {
+    position: absolute;
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border-radius: 14px;
+    top: 6px;
+    right: 20px;
+    text-align: center;
+    cursor: pointer
+}
+
+.dialog .dialog-head .close .fa {
+    position: relative;
+    top: -7px
+}
+
+.dialog .dialog-head .close:hover {
+    background-color: #ccc
+}
+
+.dialog .dialog-head .close:hover .fa {
+    color: #fff
+}
+
+.dialog .dialog-content {
+    width: 100%
+}
+
+.dialog .dialog-content p.text {
+    width: 100%;
+    margin: 30px auto 0;
+    text-align: center;
+    font-size: 16px;
+    color: #323232
+}
+
+.dialog .dialog-content .btn-group {
+    width: 100%;
+    margin-top: 36px;
+    text-align: center
+}
+
+.dialog .dialog-content .btn-group .button {
+    display: inline-block;
+    line-height: 30px;
+    padding: 0 21px;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    background-color: #ff6825;
+    cursor: pointer
+}
+
+.link-source, .prodIntro .prodInfo span {
+    font-size: 12px;
+    color: #5e5e5e
+}
+
+.dialog .dialog-content .btn-group .button:hover {
+    background-color: #ff4200
+}
+
+.pb50 {
+    padding-bottom: 50px
+}
+
+.link-source {
+    height: 50px;
+    line-height: 50px
+}
+
+.prodIntro {
+    width: 1200px;
+    height: 460px
+}
+
+.prodIntro .left {
+    width: 600px;
+    height: 458px;
+    float: left
+}
+
+.prodIntro .left .p-img {
+    display: table-cell;
+    width: 598px;
+    height: 456px;
+    vertical-align: middle;
+    text-align: center
+}
+
+.prodIntro .left .p-img img {
+    max-width: 598px;
+    max-height: 456px
+}
+
+.prodIntro .prodInfo {
+    width: 588px;
+    height: 458px;
+    margin-left: 12px;
+    padding-top: 50px;
+    float: left
+}
+
+.prodIntro .prodInfo .ml40 {
+    margin-left: 40px
+}
+
+.prodIntro .prodInfo .ml20 {
+    margin-left: 20px
+}
+
+.prodIntro .prodInfo .mt20 {
+    margin-top: 20px
+}
+
+.prodIntro .prodInfo .orange {
+    color: #ff6825
+}
+
+.prodIntro .prodInfo p.title {
+    font-size: 20px;
+    color: #323232
+}
+
+.prodIntro .prodInfo p.desc {
+    width: 330px;
+    font-size: 14px;
+    color: #5e5e5e
+}
+
+.prodIntro .prodInfo .price-info {
+    position: relative;
+    margin-top: 20px;
+    height: 66px;
+    line-height: 66px
+}
+
+.prodIntro .prodInfo .price-info span.price {
+    margin-left: 28px;
+    font-size: 28px
+}
+
+.prodIntro .prodInfo .price-info span.unit {
+    font-size: 14px
+}
+
+.prodIntro .prodInfo .price-info p.my {
+    position: absolute;
+    top: 0;
+    right: 28px
+}
+
+.prodIntro .prodInfo .price-info p.my .balance {
+    color: #323232;
+    font-weight: bolder
+}
+
+.prodIntro .prodInfo .price-info p.my .to-login {
+    color: #ff6825
+}
+
+.prodIntro .prodInfo span.tb-stock {
+    display: inline-block;
+    width: 99px;
+    height: 26px;
+    border: 1px solid #cfcfcf
+}
+
+.prodIntro .prodInfo span.tb-stock button.add, .prodIntro .prodInfo span.tb-stock button.subtract {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 20px;
+    background-color: #fff;
+    border: none;
+    text-align: center;
+    font-size: 12px;
+    color: #5e5e5e;
+    cursor: pointer
+}
+
+.prodIntro .prodInfo span.tb-stock button.add:hover, .prodIntro .prodInfo span.tb-stock button.subtract:hover {
+    background-color: #f3f3f3
+}
+
+.prodIntro .prodInfo span.tb-stock button[disabled=disabled] {
+    background-color: #f3f3f3;
+    cursor: not-allowed
+}
+
+.prodIntro .prodInfo span.tb-stock input.bug-count {
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+    line-height: 22px;
+    border: none;
+    border-left: 1px solid #cfcfcf;
+    border-right: 1px solid #cfcfcf;
+    text-align: center
+}
+
+.prodIntro .prodInfo .btn-group {
+    position: relative;
+    margin-top: 30px
+}
+
+.prodIntro .prodInfo .btn-group button {
+    padding: 0 50px;
+    height: 50px;
+    border: none;
+    font-size: 16px;
+    -webkit-transition: all .2s;
+    transition: all .2s
+}
+
+.prodIntro .prodInfo .btn-group button.buy {
+    background-color: #ff6825;
+    color: #fff
+}
+
+.prodIntro .prodInfo .btn-group button.buy:hover {
+    background-color: #ff4200
+}
+
+.prodIntro .prodInfo .btn-group a.earn-points {
+    display: inline-block;
+    padding: 0 50px;
+    height: 50px;
+    line-height: 50px;
+    border: none;
+    font-size: 16px;
+    background-color: #ccc;
+    color: #fff
+}
+
+.prodIntro .prodInfo .btn-group button.follow {
+    margin-left: 10px;
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    color: #323232
+}
+
+.prodIntro .prodInfo .btn-group button.follow .fa-heart {
+    position: relative;
+    left: -8px;
+    top: 1px;
+    color: #a5a5a5
+}
+
+.prodIntro .prodInfo .btn-group button.follow .orange {
+    color: #ff6825
+}
+
+.prodIntro .prodInfo .btn-group button.follow span {
+    font-size: 16px;
+    color: #323232
+}
+
+.prodIntro .prodInfo .btn-group button.follow:hover {
+    background-color: #f4f4f4
+}
+
+.prodIntro .prodInfo .btn-group button[disabled=disabled] {
+    background-color: #ccc;
+    color: #fff;
+    cursor: not-allowed
+}
+
+.prodIntro .prodInfo .btn-group button[disabled=disabled] span {
+    color: #fff
+}
+
+.prodIntro .prodInfo .btn-group button[disabled=disabled]:hover {
+    background-color: #ccc
+}
+
+.prodIntro .prodInfo .btn-group .focus-tip-detail {
+    position: absolute;
+    top: 14px;
+    margin-left: 10px;
+    padding: 3px 10px;
+    background-color: #fff;
+    font-size: 12px;
+    z-index: 20;
+    border: 1px solid #e6e6e6;
+    display: none
+}
+
+.prodDetail {
+    position: relative
+}
+
+.prodDetail .v-line {
+    position: absolute;
+    left: 50%;
+    width: 1px;
+    height: 18px;
+    border-right: 1px solid #e6e6e6;
+    margin-top: 14px
+}
+
+.prodDetail .tab-container {
+    position: relative;
+    width: 1200px;
+    height: 48px;
+    line-height: 46px;
+    border-bottom: 1px solid #e6e6e6;
+    font-size: 14px;
+    color: #323232
+}
+
+.prodDetail .tab-container .tab-btn {
+    position: absolute;
+    left: 50%;
+    cursor: pointer
+}
+
+.prodDetail .tab-container .tab-btn:hover {
+    color: #ff6825
+}
+
+.prodDetail .tab-container .tab-detail {
+    margin-left: -88px
+}
+
+.prodDetail .tab-container .tab-buyRecords {
+    margin-left: 32px
+}
+
+.prodDetail .tab-container .active {
+    color: #ff6825;
+    border-bottom: 2px solid #ff6825
+}
+
+.prodDetail .content-container .tab-content {
+    display: none
+}
+
+.prodDetail .content-container .active {
+    display: block
+}
+
+.prodDetail .content-container .detail p.desc {
+    width: 750px;
+    margin: 0 auto;
+    padding: 30px 0;
+    font-size: 12px;
+    color: #5e5e5e;
+    line-height: 2em
+}
+
+.prodDetail .content-container .detail .detail-imgs {
+    width: 1200px;
+    text-align: center
+}
+
+.prodDetail .content-container .detail .detail-imgs img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto
+}
+
+.prodDetail .content-container .buyRecords table.records-table {
+    width: 1200px;
+    margin-top: 40px
+}
+
+.prodDetail .content-container .buyRecords table.records-table thead, .prodDetail .content-container .buyRecords table.records-table tr:hover {
+    background-color: #f9f9f9
+}
+
+.prodDetail .content-container .buyRecords table.records-table td, .prodDetail .content-container .buyRecords table.records-table th {
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    color: #5e5e5e;
+    text-align: center
+}
+
+.prodDetail .content-container .buyRecords table.records-table td {
+    border-bottom: 1px solid #f5f5f5
+}
+
+.quick-bar {
+    display: none;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #e6e6e6;
+    box-shadow: 0 2px 4px #ccc;
+    -webkit-box-shadow: 0 2px 4px #ccc;
+    z-index: 10
+}
+
+.quick-bar .container {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px
+}
+
+.quick-bar .container .left {
+    float: left
+}
+
+.quick-bar .container .left span.title {
+    font-size: 20px;
+    color: #323232
+}
+
+.quick-bar .container .right {
+    float: right
+}
+
+.quick-bar .container .right span.price {
+    font-size: 28px
+}
+
+.quick-bar .container .right span.unit {
+    font-size: 14px
+}
+
+.quick-bar .container .right .button {
+    position: relative;
+    top: -2px;
+    padding: 0 30px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 20px;
+    border: none;
+    font-size: 14px;
+    -webkit-transition: all .4s;
+    transition: all .4s
+}
+
+.quick-bar .container .right .buy {
+    background-color: #ff6825;
+    color: #fff
+}
+
+.quick-bar .container .right .buy:hover {
+    background-color: #ff4200
+}
+
+.quick-bar .container .right .earn-points {
+    display: inline-block;
+    background-color: #ccc;
+    color: #fff
+}
+
+.quick-bar .container .right .button[disabled=disabled] {
+    background-color: #ccc;
+    color: #fff;
+    cursor: not-allowed
+}
+
+.quick-bar .container .right .button[disabled=disabled] span {
+    color: #fff
+}
+
+.quick-bar .container .right .button[disabled=disabled]:hover {
+    background-color: #ccc
+}

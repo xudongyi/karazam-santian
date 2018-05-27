@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  ~ Copyright (c) 2016 klzan.com. All rights reserved.
+  ~ Support: http://www.klzan.com
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.klzan.p2p.mapper.TransferMapper">
+
+    <select id="findTransferListOrDetail" resultType="com.klzan.p2p.vo.transfer.TransferVo" parameterType="java.util.Map">
+        SELECT
+        t.id as id,
+        t.state AS enumStateStr,
+        t.borrowing AS borrowingId,
+        t.transfer as transferUserId,
+        t.capital as capital,
+        t.worth as worth,
+        t.surplus_worth as surplusWorth,
+        t.transfered_capital as transferedCapital,
+        t.in_fee as inFee,
+        t.out_fee as outFee,
+        t.last_date as lastDate,
+        t.full_date as fullDate,
+        t.order_no as orderNo,
+        t.type as typeStr,
+        t.create_date as createDate,
+        b.repayment_method as repaymentMethodStr,
+        u.mobile as transferMobile,
+        ui.real_name as transferRealName
+        FROM karazam_transfer t
+        LEFT JOIN karazam_borrowing b ON t.borrowing=b.id
+        LEFT JOIN karazam_user u ON t.transfer=u.id
+        LEFT JOIN karazam_user_info ui ON t.transfer=ui.user_id
+        WHERE
+        t.deleted = FALSE
+        <if test="mobile != null and mobile!='' ">
+            AND u.mobile LIKE '%${mobile}%'
+        </if>
+        <if test="id != null and id!=''">
+            AND t.id = ${id}
+        </if>
+    </select>
+
+    <select id="findBuyInList" resultType="com.klzan.p2p.vo.transfer.TransferVo" parameterType="java.util.Map">
+        SELECT
+            i.id investId,
+            i.borrowing borrowingId,
+            t.title,
+            i.create_date investmentDate,
+            t.id transfer,
+            t.surplus_period surplusPeriod,
+            sum(rp.capital) capital,
+            sum(rp.interest) interest,
+            sum(rp.capital + rp.interest) capitalInterest
+        FROM
+          karazam_investment i
+        LEFT JOIN karazam_transfer t ON t.id = i.transfer
+        LEFT JOIN karazam_repayment_plan rp ON rp.borrowing = i.borrowing
+        AND rp.transfer = i.transfer
+        AND rp.investment = i.id
+        AND rp.investor = i.investor
+        WHERE
+            i.deleted = 0
+        AND rp.transfer_state != 'TRANSFER_OUT'
+        <if test="investor != null and investor!='' ">
+            AND i.investor = #{investor}
+        </if>
+        GROUP BY i.id
+    </select>
+
+    <select id="findTransferInvestment" resultType="com.klzan.p2p.vo.transfer.TransferVo" parameterType="java.util.Map">
+        SELECT
+            i.id as id,
+            i.create_date as investmentDate,
+            i.amount as capital,
+            b.title as title
+        FROM
+            karazam_investment i
+        LEFT JOIN karazam_borrowing b ON i.borrowing = b.id
+        LEFT JOIN karazam_transfer t on i.transfer = t.id
+        WHERE
+            !ISNULL(i.transfer)
+        <if test="transfer != null and transfer!='' ">
+            AND t.transfer = #{transfer}
+        </if>
+        <if test="borrowingId != null and borrowingId!='' ">
+            AND i.borrowing = #{borrowingId}
+        </if>
+    </select>
+
+    <select id="findList" resultType="com.klzan.p2p.model.Transfer" parameterType="java.util.Map">
+        SELECT
+            t.*,
+            b.repayment_method as repaymentMethodStr,
+            u.mobile as transferMobile,
+            ui.real_name as transferRealName,
+            CASE t.state
+              WHEN 'TRANSFERING' THEN 1
+              WHEN 'TRANSFERPART' THEN 2
+              WHEN 'TRANSFERED' THEN 3
+              ELSE 4
+            END stateNo
+        FROM karazam_transfer t
+        LEFT JOIN karazam_borrowing b ON t.borrowing=b.id
+        LEFT JOIN karazam_user u ON t.transfer=u.id
+        LEFT JOIN karazam_user_info ui ON t.transfer=ui.user_id
+        WHERE
+              t.deleted = FALSE
+        <if test="states != null and states.size != 0">
+            AND
+            <foreach collection="states" item="state" index="index"  open="(" separator="OR" close=")">
+                t.state = #{state}
+            </foreach>
+        </if>
+        <if test="mobile != null and mobile!='' ">
+            AND u.mobile LIKE '%${mobile}%'
+        </if>
+        <if test="id != null and id!=''">
+            AND t.id = ${id}
+        </if>
+        ORDER BY stateNo ASC
+    </select>
+</mapper>

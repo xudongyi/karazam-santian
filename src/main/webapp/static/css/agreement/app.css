@@ -1,0 +1,147 @@
+.mui-plus header.mui-bar{
+	display: none;
+}
+.mui-plus .mui-bar-nav~.mui-content{
+	padding: 0;
+}
+
+/*hm开头的表示仅为 Hello MUI示例定义*/
+.hm-description{
+	margin: .5em 0;
+}
+
+.hm-description>li {
+	font-size: 14px;
+	color: #8f8f94;
+}
+
+.mui-content-padded p{
+	font-size: 12px;
+	margin-bottom: 0px;
+	text-indent: 2em;
+}
+
+.title-1 {
+	height: 30px;
+	line-height: 30px;
+	font-size: 24px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	font-size: 14px;
+}
+
+body {
+	margin:0 20px 0 20px;
+	padding: 0px;
+	font-size: 14px;
+	color: #4c4c4c;
+	line-height: 24px;
+	font-family: "微软雅黑","Tahoma","Arial","Georgia";
+}
+
+.number {
+	height: 24px;
+	text-align: right;
+	margin-bottom: 30px;
+	margin-right: 90px;
+}
+
+table{
+	border: 1px solid #dddddd;
+	background-color: transparent;
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 30px;
+}
+
+.table-2 th {
+	text-align: left;
+	font-weight: normal;
+}
+
+.table-2 td, .table-2 th {
+	border: 1px solid #333;
+	padding: 8px 10px;
+}
+
+ul, ol {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.legalPerson li {
+	height: 24px;
+}
+
+.instr-2 p{
+	/*text-indent: 28px;*/
+	margin-bottom: 10px;
+	color: #4c4c4c;
+	line-height: 24px;
+}
+
+.instr-2 li.no-1 p {
+	/*text-indent: 28px;*/
+	margin-bottom: 10px;
+	color: #4c4c4c;
+	line-height: 24px;
+}
+
+.instr-2 li {
+	height: auto !important;
+	height: 24px;
+	min-height: 24px;
+	margin-bottom: 10px;
+}
+
+.xian {
+	display: inline-block;
+	width: 80px;
+	height: 20px;
+	vertical-align: middle;
+	border-bottom: 1px solid #333;
+}
+
+.xian-2 {
+	display: inline-block;
+	width: 40px;
+	height: 20px;
+	vertical-align: middle;
+	border-bottom: 1px solid #333;
+}
+
+.title-2 {
+	height: 30px;
+	line-height: 30px;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.table td, .table th {
+	border: 1px solid #333;
+	text-align: center;
+	height: 30px;
+	line-height: 30px;
+}
+
+.table-2 td {
+	text-align: left;
+}
+
+.table-2 td, .table-2 th {
+	border: 1px solid #333;
+	padding: 8px 10px;
+}
+
+.mt-30 {
+	margin-top: 30px;
+}
+
+.mb-30 {
+	margin-bottom: 30px;
+}

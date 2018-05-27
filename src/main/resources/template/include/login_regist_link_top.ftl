@@ -1,0 +1,5 @@
+[@css href="lib/font-awesome/css/font-awesome.min.css" /]
+[@css href="css/login_regist/bootstrap.min.css" /]
+[@css href="css/login_regist/Public.css" /]
+[@css href="css/login_regist/Public-upgrade.css" /]
+[@css href="css/login_regist/user.css" /]

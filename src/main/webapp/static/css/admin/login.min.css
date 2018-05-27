@@ -1,0 +1,83 @@
+* {font-family: "Verdana", "Tahoma", "Lucida Grande", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;}
+body {
+    background-color: #f8f8f8;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+a:link {color: #285e8e;}
+html.login .dialog-box {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    height: 425px;
+    margin: auto;
+    margin-top: 120px;
+    width: 450px;
+    padding: 30px;
+    background-color:rgba(0, 0, 0, 0.03);
+    border: 1px #DDD solid;
+    border-radius: 5px;
+    -webkit-box-shadow: 1px 5px 8px #888888;
+    -moz-box-shadow: 1px 5px 8px #888888;
+    box-shadow: 1px 5px 8px #888888;
+}
+
+html.login .dialog-box .title-bar .setting {position: relative; float: right; top: 5px; right: 10px; width: 10px; height: 10px;}
+html.login .dialog-box .title-bar .setting a {color: #FF6600;}
+html.login .dialog-box .title-bar .setting a:hover {color: #555;}
+
+html.login .title-bar {
+    border-bottom: 1px dotted #FFF;
+    font-size: 15px;
+    height: 40px;
+    line-height: 35px;
+    padding: 0 20px;
+}
+
+html.login #flashMessage {
+	color: #B94A48;
+    height: 28px;
+    margin: 10px;
+    padding: 3px 14px
+}
+
+html.login .form-groups {
+	margin: 0 auto;
+    width: 70%;
+}
+
+html.login .form-groups .form-group {
+	height: 55px;
+    margin-bottom: 0;
+}
+
+html.login .form-group.fieldError .errorMessage {
+	font-size: 12px;
+}
+
+html.login img.captchaImage {
+	border-color: #CCCCCC;
+    border-radius: 0 3px 3px 0;
+    border-style: solid;
+    border-width: 1px 1px 1px 0;
+    cursor: pointer;
+    height: 28px;
+    width: 80px;
+}
+
+html.login .control-toolbar {
+    border-top: 1px #FFF dotted;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+html.login .copyright {
+    font-size: 12px;
+    padding: 5px 0;
+    text-align: center;
+}
+
+.login_main_submit{
+    background-color: #0f6f8a;
+    width: 150px;
+}

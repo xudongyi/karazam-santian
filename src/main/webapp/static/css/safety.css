@@ -1,0 +1,206 @@
+.safetyList li {
+    height: 73px;
+    line-height: 73px;
+    position: relative;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.safetyList li label {
+    color: #212121;
+    padding-left: 21px;
+    display: inline-block;
+    /*float: left;*/
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.safetyList li span {
+    position: absolute;
+    left: 242px;
+    color: #9e9e9e;
+    display: inline-block;
+}
+.safetyList li span img{
+    width:80px;
+    height:60px;
+}
+
+.safetyList li a {
+    color: #0091ea;
+    padding-right: 20px;
+    display: inline-block;
+}
+
+.inputText {
+    width: 235px;
+    height: 38px;
+    border: 1px solid #cccccc;
+    line-height: 38px;
+    padding: 0 0 0 15px;
+    border-radius: 2px;
+}
+
+.inputText:focus,
+.inputText:hover {
+    border-color: #36adf7;
+}
+
+.error .inputText {
+    border-color: #f24343;
+}
+
+
+/*password*/
+
+.login-pwd li.error {
+    color: #212121;
+}
+
+.login-pwd li , .arrayUl li{
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 25px;
+    position: relative;
+}
+.arrayUl li{
+    height:auto;
+}
+
+.login-pwd li .repeat {
+    color: #cccccc;
+}
+
+.login-pwd li .validate {
+    position: absolute;
+    left: 320px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 90px;
+    display: inline-block;
+}
+
+.login-pwd li .line {
+    width: 1px;
+    height: 20px;
+    top: 9px;
+    position: absolute;
+    background-color: #ededed;
+    left: 320px;
+    display: inline-block;
+}
+
+.login-pwd li label {
+    width: 154px;
+    display: inline-block;
+    text-align: right;
+    font-size: 14px;
+}
+.arrayUl li label{
+    width:160;
+    display: inline-block;
+    margin-right:6px;
+}
+.login-pwd li .inputBut {
+    margin-left: 156px;
+    outline: none;
+}
+
+.login-pwd li.error span.error {
+    position: absolute;
+    left: 158px;
+    bottom: -25px;
+    height: 25px;
+    line-height: 25px;
+    color: #f24343;
+    background-image: url("../img/center/tipIcon.png");
+    background-position: 0 5px;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+}
+
+.service_tip p {
+    padding-left: 92px;
+    font-size: 14px;
+    line-height: 38px;
+}
+
+.service_tip p a {
+    color: #36adf7;
+    margin-left: 5px;
+}
+
+.service_tip p:first-child {
+    font-weight: bold;
+}
+
+
+/*alert*/
+
+.alertTips {
+    min-width: 300px;
+    padding: 0 10px;
+    height: 130px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -65px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 130px;
+    z-index: 88;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.upBtn {
+    position: absolute;
+    display: block;
+    width: 70px;
+    height: 25px;
+    line-height: 25px;
+    border: 1px solid #36adf7;
+    color: #36adf7;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 12px;
+    left: 430px;
+    top: 8px
+}
+
+.upImg {
+    width: 40px;
+    height: 20px;
+    display: inline-block;
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    top: 0;
+}
+
+.imgShow {
+    width: 271px;
+    height: 180px;
+    border: 1px dashed #dfdfdf;
+}
+
+.login-pwd li.imgLi {
+    height: 180px;
+}
+.fromBtn{
+    margin-top:30px;
+    margin-left:168px;
+}
+.upshow {
+    width: 245px;
+    height: 182px;
+    margin:30px 0 0 168px;
+    position: relative;
+    display: block;
+}
+#bankOpen{
+    width:250px;
+}
+/*# sourceMappingURL=safety.css.map */

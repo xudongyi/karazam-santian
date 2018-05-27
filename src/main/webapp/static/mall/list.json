@@ -1,0 +1,69 @@
+{
+  "data": {
+    "results": [
+      {
+        "id": "2D2C0AC2-C296-460B-BA68-339EB09C6526",
+        "name": "青莲之壶 限量艺术品",
+        "briefProduct": "「青莲之壶」的设计理念来自于潘公凯先生的现代水墨作品&mdash;&mdash;《残荷铁铸图》",
+        "priceSale": null,
+        "pointsNeeded": 124000,
+        "moHomercImage": null,
+        "moListImage": null,
+        "moDetailHeadImage": null,
+        "moDetailImage": null,
+        "images": [
+          "static/mall/images/in/d9222732-1476-46ca-a5b0-74aed4e1b406.jpg"
+        ],
+        "inventory": 1
+      },
+      {
+        "id": "44DDC58C-E09D-470A-85F3-8CB2CCDDF073",
+        "name": "人首翼牛像书挡",
+        "briefProduct": "人首翼牛像是古代美索不达米亚文明时期独特的石质雕像",
+        "priceSale": null,
+        "pointsNeeded": 10500,
+        "moHomercImage": null,
+        "moListImage": null,
+        "moDetailHeadImage": null,
+        "moDetailImage": null,
+        "images": [
+          "static/mall/images/in/a2411e67-552c-426a-98bb-4c823661b2e0.jpg"
+        ],
+        "inventory": 6
+      },
+      {
+        "id": "8A4FDFC0-293E-49CE-85B6-1139062816CF",
+        "name": "洪水纪念碑",
+        "briefProduct": "洪水纪念碑刻有世界上最古老的英雄史诗&mdash;&mdash;《吉尔伽美什史诗》中关于大洪水章节",
+        "priceSale": null,
+        "pointsNeeded": 9100,
+        "moHomercImage": null,
+        "moListImage": null,
+        "moDetailHeadImage": null,
+        "moDetailImage": null,
+        "images": [
+          "static/mall/images/in/8ed66978-8643-4e37-a7a9-8099abb90c24.jpg"
+        ],
+        "inventory": 10
+      },
+      {
+        "id": "F52F09A5-4DAF-408A-AB1D-57C754AF3095",
+        "name": "埃及法老图坦卡蒙面具雕塑",
+        "briefProduct": "图坦卡蒙是3300多年前的一个年轻埃及法老 他曾在金雕御座上管理着庞大帝国",
+        "priceSale": null,
+        "pointsNeeded": 7650,
+        "moHomercImage": null,
+        "moListImage": null,
+        "moDetailHeadImage": null,
+        "moDetailImage": null,
+        "images": [
+          "static/mall/images/in/3bbd48c2-327d-4ebf-a138-0606ec369304.jpg"
+        ],
+        "inventory": 11
+      }
+    ],
+    "totalSize": 4
+  },
+  "error": [],
+  "success": true
+}

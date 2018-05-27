@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  ~ Copyright (c) 2016 klzan.com. All rights reserved.
+  ~ Support: http://www.klzan.com
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.klzan.p2p.mapper.PlatformCapitalMapper">
+    <select id="findPlatFormAmount" resultType="com.klzan.p2p.vo.capital.PlatformCapitalVo" parameterType="java.util.Map">
+        SELECT
+         a.id as id,
+         a.type as type,
+         a.method as method,
+         a.credit as credit,
+         a.debit as debit,
+         a.memo as memo,
+         a.operator as operator,
+         a.ip as ip,
+         c.login_name as userLoginName,
+         a.create_date as createDate
+        FROM
+        karazam_platform_capital a
+        left join karazam_capital b on a.user_finance_id = b.id
+        left JOIN karazam_user c on b.user_id = c.id
+        WHERE
+        a.deleted = FALSE
+        <if test="operator !=null ">
+            AND a.operator LIKE '%${operator}%'
+        </if>
+        <if test="type !=null ">
+            AND a.type = '${type}'
+        </if>
+        <if test="method !=null ">
+            AND a.method = '${method}'
+        </if>
+        <if test="createDateBegin !=null ">
+            AND a.create_date &gt;= '${createDateBegin}'
+        </if>
+        <if test="createDateEnd !=null ">
+            AND a.create_date &lt;= '${createDateEnd}'
+        </if>
+        ORDER BY a.id DESC
+    </select>
+</mapper>

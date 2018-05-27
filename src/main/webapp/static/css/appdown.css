@@ -1,0 +1,23 @@
+.appdown .app-banner {
+    text-align: center;
+    position: relative;
+    /*width: 1600px;*/
+    height: 2254px;
+    background: #fff url(../images/appdown/appdown.jpg) no-repeat center center;
+}
+
+.appdown .app-items a.iph {
+    top: 311px;
+}
+
+.appdown .app-btm a, .appdown .app-items a {
+    position: absolute;
+    display: block;
+    left: 983px;
+    width: 230px;
+    height: 61px;
+}
+
+.appdown .app-items a.and {
+    top: 379px;
+}

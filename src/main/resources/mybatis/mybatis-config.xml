@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="cacheEnabled" value="false"/>
+        <setting name="lazyLoadingEnabled" value="false"/>
+        <setting name="aggressiveLazyLoading" value="true"/>
+        <setting name="logImpl" value="LOG4J2"/>
+        <setting name="mapUnderscoreToCamelCase" value="true" />
+    </settings>
+    <typeHandlers>
+        <!-- javaType 配置java类型，例如String, 如果配上javaType, 那么指定的typeHandler就只作用于指定的类型 -->
+        <typeHandler javaType="com.klzan.p2p.model.RepaymentRecord" handler="com.klzan.p2p.mapper.handler.RepaymentRecordHandler"/>
+        <typeHandler javaType="com.klzan.p2p.model.elem.SEOElem" handler="com.klzan.p2p.mapper.handler.SeoEleHandler"/>
+
+    </typeHandlers>
+</configuration> 

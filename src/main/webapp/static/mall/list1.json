@@ -1,0 +1,159 @@
+{
+  "data": {
+    "results": [
+      {
+        "id": "0B70E836-0FF4-476B-9A0B-EF0D95E1EEB0",
+        "name": "拍拖贷100元周末投资红包",
+        "briefProduct": "每周一至周五限量抢兑 周末限时使用",
+        "priceSale": null,
+        "pointsNeeded": 900,
+        "moHomercImage": null,
+        "moListImage": null,
+        "moDetailHeadImage": null,
+        "moDetailImage": null,
+        "images": [
+          "static/mall/images/in/eae7ec4f-aa21-49f5-974b-27dd431718a6.jpg"
+        ],
+        "inventory": 1
+      },
+      {
+        "id": "3D1B8D3E-1255-4605-AFC1-8606C15F84C7",
+        "name": "拍拖贷200元周末投资红包",
+        "briefProduct": "每周一至周五限量抢兑 周末限时使用",
+        "priceSale": null,
+        "pointsNeeded": 1800,
+        "moHomercImage": null,
+        "moListImage": null,
+        "moDetailHeadImage": null,
+        "moDetailImage": null,
+        "images": [
+          "static/mall/images/in/f19d395c-6b67-458a-81be-769f86be51f7.jpg"
+        ],
+        "inventory": 18
+      },
+      {
+        "id": "3A61ABBE-2E2C-4E32-9A6E-AE18FB07608C",
+        "name": "多功能吐司机早餐机家用烤面包机",
+        "briefProduct": "唤醒你的早餐正能量",
+        "priceSale": null,
+        "pointsNeeded": 8500,
+        "moHomercImage": null,
+        "moListImage": null,
+        "moDetailHeadImage": null,
+        "moDetailImage": null,
+        "images": [
+          "static/mall/images/in/db8d36df-f11e-49da-9be6-e86672021feb.jpg"
+        ],
+        "inventory": 48
+      },
+      {
+        "id": "22212CD6-86BF-47FF-BC2E-C18DF42BCBEB",
+        "name": "JOYJULY成人电动牙刷",
+        "briefProduct": "原来刷牙也可以如此美妙",
+        "priceSale": null,
+        "pointsNeeded": 5100,
+        "moHomercImage": null,
+        "moListImage": null,
+        "moDetailHeadImage": null,
+        "moDetailImage": null,
+        "images": [
+          "static/mall/images/in/14309fcb-c49a-4f27-81b6-b2751161360f.jpg"
+        ],
+        "inventory": 86
+      },
+      {
+        "id": "5B04474B-FEFA-4C8D-B7F3-30E1F913353C",
+        "name": "多功能镜像数字闹钟",
+        "briefProduct": "柔和环境光 展现镜像颜值",
+        "priceSale": null,
+        "pointsNeeded": 1800,
+        "moHomercImage": null,
+        "moListImage": null,
+        "moDetailHeadImage": null,
+        "moDetailImage": null,
+        "images": [
+          "static/mall/images/in/72dd8bce-a386-4f2b-a8d9-32a590fe593a.jpg"
+        ],
+        "inventory": 41
+      },
+      {
+        "id": "AB440A7E-AA4D-49B7-87DD-41058D5E9F73",
+        "name": "手指指夹式脉搏血氧仪",
+        "briefProduct": "轻便易携带 5秒精准监测心跳",
+        "priceSale": null,
+        "pointsNeeded": 3200,
+        "moHomercImage": null,
+        "moListImage": null,
+        "moDetailHeadImage": null,
+        "moDetailImage": null,
+        "images": [
+          "static/mall/images/in/d98a2f53-b33b-4e7c-9b77-072186cf2510.jpg"
+        ],
+        "inventory": 97
+      },
+      {
+        "id": "7FFDEE1F-C7CC-4111-87C8-82EC0D9587ED",
+        "name": "拍拖贷投资返现200元红包",
+        "briefProduct": "积分兑换后即可投资使用200元返现红包",
+        "priceSale": null,
+        "pointsNeeded": 3000,
+        "moHomercImage": null,
+        "moListImage": null,
+        "moDetailHeadImage": null,
+        "moDetailImage": null,
+        "images": [
+          "static/mall/images/in/b8d0a1b9-8401-4ff4-b2db-605bf185ef40.jpg"
+        ],
+        "inventory": 2887
+      },
+      {
+        "id": "6B1A17A2-C9D3-4A47-9A03-561A0DE6DD59",
+        "name": "拍拖贷投资返现50元红包",
+        "briefProduct": "积分兑换后即可使用50元返现红包",
+        "priceSale": null,
+        "pointsNeeded": 750,
+        "moHomercImage": null,
+        "moListImage": null,
+        "moDetailHeadImage": null,
+        "moDetailImage": null,
+        "images": [
+          "static/mall/images/in/5358dc39-c4f1-48cb-8174-9d0c713ad51f.jpg"
+        ],
+        "inventory": 2833
+      },
+      {
+        "id": "9BE0409F-8E5D-4276-B081-3E186CD27040",
+        "name": "拍拖贷投资返现20元红包",
+        "briefProduct": "积分兑换后即可投资使用20元返现红包",
+        "priceSale": null,
+        "pointsNeeded": 300,
+        "moHomercImage": null,
+        "moListImage": null,
+        "moDetailHeadImage": null,
+        "moDetailImage": null,
+        "images": [
+          "static/mall/images/in/64d9fb0c-1be8-4a35-8463-d4a8bd38f79f.jpg"
+        ],
+        "inventory": 602
+      },
+      {
+        "id": "400817DE-B76D-4F0F-8CE9-C27FD750B09B",
+        "name": "拍拖贷投资返现30元红包",
+        "briefProduct": "积分兑换后即可使用30元返现红包",
+        "priceSale": null,
+        "pointsNeeded": 450,
+        "moHomercImage": null,
+        "moListImage": null,
+        "moDetailHeadImage": null,
+        "moDetailImage": null,
+        "images": [
+          "static/mall/images/in/b5318bd8-b9c0-49e8-87e3-c29ba42b5155.jpg"
+        ],
+        "inventory": 1074
+      }
+    ],
+    "totalSize": 109
+  },
+  "error": [],
+  "success": true
+}

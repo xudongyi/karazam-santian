@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  ~ Copyright (c) 2016 klzan.com. All rights reserved.
+  ~ Support: http://www.klzan.com
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.klzan.p2p.mapper.UserAutoInvestmentRankMapper">
+    <select id="findEffectiveList" resultType="com.klzan.p2p.model.UserAutoInvestmentRank" parameterType="java.util.Map">
+        SELECT
+            a.*
+        FROM
+            karazam_user_auto_investment_rank a
+        WHERE
+            a.deleted = 0
+        <if test="now != null ">
+          AND a.expire > #{now}
+        </if>
+        <if test="interestRate != null ">
+            AND a.interest_rate_min_rate &lt;= #{interestRate}
+            AND a.interest_rate_max_rate &gt;= #{interestRate}
+        </if>
+        <if test="projectAmount != null ">
+            AND (a.residual_amount &lt;= #{projectAmount} or a.invest_min_amount &lt;=#{projectAmount})
+        </if>
+        <if test="projectCyc != null ">
+            AND a.project_min_cyc &lt;= #{projectCyc}
+            AND a.project_max_cyc &gt;= #{projectCyc}
+        </if>
+        <if test="openStatus != null ">
+            AND a.open_status = #{openStatus}
+        </if>
+        ORDER BY a.invest_no ASC
+    </select>
+
+    <select id="findPage" resultType="com.klzan.p2p.model.UserAutoInvestmentRank" parameterType="java.util.Map">
+        SELECT
+          a.*,
+          u.mobile mobile,
+          b.real_name realName
+        FROM
+          karazam_user_auto_investment_rank a
+        LEFT JOIN karazam_user u ON u.id = a.user_id
+        LEFT JOIN karazam_user_info b ON u.id = b.user_id
+        WHERE
+          a.deleted = 0
+        <if test="mobile != null and mobile!='' ">
+            AND u.mobile LIKE '%${mobile}%'
+        </if>
+        <if test="realName != null and realName!=''">
+            AND b.real_name LIKE '%${realName}%'
+        </if>
+        ORDER BY a.invest_no ASC
+    </select>
+</mapper>

@@ -1,0 +1,68 @@
+{
+  "data": [
+    {
+      "productId": "C77243BD-E373-488C-B6C4-EDE5139EEF1F",
+      "url": "",
+      "imgUrl": "static/mall/images/762e621c-134c-46d2-a2cf-0e5f315fac0a.jpg",
+      "title": "瓷娃娃腿真皮钉珠包",
+      "price": 11200,
+      "surplus": 1
+    },
+    {
+      "productId": "496559A1-6608-44D1-96C3-5FD55A4246B5",
+      "url": "",
+      "imgUrl": "static/mall/images/7b2db41f-1b42-43a9-a058-4900206e44a8.jpg",
+      "title": "空铁管家机场贵宾厅免费体验",
+      "price": 10,
+      "surplus": 469
+    },
+    {
+      "productId": "91F58524-E164-46DB-A8B6-53AE88623AC0",
+      "url": "",
+      "imgUrl": "static/mall/images/ce946cb2-0ce9-4607-a298-0fd0fa634a62.jpg",
+      "title": "LKK55度mini降温杯",
+      "price": 3000,
+      "surplus": 11
+    },
+    {
+      "productId": "1E778A80-91F0-4C8D-8FB2-F005B181AE0C",
+      "url": "",
+      "imgUrl": "static/mall/images/acd96762-9789-4d50-bfa1-884436fcd267.jpg",
+      "title": "有机手工冷制皂",
+      "price": 2800,
+      "surplus": 3
+    },
+    {
+      "productId": "8C0D4444-86F2-422B-9835-F31C92D51307",
+      "url": "",
+      "imgUrl": "static/mall/images/da7f39e8-dbd1-4da2-8528-1b7a8f23d1d0.jpg",
+      "title": "天然碎乳胶颗粒婴童枕",
+      "price": 14000,
+      "surplus": 10
+    },
+    {
+      "productId": "9B95EC92-7AEA-40D2-B296-28B4A51F3ABC",
+      "url": "",
+      "imgUrl": "static/mall/images/49744565-82d5-4022-af2b-2ed324256b49.jpg",
+      "title": "帕洛天然驱蚊手环|儿童款",
+      "price": 2900,
+      "surplus": 18
+    },
+    {
+      "productId": "6F187273-95C5-4DD4-8C04-2E7A1801E6FD",
+      "url": "",
+      "imgUrl": "static/mall/images/04b2a04d-1b78-460b-8fd7-8d9d9a4a7e06.jpg",
+      "title": "暖小屋多功能USB创意插座",
+      "price": 2000,
+      "surplus": 71
+    },
+    {
+      "productId": "657E2900-F62D-4FF8-B3A9-E6AD18336EAA",
+      "url": "",
+      "imgUrl": "static/mall/images/c23d0c1b-24ba-4174-af07-3d21149e372a.jpg",
+      "title": "丹麦AM屏幕清洁喷雾套装",
+      "price": 2000,
+      "surplus": 89
+    }
+  ]
+}

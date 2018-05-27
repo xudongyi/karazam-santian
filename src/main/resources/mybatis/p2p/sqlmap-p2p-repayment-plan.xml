@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  ~ Copyright (c) 2016 klzan.com. All rights reserved.
+  ~ Support: http://www.klzan.com
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.klzan.p2p.mapper.RepaymentPlanMapper">
+    <select id="findPage" resultType="com.klzan.p2p.vo.repayment.RepaymentPlanVo" parameterType="java.util.Map">
+        SELECT
+            rp.`id`,
+            rp.`create_date`,
+            rp.`modify_date`,
+            rp.`advance`,
+            rp.`ahead_interest`,
+            rp.`borrower`,
+            rp.`borrowing`,
+            rp.`guarantee`,
+            rp.`investment`,
+            rp.`investor`,
+            rp.`order_no`,
+            rp.`overdue_interest`,
+            rp.`overdue_period`,
+            rp.`paid_amount`,
+            rp.`paid_capital`,
+            rp.`paid_date`,
+            rp.`paid_interest`,
+            rp.`paid_overdue_interest`,
+            rp.`paid_serious_overdue_interest`,
+            rp.`pay_state`,
+            rp.`recovery_fee`,
+            rp.`repayment`,
+            rp.`capital`,
+            rp.`interest`,
+            rp.`next_pay_date`,
+            rp.`pay_date`,
+            rp.`period`,
+            rp.`serious_overdue_interest`,
+            rp.`serious_overdue_period`,
+            rp.`state`,
+            rp.`transfer`,
+            rp.`transfer_every_interest`,
+            rp.`transfer_fee_in`,
+            rp.`transfer_fee_out`,
+            rp.`transfer_state`,
+            b.title AS projectName,
+            b.repay_period AS projectPeriod
+        FROM
+            karazam_repayment_plan rp
+        LEFT JOIN karazam_borrowing b ON b.id = rp.borrowing
+        WHERE
+          rp.transfer_state &lt;&gt; 'TRANSFER_OUT'
+        <if test="userId !=null ">
+            AND rp.investor = #{userId}
+        </if>
+        <if test="state != null and state != '' ">
+            AND rp.state = #{state}
+        </if>
+        <if test="borrowingProgress != null ">
+            AND b.progress IN
+            <foreach collection="borrowingProgress" index="index" item="item" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        <if test="searchParamas != null and searchParamas.size != 0">
+            and
+            <foreach collection="searchParamas" item="param" index="index"  open="(" separator="and" close=")">
+                rp.pay_date
+                <if test="param.matchType.name() == 'GE'">
+                    &gt;=
+                </if>
+                <if test="param.matchType.name() == 'LE'">
+                    &lt;=
+                </if>
+                #{param.matchValue}
+            </foreach>
+        </if>
+        ORDER BY rp.pay_date ASC
+    </select>
+</mapper>

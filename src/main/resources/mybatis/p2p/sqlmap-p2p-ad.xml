@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  ~ Copyright (c) 2016 klzan.com. All rights reserved.
+  ~ Support: http://www.klzan.com
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.klzan.p2p.mapper.AdMapper">
+    <select id="findByIdent" resultType="com.klzan.p2p.vo.content.AdVo" parameterType="java.util.Map">
+        <![CDATA[
+            SELECT
+                a.title title,
+                a.cont cont,
+                a.path path,
+                a.url url
+            FROM
+              karazam_ad a
+            LEFT JOIN karazam_ad_position b on b.id=a.position
+            WHERE
+              a.deleted = 0
+            AND
+              ((a.start_date <= #{nowtime} AND a.end_date>=#{nowtime}) OR a.start_date IS NULL)
+            AND
+              b.ident=#{ident}
+            ORDER BY a.sort ASC
+        ]]>
+    </select>
+</mapper>

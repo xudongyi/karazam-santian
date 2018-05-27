@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  ~ Copyright (c) 2016 klzan.com. All rights reserved.
+  ~ Support: http://www.klzan.com
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.klzan.p2p.mapper.BorrowingMapper">
+    <select id="findBorrowing" resultType="com.klzan.p2p.vo.borrowing.BorrowingSimpleVo" parameterType="java.util.Map">
+        SELECT
+            b.id    borrowingId,
+            b.title title,
+            b.interest_rate + IFNULL(b.reward_interest_rate, 0) interestRate,
+            (
+              b.amount - b.invested_amount - b.occupy_amount
+            ) residualAmount,
+            b.period      period,
+            b.period_unit period_unit,
+            b.progress    progress,
+            b.amount amount,
+            b.invested_amount investedAmount,
+            b.investment_start_date investmentStartDate,
+            CASE b.progress
+                WHEN 'PREVIEWING' THEN 1
+                WHEN 'AUTOINVESTING' THEN 2
+                WHEN 'INVESTING' THEN 3
+                WHEN 'LENDING' THEN 4
+                WHEN 'REPAYING' THEN 5
+                WHEN 'COMPLETED' THEN 6
+                ELSE 7
+            END projectProgress,
+            CASE
+              WHEN b.create_date &lt; '2017-02-23 00:00:00' THEN true
+            ELSE
+              false
+            END oldProject,
+            b.type as borrowingType,
+            b.repayment_method as repaymentMethod
+        FROM
+          karazam_borrowing b
+        WHERE
+          b.deleted = 0
+        AND
+          b.is_experience = false
+        AND
+          b.state !='FAILURE'
+        AND
+          b.state !='EXPIRY'
+        AND   b.progress != 'EXPIRE'
+        AND   b.progress != 'RESCIND'
+        <if test="progress != null">
+            AND b.progress in
+            <foreach item="item" index="index" collection="progress"  open="("
+                     separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        ORDER BY
+          projectProgress ASC, borrowingId DESC
+
+    </select>
+
+    <select id="findList" resultType="com.klzan.p2p.model.Borrowing" parameterType="java.util.Map">
+        SELECT
+            b.*,
+            (b.interest_rate+b.reward_interest_rate) as realinterestRate,
+            (
+                CASE b.progress
+                WHEN 'PREVIEWING' THEN
+                    1
+                WHEN 'AUTOINVESTING' THEN
+                    2
+                WHEN 'INVESTING' THEN
+                    3
+                WHEN 'LENDING' THEN
+                    4
+                WHEN 'REPAYING' THEN
+                    5
+                WHEN 'COMPLETED' THEN
+                    6
+                ELSE
+                    7
+                END
+            ) AS projectProgress,
+            (
+              CASE b.period_unit WHEN 'MONTH' THEN b.period*30  ELSE period END
+            ) AS psort
+        FROM
+              karazam_borrowing b
+        WHERE
+              b.deleted = 0
+        AND   b.progress != 'INQUIRING'
+        AND   b.progress != 'APPROVAL'
+        AND   b.progress != 'EXPIRE'
+        AND   b.progress != 'RESCIND'
+        <if test="progress != null">
+            AND b.progress = #{progress}
+        </if>
+        <if test="type != null">
+            AND  b.type=#{type}
+        </if>
+        <if test="isRecommend != null and isRecommend">
+            AND  b.is_Recommend =#{isRecommend}
+        </if>
+        <if test="scope != null">
+            <choose>
+                <when test="scope=='BETWEEN_1MONTH_AND_3MONTH'">
+                    AND ((b.period &gt;= 0 AND b.period &lt;= 3 AND period_unit ="MONTH")
+                    OR (b.period &gt;= 0 AND b.period &lt;= 90 AND period_unit ="DAY"))
+                </when>
+                <when test="scope=='BETWEEN_3MONTH_AND_12MONTH'">
+                    AND ((b.period &gt; 3 AND b.period &lt;= 12 AND period_unit ="MONTH")
+                    OR (b.period &gt; 90 AND b.period &lt;= 360 AND period_unit ="DAY"))
+                </when>
+                <when test="scope=='OVER_12MONTH'">
+                    AND ((b.period &gt; 12 AND period_unit ="MONTH")
+                    OR (b.period &gt; 360 AND period_unit = "DAY"))
+                </when>
+                <otherwise>
+                </otherwise>
+            </choose>
+        </if>
+        <if test="rate != null">
+            <choose>
+                <when test="rate=='BETWEEN_0_AND_5'">
+                    AND (b.interest_rate + b.reward_interest_rate) &gt;=0
+                    AND (b.interest_rate + b.reward_interest_rate) &lt;5
+                </when>
+                <when test="rate=='BETWEEN_5_AND_10'">
+                    AND (b.interest_rate + b.reward_interest_rate) &gt;=5
+                    AND (b.interest_rate + b.reward_interest_rate) &lt;10
+                </when>
+                <when test="rate=='BETWEEN_10_AND_15'">
+                    AND (b.interest_rate + b.reward_interest_rate) &gt;=10
+                    AND (b.interest_rate + b.reward_interest_rate) &lt;15
+                </when>
+                <when test="rate=='BETWEEN_15_AND_20'">
+                    AND (b.interest_rate + b.reward_interest_rate) &gt;=15
+                    AND (b.interest_rate + b.reward_interest_rate) &lt; 20
+                </when>
+                <when test="rate=='BETWEEN_20_AND_24'">
+                    AND (b.interest_rate + b.reward_interest_rate) &gt;=20
+                    AND (b.interest_rate + b.reward_interest_rate) &lt; 24)
+                </when>
+                <when test="rate=='OVER_24'">
+                    AND (b.interest_rate + b.reward_interest_rate) &gt;= 24
+                </when>
+                <otherwise>
+                </otherwise>
+            </choose>
+        </if>
+        AND b.state != 'FAILURE' AND b.state !='EXPIRY'
+        <if test="sort != null and sort!=''">
+            ORDER BY ${sort} ${order}
+        </if>
+        <if test="sort == null or sort=='' ">
+            ORDER BY projectProgress ASC, b.id DESC
+        </if>
+    </select>
+</mapper>

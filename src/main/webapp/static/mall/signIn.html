@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>积分商城-拍拖贷</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta name="description" content="">
+    <meta name="keywords" content="拍拖贷，p2p理财，理财产品，互联网金融，p2p网贷">
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+    <meta content="always" name="referrer"/>
+    <script>
+        (function (root) {
+            /* -- Data -- */
+            root.domainUrl = function (path, branch) {
+                var regHttp = /^(http|https):\/\//i;
+                if (regHttp.test(path) || '' == path || '#' == path) {
+                    return path;
+                }
+                if (domains) {
+                    if (domains && domains[branch]) {
+                        return domains[branch] + path;
+                    } else {
+                        return path;
+                    }
+                } else {
+                    return path;//没有配置域名，直接返回
+                }
+            };
+            root.domains = {
+                "domain": "http://www.paituodai.com",
+                "main": "http:\u002F\u002Fwww.paituodai.com",
+                "my": "http:\u002F\u002Fwww.paituodai.com",
+                "pay": "http:\u002F\u002Fwww.paituodai.com",
+                "lc": "http:\u002F\u002Fwww.paituodai.com",
+                "fund": "http:\u002F\u002Fwww.paituodai.com",
+                "funds": "http:\u002F\u002Fwww.paituodai.com",
+                "bx": "http:\u002F\u002Fwww.paituodai.com",
+                "mall": "http:\u002F\u002Fwww.paituodai.com",
+                "tb": "http:\u002F\u002Fwww.paituodai.com",
+                "hw": "http:\u002F\u002Fwww.paituodai.com",
+                "ph": "http:\u002F\u002Fwww.paituodai.com"
+            };
+            root.ssoDomains = undefined;
+            root.redirect = {
+                "main": function (path) {
+                    var regHttp = /^(http|https):\/\//i;
+                    if (regHttp.test(path) || '' == path || '#' == path) {
+                        return path;
+                    }
+                    if (domains) {
+                        var regAccount = /^\/account/i;//个人中心
+                        var regRegister = /^\/register/i;//注册页
+                        var regLogin = /^\/login/i;//登陆页
+                        var regZcOrderPay = /^\/pay/i;//众筹支付
+
+                        if (regAccount.test(path) || regRegister.test(path) || regLogin.test(path)) {
+                            //个人中心、注册页、登陆页使用my域名
+                            return domains.my + path;
+                        } else if (regZcOrderPay.test(path)) {
+                            return domains.pay + path;
+                        } else {
+                            //其它都使用主域名
+                            if (config_global && !(new RegExp('^/' + config_global, 'i').test(path))) {
+                                return domains.main + '/' + config_global + path;
+                            } else {
+                                return domains.main + path;
+                            }
+                        }
+                    } else {
+                        return path;//没有配置域名，直接返回
+                    }
+                }, "my": function anonymous() {
+                    return domainUrl(arguments[0], "my");
+                }, "pay": function anonymous() {
+                    return domainUrl(arguments[0], "pay");
+                }, "lc": function anonymous() {
+                    return domainUrl(arguments[0], "lc");
+                }, "fund": function (path) {
+                    var regAccount = /^\/account/i;
+                    var regSso = /^\/sso/i;
+                    var regTrade = /^\/trade/i;
+                    if (regAccount.test(path) || regSso.test(path) || regTrade.test(path)) {
+                        return domainUrl(path, 'funds');
+                    } else {
+                        return domainUrl(path, 'fund');
+                    }
+                }, "funds": function anonymous() {
+                    return domainUrl(arguments[0], "funds");
+                }, "bx": function anonymous() {
+                    return domainUrl(arguments[0], "bx");
+                }, "mall": function anonymous() {
+                    return domainUrl(arguments[0], "mall");
+                }, "tb": function anonymous() {
+                    return domainUrl(arguments[0], "tb");
+                }, "hw": function anonymous() {
+                    return domainUrl(arguments[0], "hw");
+                }, "ph": function anonymous() {
+                    return domainUrl(arguments[0], "ph");
+                }
+            };
+            root.source = "pc";
+            root.util = {
+                "getParams": function (req, p) {
+                    p = p || {body: 1, query: 1, params: 1};
+                    return extend(true, ((p.query && req.query) || {}), ((p.body && req.body) || {}), ((p.params && req.params) || {}));
+                }, "formatJSON": function (d) {
+                    var obj = {};
+                    if (!d) return obj;
+                    if ('string' == typeof d) {
+                        try {
+                            obj = JSON.parse(d);
+                        }
+                        catch (e) {
+                            console.log(e.message);
+                        }
+                    }
+                    else
+                        obj = d;
+                    return obj;
+                }, "gblen": function (str) {
+                    var len = 0;
+                    for (var i = 0; i < str.length; i++) {
+                        if (str.charCodeAt(i) > 127 || str.charCodeAt(i) == 94) {
+                            len += 2;
+                        } else {
+                            len++;
+                        }
+                    }
+                    return len;
+                }, "errorStr": function (err) {
+
+                    console.log(Array.isArray(err), ',...');
+                    if (Array.isArray(err)) {
+                        return err.length > 0 ? err[0].message : 'UNKNOWN_ERROR';
+                    }
+                    if ('object' === typeof err && !Array.isArray(err)) {
+                        return err.message;
+                    }
+                    if ('string' === typeof err) {
+                        if (/404/.test(err)) {
+                            return 'NOT_FOUND';
+                        }
+                        else if (/ETIMEDOUT/.test(err)) {
+                            return 'TIME_OUT';
+                        }
+                        else {
+                            return 'UNKNOWN_ERROR';
+                        }
+                    }
+                    else {
+                        return 'UNKNOWN_ERROR';
+                    }
+                }
+            };
+            root.system_id = "mall";
+            root.config_global = "cn";
+        }(this));
+    </script>
+    <link rel="stylesheet" href="base-51daa35356.css"/>
+    <link rel="stylesheet" href="signIn.css"/>
+</head>
+<body data="page-index">
+<div class="ff-floors" id="ff-floors">
+    <div class="header ff-layout clearfix">
+        <div class="main-nav-wrapper" style="height:70px;">
+            <div class="main-nav">
+                <div class="container clearfix">
+                    <div class="main-nav-logo"><img src="images/attach_1495780901348.png" alt="拍拖贷"
+                                                    style="width:256px;height: 36px;"> <a class="feng-main" href=""></a> <a
+                            class="feng-mall" href=""></a>
+                        <h1 style="display:none;">懂你,懂金融</h1></div>
+                    <div role="navigation" un-id="7671E6CC-3F3E-4680-B94A-853E8197B04A" u-host="" u-currenturl="/" u-p-id=""
+                         class="p2p-navbar pull-left public-messagee-user" style="display:none;"></div>
+                    <ul class="main-menu-lst clearfix">
+                        <li class="main-menu-item active"><a href="" class="main-url">首页</a></li>
+                        <li class="main-menu-item "><a href="" class="main-url">拍拖贷礼品店</a></li>
+                        <li class="main-menu-item "><a href="" class="main-url">购实惠</a></li>
+                        <li class="main-menu-item"><a href="" class="main-url">帮助中心</a></li>
+                    </ul>
+                    <ul class="main-menu-lst main-menu-rst clearfix">
+                        <li class="main-menu-item"><a href="" class="main-url">我的积分：3</a></li>
+                    </ul>
+                    <div class="user-info">
+                        <div class="user-portal login-ready"> <!--<i class="fa fa-circle"></i>-->
+                            <div class="user-info-cont"><a href="" class="account-link"> <span class="user-icon"> <img
+                                    src="images/head_user_icon-c4a354f9e5.png" alt=""
+                                    style="margin-top:-2px"> </span> <span>我的账户</span> <i class="fa fa-angle-down"></i> </a>
+                                <div class="select-down"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper ff-layout">
+        <input type="hidden" id="serverTime" value="1497179184354"/>
+        <div id="signIn">
+            <div class="alert">
+                <div class="shadow" style="display:none"></div>
+                <div style="display:none" class="qa">
+                    <div class="title">
+                        答题获抽奖机会
+                    </div>
+                    <div class="content">
+                        <div class="q" data-id="52">
+                            下列属于金融资产的是？
+                        </div>
+                        <ul class="a">
+                            <li data-id="53"><span class="option">A</span> <span class="answer">购物小票</span></li>
+                            <li data-id="54"><span class="option">B</span> <span class="answer">基金</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="answer-wrong qa-result">
+                    <div class="close"></div>
+                    <div class="message">
+                        <p>抱歉~没有答对</p>
+                        <p id="rAnswer">正确答案是A</p>
+                    </div>
+                    <div class="face"></div>
+                    <div class="btn btn-close">
+                        明日再来
+                    </div>
+                </div>
+                <div class="answer-right qa-result">
+                    <div class="close"></div>
+                    <div class="message">
+                        恭喜~回答正确
+                    </div>
+                    <div class="face"></div>
+                    <div class="btn btn-close">
+                        再抽一次
+                    </div>
+                </div>
+                <div class="sign-in">
+                    <div class="shining-yellow"></div>
+                    <div class="sign-get prize">
+                        <div class="close"></div>
+                        <div class="title"></div>
+                        <div class="prize-img">
+                            <img src="images/signin/prize0.png" alt=""/>
+                            <p class="prize-name"></p>
+                        </div>
+                        <div class="explain">
+                        </div>
+                        <div class="progress">
+                            <div class="bar"></div>
+                            <ul class="dot">
+                                <li class="done"><p class="t"></p>
+                                    <p class="b">1</p></li>
+                                <li><p class="t"></p>
+                                    <p class="b">2</p></li>
+                                <li><p class="t"></p>
+                                    <p class="b">3</p></li>
+                                <li><p class="t"></p>
+                                    <p class="b">4</p></li>
+                                <li><p class="t"></p>
+                                    <p class="b">5</p></li>
+                                <li><p class="t"></p>
+                                    <p class="b">6</p></li>
+                                <li class="t-last"><p class="last"></p>
+                                    <p class="b">7</p></li>
+                            </ul>
+                        </div>
+                        <a href="javascript:;" target="_blank" class="button"> </a>
+                        <div class="share">
+                            <img src="images/signin/icon_wechat.png" alt=""/>
+                            <p> 通过移动端分享可获得5%加息券哦~ <a href="javascript:;">立即分享
+                                <span class="ewm"><img src="" alt=""/>
+                                    <span>进入微信，&quot;扫一扫&quot;左侧二维码，即刻分享到朋友圈或朋友，可再获得一张5%加息券，惊喜多多，赚足收益！</span>
+                                </span>
+                            </a></p>
+                        </div>
+                    </div>
+                    <div class="no-prize prize">
+                        <div class="close"></div>
+                        <div class="title"></div>
+                        <div class="prize-img" style="top: 140px;">
+                            <img src="images/signin/prize_no.png" alt=""/>
+                        </div>
+                        <div style="color: #fff;font-size: 18px;position: absolute;top: 330px;left: 110px;">
+                            别灰心,还有机会哦~
+                        </div>
+                        <div class="button">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-head1">
+                <div class="title">
+                    <h1>每日签到</h1>
+                    <p>签到赢取即时加息、积分、红包等奖品</p>
+                    <p>连续7天签到更享神秘惊喜</p>
+                </div>
+                <div class="shining"></div>
+                <div class="btn-group">
+                    <a href="javascript:;" id="getSignIn" class="btn1"><img src="images/signin/btn3.png" alt=""/></a>
+                </div>
+                <div class="tree"></div>
+            </div>
+            <div class="bg1 bg-body"></div>
+            <div class="bg2 bg-body">
+                <div class="calendar">
+                    <div class="title">
+                        已连续签到
+                        <span class="color-red">0</span>天，再连续签到
+                        <span class="color-red">7</span>天可获得1棵钻石树抽奖机会
+                    </div>
+                    <div class="content">
+                        <div class="content-left">
+                            <table class="calendar-body">
+                                <thead>
+                                <tr>
+                                    <th>星期日</th>
+                                    <th>星期一</th>
+                                    <th>星期二</th>
+                                    <th>星期三</th>
+                                    <th>星期四</th>
+                                    <th>星期五</th>
+                                    <th>星期六</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><span class="color-gray">28</span></td>
+                                    <td><span class="color-gray">29</span></td>
+                                    <td><span class="color-gray">30</span></td>
+                                    <td><span class="color-gray">31</span></td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td>6</td>
+                                    <td>7</td>
+                                    <td>√</td>
+                                    <td>9</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="color-red">11</span></td>
+                                    <td>12</td>
+                                    <td>13</td>
+                                    <td>14</td>
+                                    <td>15</td>
+                                    <td>16</td>
+                                    <td>17</td>
+                                </tr>
+                                <tr>
+                                    <td>18</td>
+                                    <td>19</td>
+                                    <td>20</td>
+                                    <td>21</td>
+                                    <td>22</td>
+                                    <td>23</td>
+                                    <td>24</td>
+                                </tr>
+                                <tr>
+                                    <td>25</td>
+                                    <td>26</td>
+                                    <td>27</td>
+                                    <td>28</td>
+                                    <td>29</td>
+                                    <td>30</td>
+                                    <td><span class="color-gray">1</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="color-gray">2</span></td>
+                                    <td><span class="color-gray">3</span></td>
+                                    <td><span class="color-gray">4</span></td>
+                                    <td><span class="color-gray">5</span></td>
+                                    <td><span class="color-gray">6</span></td>
+                                    <td><span class="color-gray">7</span></td>
+                                    <td><span class="color-gray">8</span></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="content-right">
+                            <ul class="tab">
+                                <li data-type="l0">中奖纪录</li>
+                                <li data-type="l1" class="active">我的奖励</li>
+                            </ul>
+                            <table class="list l1">
+                                <thead>
+                                <tr>
+                                    <th>时间</th>
+                                    <th>奖励</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>2017-06-08 15:39:00</td>
+                                    <td class="color-red">3积分</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table class="list l0">
+                                <thead>
+                                <tr>
+                                    <th>用户</th>
+                                    <th>时间</th>
+                                    <th>奖励</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>7***1</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>9***4</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>0***0</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>l***n</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>9***6</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>7***7</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>3***6</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>5***6</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>5***2</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>9***6</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>1***0</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>4***4</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>9***9</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>4***0</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>3***5</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>3***6</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>6***8</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>2***9</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>k***u</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>*磊</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>8***9</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>3***4</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>1***5</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>4***6</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>7***9</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>难***7</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>0***8</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>**飞</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>5***0</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                <tr>
+                                    <td>5***9</td>
+                                    <td>2017-06-11</td>
+                                    <td class="color-red">5周末签到红包</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg3 bg-body">
+                <div class="rule">
+                    <p>1.用户每日进入活动页面通过点击“签到”按钮完成签到，并抽奖一次；</p>
+                    <p>2.每日“签到”后第一次抽奖，若未抽中奖品，可参与理财知识竞答，答题正确即可获得一次额外抽奖机会；</p>
+                    <p>3.“签到”成功即可参与当日抽奖，将有机会获得最高达0.6%年化收益的即时加息，或1-10不等的积分奖励；</p>
+                    <p>4.周末参与“签到”抽奖，将有机会获得5元周末签到红包，详细使用规则可进入&quot;我的卡券&quot;查看；</p>
+                    <p>5.“签到”中的即时加息奖励可为历史中最近一笔定期投资（不含债权转让及网贷产品）进行加息，当日奖励收益将在2个工作日内返现至用户账户，若历史最近一笔定期投资金额低于400元则无法获得返现奖励；</p>
+                    <p>6.连续7天“签到”并分享活动至微信好友或朋友圈，将获赠1张5%加息券，加息期限10天，有效期3天，下次投资可使用；</p>
+                    <p>7.如有任何疑问，欢迎致电客服中心*****（工作时间9:00-21:00）。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="lib-1fc6a9481f.js" type="text/javascript"></script>
+<script src="base-0d23983eee.js" type="text/javascript"></script>
+<script src="signIn.js" type="text/javascript"></script>
+</body>
+</html>

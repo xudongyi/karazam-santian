@@ -1,0 +1,25 @@
+#------------ Template ------------
+template.encoding=UTF-8
+template.number_format=0.######
+template.boolean_format=true,false
+template.datetime_format=yyyy-MM-dd HH:mm:ss
+template.date_format=yyyy-MM-dd
+template.time_format=HH:mm:ss
+template.loader_path=classpath:/template/,classpath:/
+template.prefix=
+template.suffix=.ftl
+template.locale=zh_CN
+template.default_encoding=UTF-8
+template.url_escaping_charset=UTF-8
+template.template_update_delay=1
+template.tag_syntax=auto_detect
+template.whitespace_stripping=true
+template.classic_compatible=true
+template.object_wrapper=freemarker.ext.beans.BeansWrapper
+template.output_encoding=UTF-8
+template.template_exception_handler=com.klzan.core.freemarker.DefaultFreemarkerExceptionHandler
+
+#------------ mvc ------------
+web.url.admin=admin
+web.url.content=c
+web.url.taxonomy=t

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  ~ Copyright (c) 2016 klzan.com. All rights reserved.
+  ~ Support: http://www.klzan.com
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.klzan.p2p.mapper.BorrowingApplyMapper">
+    <select id="pageList" resultType="com.klzan.p2p.vo.borrowing.BorrowingApplyVo" parameterType="java.util.Map">
+        SELECT
+         a.id as id,
+         a.mobile as mobile,
+         a.user_name as userName,
+         a.borrowing_apply_progress as borrowingApplyProgress,
+         a.gender_type as genderType,
+         a.borrowing_apply_type as borrowType,
+         a.is_plat_form_user as isPlatFormUser,
+         a.suggestion as suggestion,
+         a.remark as remark,
+         a.amount as amount,
+         a.deadline as deadline,
+         a.rate as rate,
+         a.create_date as createDate
+        FROM
+        karazam_borrowing_apply a
+        WHERE
+        a.deleted = FALSE
+        <if test="mobile !=null and mobile!=''">
+            AND a.mobile LIKE '%${mobile}%'
+        </if>
+        <if test="userName !=null and userName!=''">
+            AND a.user_name LIKE '%${userName}%'
+        </if>
+        <if test="borrowingApplyProgressEnum !=null and borrowingApplyProgressEnum!=''">
+            AND a.borrowing_apply_progress = #{borrowingApplyProgressEnum}
+        </if>
+        <if test="borrowingApplyTypeEnum !=null and borrowingApplyTypeEnum!=''">
+            AND a.borrowing_apply_type = '${borrowingApplyTypeEnum}'
+        </if>
+        <if test="paramList != null and paramList.size != 0">
+            and
+            <foreach collection="paramList" item="param" index="index"  open="(" separator="and" close=")">
+                a.create_date
+                <if test="param.matchType.name() == 'GE'">
+                    &gt;=
+                </if>
+                <if test="param.matchType.name() == 'LE'">
+                    &lt;=
+                </if>
+                #{param.matchValue}
+            </foreach>
+        </if>
+        ORDER BY a.id DESC
+    </select>
+</mapper>

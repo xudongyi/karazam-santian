@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache name="karazam">
+    <!-- 缓存写入文件目录 -->
+    <diskStore path="karazam_p2p" />
+
+    <!-- 数据过期策略 -->
+    <defaultCache
+            maxElementsInMemory="1000"
+            eternal="false"
+            overflowToDisk="true"
+            timeToIdleSeconds="180"
+            timeToLiveSeconds="180"
+            diskPersistent="false"
+            diskExpiryThreadIntervalSeconds="120" />
+
+    <!-- 菜单缓存  没必要过期 -->
+    <cache name="sys-menus"
+           maxEntriesLocalHeap="10000"
+           overflowToDisk="false"
+           eternal="false"
+           diskPersistent="false"
+           timeToLiveSeconds="0"
+           timeToIdleSeconds="0"
+           statistics="true"/>
+
+    <!-- 登录记录缓存 锁定10分钟 -->
+    <cache name="passwordRetryCache"
+           maxEntriesLocalHeap="2000"
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+
+    <cache name="authorizationCache"
+           maxEntriesLocalHeap="2000"
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+
+    <cache name="authenticationCache"
+           maxEntriesLocalHeap="2000"
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+
+    <cache name="shiro-activeSessionCache"
+           maxEntriesLocalHeap="2000"
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+
+</ehcache>

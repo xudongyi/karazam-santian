@@ -1,0 +1,39 @@
+.recharge-banks-box{
+    clear: both;
+    margin-bottom: 20px;
+}
+.recharge-banks h2{
+    font-weight: bold;
+}
+.recharge-banks ul{
+    width: 700px;
+    margin-bottom: 50px !important;
+}
+.recharge-banks ul li {
+    height: 40px;
+    line-height: 40px;
+}
+.recharge-banks ul li div label input[type="radio"]{
+    margin-top: 15px;
+    margin-right: 5px;
+}
+.recharge-banks ul li div label img{
+    margin-left: 5px;
+    margin-right: 15px;
+}
+.recharge-banks ul, .recharge-banks ul li{
+    margin: 0;
+    padding: 0;
+}
+.recharge-banks ul li{
+    float: left;
+}
+.recharge-banks ul li img{
+    position: relative;
+    /*left: -20px;*/
+    width:120px;
+    height: 35px;
+}
+.recharge-banks .clear{
+    clear: both;
+}

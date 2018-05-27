@@ -1,0 +1,459 @@
+{
+  "data": {
+    "signinSatus": "SIGNIN_DRAW_END",
+    "shareStatus": "SEVEN_NOT_SHARE",
+    "signinStat": {
+      "months": 6,
+      "currentDay": 12,
+      "signinCount": 2,
+      "leftCount": 5,
+      "lists": [
+        {
+          "day": 1,
+          "weekDay": "周四",
+          "iconStatus": "NOT_SIGNIN",
+          "prizeInfos": null
+        },
+        {
+          "day": 2,
+          "weekDay": "周五",
+          "iconStatus": "NOT_SIGNIN",
+          "prizeInfos": null
+        },
+        {
+          "day": 3,
+          "weekDay": "周六",
+          "iconStatus": "NOT_SIGNIN",
+          "prizeInfos": null
+        },
+        {
+          "day": 4,
+          "weekDay": "周日",
+          "iconStatus": "NOT_SIGNIN",
+          "prizeInfos": null
+        },
+        {
+          "day": 5,
+          "weekDay": "周一",
+          "iconStatus": "NOT_SIGNIN",
+          "prizeInfos": null
+        },
+        {
+          "day": 6,
+          "weekDay": "周二",
+          "iconStatus": "NOT_SIGNIN",
+          "prizeInfos": null
+        },
+        {
+          "day": 7,
+          "weekDay": "周三",
+          "iconStatus": "NOT_SIGNIN",
+          "prizeInfos": null
+        },
+        {
+          "day": 8,
+          "weekDay": "周四",
+          "iconStatus": "SIGNIN",
+          "prizeInfos": [
+            {
+              "questionBank": null,
+              "prizeId": "5d1c97ea-edaa-4ad0-8c21-185446aa5c28",
+              "prizeName": "积分",
+              "faceValue": "3",
+              "prizeType": "INTEGRAL",
+              "expireDesc": "3天",
+              "durationDesc": "1天",
+              "lottery": true,
+              "creditAssign": false
+            }
+          ]
+        },
+        {
+          "day": 9,
+          "weekDay": "周五",
+          "iconStatus": "NOT_SIGNIN",
+          "prizeInfos": null
+        },
+        {
+          "day": 10,
+          "weekDay": "周六",
+          "iconStatus": "NOT_SIGNIN",
+          "prizeInfos": null
+        },
+        {
+          "day": 11,
+          "weekDay": "周日",
+          "iconStatus": "SIGNIN",
+          "prizeInfos": [
+            {
+              "questionBank": null,
+              "prizeId": "5de64d5b-67ad-41e5-8ab1-39e950b02132",
+              "prizeName": "周末签到红包",
+              "faceValue": "5",
+              "prizeType": "WEEKEND_REBATE",
+              "expireDesc": "3天",
+              "durationDesc": "1天",
+              "lottery": true,
+              "creditAssign": false
+            }
+          ]
+        },
+        {
+          "day": 12,
+          "weekDay": "周一",
+          "iconStatus": "SIGNIN",
+          "prizeInfos": [
+            {
+              "questionBank": null,
+              "prizeId": "c75f4d3f-e564-4c0d-8bbd-581d167d6d58",
+              "prizeName": "积分",
+              "faceValue": "3",
+              "prizeType": "INTEGRAL",
+              "expireDesc": "3天",
+              "durationDesc": "1天",
+              "lottery": true,
+              "creditAssign": false
+            }
+          ]
+        },
+        {
+          "day": 13,
+          "weekDay": "周二",
+          "iconStatus": "OTHER",
+          "prizeInfos": null
+        },
+        {
+          "day": 14,
+          "weekDay": "周三",
+          "iconStatus": "OTHER",
+          "prizeInfos": null
+        },
+        {
+          "day": 15,
+          "weekDay": "周四",
+          "iconStatus": "OTHER",
+          "prizeInfos": null
+        },
+        {
+          "day": 16,
+          "weekDay": "周五",
+          "iconStatus": "OTHER",
+          "prizeInfos": null
+        },
+        {
+          "day": 17,
+          "weekDay": "周六",
+          "iconStatus": "OTHER",
+          "prizeInfos": null
+        },
+        {
+          "day": 18,
+          "weekDay": "周日",
+          "iconStatus": "OTHER",
+          "prizeInfos": null
+        },
+        {
+          "day": 19,
+          "weekDay": "周一",
+          "iconStatus": "OTHER",
+          "prizeInfos": null
+        },
+        {
+          "day": 20,
+          "weekDay": "周二",
+          "iconStatus": "OTHER",
+          "prizeInfos": null
+        },
+        {
+          "day": 21,
+          "weekDay": "周三",
+          "iconStatus": "OTHER",
+          "prizeInfos": null
+        },
+        {
+          "day": 22,
+          "weekDay": "周四",
+          "iconStatus": "OTHER",
+          "prizeInfos": null
+        },
+        {
+          "day": 23,
+          "weekDay": "周五",
+          "iconStatus": "OTHER",
+          "prizeInfos": null
+        },
+        {
+          "day": 24,
+          "weekDay": "周六",
+          "iconStatus": "OTHER",
+          "prizeInfos": null
+        },
+        {
+          "day": 25,
+          "weekDay": "周日",
+          "iconStatus": "OTHER",
+          "prizeInfos": null
+        },
+        {
+          "day": 26,
+          "weekDay": "周一",
+          "iconStatus": "OTHER",
+          "prizeInfos": null
+        },
+        {
+          "day": 27,
+          "weekDay": "周二",
+          "iconStatus": "OTHER",
+          "prizeInfos": null
+        },
+        {
+          "day": 28,
+          "weekDay": "周三",
+          "iconStatus": "OTHER",
+          "prizeInfos": null
+        },
+        {
+          "day": 29,
+          "weekDay": "周四",
+          "iconStatus": "OTHER",
+          "prizeInfos": null
+        },
+        {
+          "day": 30,
+          "weekDay": "周五",
+          "iconStatus": "OTHER",
+          "prizeInfos": null
+        }
+      ]
+    },
+    "lotteryPrizeInfo": [
+      {
+        "questionBank": null,
+        "prizeId": "c75f4d3f-e564-4c0d-8bbd-581d167d6d58",
+        "prizeName": "积分",
+        "faceValue": "3",
+        "prizeType": "INTEGRAL",
+        "expireDesc": "3天",
+        "durationDesc": "1天",
+        "lottery": true,
+        "creditAssign": false
+      }
+    ],
+    "signinTotalCount": 4463741,
+    "lotteryInfoMarquees": [
+      {
+        "loginName": "6***4",
+        "mobile": "159****6928",
+        "lotteryTime": 1497224660462,
+        "prizeName": "3积分",
+        "prizeType": "INTEGRAL"
+      },
+      {
+        "loginName": "3***5",
+        "mobile": "176****1586",
+        "lotteryTime": 1497224660108,
+        "prizeName": "10积分",
+        "prizeType": "INTEGRAL"
+      },
+      {
+        "loginName": "7***7",
+        "mobile": "150****1985",
+        "lotteryTime": 1497224658918,
+        "prizeName": "5积分",
+        "prizeType": "INTEGRAL"
+      },
+      {
+        "loginName": "0***8",
+        "mobile": "186****5542",
+        "lotteryTime": 1497224653402,
+        "prizeName": "1积分",
+        "prizeType": "INTEGRAL"
+      },
+      {
+        "loginName": "0***3",
+        "mobile": "133****0537",
+        "lotteryTime": 1497224651275,
+        "prizeName": "0.5%即时加息",
+        "prizeType": "INSTANT_INTEREST"
+      },
+      {
+        "loginName": "8***3",
+        "mobile": "130****4799",
+        "lotteryTime": 1497224650603,
+        "prizeName": "0.5%即时加息",
+        "prizeType": "INSTANT_INTEREST"
+      },
+      {
+        "loginName": "s***z",
+        "mobile": "138****7069",
+        "lotteryTime": 1497224649559,
+        "prizeName": "1积分",
+        "prizeType": "INTEGRAL"
+      },
+      {
+        "loginName": "8***9",
+        "mobile": "136****0266",
+        "lotteryTime": 1497224648888,
+        "prizeName": "0.5%即时加息",
+        "prizeType": "INSTANT_INTEREST"
+      },
+      {
+        "loginName": "5***1",
+        "mobile": "136****9967",
+        "lotteryTime": 1497224648731,
+        "prizeName": "0.5%即时加息",
+        "prizeType": "INSTANT_INTEREST"
+      },
+      {
+        "loginName": "3***4",
+        "mobile": "185****9145",
+        "lotteryTime": 1497224646769,
+        "prizeName": "3积分",
+        "prizeType": "INTEGRAL"
+      },
+      {
+        "loginName": "0***0",
+        "mobile": "150****0068",
+        "lotteryTime": 1497224646190,
+        "prizeName": "3积分",
+        "prizeType": "INTEGRAL"
+      },
+      {
+        "loginName": "6***8",
+        "mobile": "139****9274",
+        "lotteryTime": 1497224645941,
+        "prizeName": "5积分",
+        "prizeType": "INTEGRAL"
+      },
+      {
+        "loginName": "8***8",
+        "mobile": "133****1397",
+        "lotteryTime": 1497224643308,
+        "prizeName": "3积分",
+        "prizeType": "INTEGRAL"
+      },
+      {
+        "loginName": "8***2",
+        "mobile": "138****8853",
+        "lotteryTime": 1497224636270,
+        "prizeName": "3积分",
+        "prizeType": "INTEGRAL"
+      },
+      {
+        "loginName": "5***0",
+        "mobile": "159****1819",
+        "lotteryTime": 1497224633469,
+        "prizeName": "1积分",
+        "prizeType": "INTEGRAL"
+      },
+      {
+        "loginName": "1***1",
+        "mobile": "155****7257",
+        "lotteryTime": 1497224630759,
+        "prizeName": "0.5%即时加息",
+        "prizeType": "INSTANT_INTEREST"
+      },
+      {
+        "loginName": "4***1",
+        "mobile": "150****4172",
+        "lotteryTime": 1497224628029,
+        "prizeName": "3积分",
+        "prizeType": "INTEGRAL"
+      },
+      {
+        "loginName": "6***4",
+        "mobile": "159****0852",
+        "lotteryTime": 1497224627978,
+        "prizeName": "3积分",
+        "prizeType": "INTEGRAL"
+      },
+      {
+        "loginName": "3***0",
+        "mobile": "139****8828",
+        "lotteryTime": 1497224626448,
+        "prizeName": "5积分",
+        "prizeType": "INTEGRAL"
+      },
+      {
+        "loginName": "2***4",
+        "mobile": "138****2551",
+        "lotteryTime": 1497224624857,
+        "prizeName": "3积分",
+        "prizeType": "INTEGRAL"
+      },
+      {
+        "loginName": "1***5",
+        "mobile": "185****7169",
+        "lotteryTime": 1497224623861,
+        "prizeName": "1积分",
+        "prizeType": "INTEGRAL"
+      },
+      {
+        "loginName": "4***7",
+        "mobile": "139****4258",
+        "lotteryTime": 1497224621308,
+        "prizeName": "1积分",
+        "prizeType": "INTEGRAL"
+      },
+      {
+        "loginName": "7***6",
+        "mobile": "151****3076",
+        "lotteryTime": 1497224620324,
+        "prizeName": "0.5%即时加息",
+        "prizeType": "INSTANT_INTEREST"
+      },
+      {
+        "loginName": "s***2",
+        "mobile": "155****9368",
+        "lotteryTime": 1497224612921,
+        "prizeName": "5积分",
+        "prizeType": "INTEGRAL"
+      },
+      {
+        "loginName": "4***0",
+        "mobile": "130****3685",
+        "lotteryTime": 1497224612738,
+        "prizeName": "3积分",
+        "prizeType": "INTEGRAL"
+      },
+      {
+        "loginName": "6***7",
+        "mobile": "139****5616",
+        "lotteryTime": 1497224610605,
+        "prizeName": "3积分",
+        "prizeType": "INTEGRAL"
+      },
+      {
+        "loginName": "1***3",
+        "mobile": "151****0800",
+        "lotteryTime": 1497224608416,
+        "prizeName": "0.6%即时加息",
+        "prizeType": "INSTANT_INTEREST"
+      },
+      {
+        "loginName": "8***0",
+        "mobile": "189****7318",
+        "lotteryTime": 1497224607994,
+        "prizeName": "0.5%即时加息",
+        "prizeType": "INSTANT_INTEREST"
+      },
+      {
+        "loginName": "n***n",
+        "mobile": "136****3133",
+        "lotteryTime": 1497224603189,
+        "prizeName": "1积分",
+        "prizeType": "INTEGRAL"
+      },
+      {
+        "loginName": "s***5",
+        "mobile": "139****5518",
+        "lotteryTime": 1497224601969,
+        "prizeName": "5积分",
+        "prizeType": "INTEGRAL"
+      }
+    ],
+    "invest": false
+  },
+  "error": null,
+  "success": true
+}

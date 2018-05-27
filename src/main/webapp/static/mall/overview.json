@@ -1,0 +1,78 @@
+{
+  "data": {
+    "insurance": {
+      "asset": 0.00,
+      "totalInterest": 0.00,
+      "yesterdayInterest": 0.00,
+      "investAmount": 0.00
+    },
+    "point": {
+      "levelName": "普通会员",
+      "points": 0,
+      "levelValue": 1
+    },
+    "netLoan": {
+      "asset": 0
+    },
+    "count": {
+      "inviteAndInvestedCount": -1,
+      "unusedCardCouponCount": 5,
+      "availableCouponCount": 5,
+      "inviteAndRegisterCount": 0,
+      "interestTicketCount": 0,
+      "investCount": 0,
+      "unreadMsgCount": 1
+    },
+    "regular": {
+      "paidInterest": 0,
+      "creditAssignOpenNum": 0,
+      "asset": 0,
+      "fixInvestFrozenAmount": 0.00,
+      "unRepayInterest": 0,
+      "unRepayAmount": 0,
+      "fixTotalInvestAmount": 0,
+      "fixFrozenAmount": 0,
+      "fixInterestYesterday": 0
+    },
+    "experience": {
+      "availableAmount": 0,
+      "paidInterest": 0,
+      "asset": 0,
+      "unRepayInterest": 0,
+      "experienceAmount": null,
+      "totalInterest": 0
+    },
+    "foundation": {
+      "dayIncome": null,
+      "totalIncome": null,
+      "totalStaticShare": 0,
+      "totalAssets": null,
+      "buyConfirming": 0
+    },
+    "fixedCurrent": {
+      "asset": 0.00
+    },
+    "fund": {
+      "availableAmount": 0.00,
+      "depositAmount": 0.00,
+      "dueInAmount": 0.00,
+      "dueOutAmount": 0.00,
+      "freeWithdrawAmount": 0.00,
+      "frozenAmount": 0.00,
+      "totalInvest": 0,
+      "transferAmount": 0,
+      "withdrawAmount": 0.00
+    },
+    "totalAsset": 0.00,
+    "aztec": {
+      "interestSumTotal": 0,
+      "asset": 0.00,
+      "redeemedAmount": 0.00,
+      "totalInvestAmount": 0.00,
+      "inertestCount": 0,
+      "interestYesterday": 0
+    }
+  },
+  "error": null,
+  "success": true
+}

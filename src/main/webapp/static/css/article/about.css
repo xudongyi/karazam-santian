@@ -1,0 +1,38 @@
+.aside-area-content{width:1010px}
+.version-abus{min-width:650px;border:1px solid #ececec}
+.version-abus-head{margin:0 22px;height:56px;border-bottom:solid 1px #ececec;font-size:18px}
+.version-abus-head .version-abus-head-flag{display:inline-block;height:56px;border-bottom:solid 3px #53a0e3;color:#333;text-align:center;line-height:56px}
+.version-abus-company{margin:22px 22px 0}
+.version-abus-company .version-abus-company-l{float:left;width:520px;height:214px;color:#333;font-size:14px;line-height:28px}
+.version-abus-company .version-abus-company-l>p{margin-bottom:10px;line-height:24px}
+p,span{margin:0;padding:0}
+.cf{zoom:1}
+.cf:after{clear:both}
+.aboutus-icons-items{margin-top:40px}
+.lt{float:left}
+.aboutus-icons-items .icons-circle1-box{width:320px;height:156px}
+.aboutus-icons-items .icons-circle1-box>em{display:block;margin:0 auto;width:100px;height:100px}
+.information-disclosure-images1{background:url(/static/images/article/zuzhi.png) no-repeat 0 0;}
+.information-disclosure-images2{background:url(/static/images/article/zhizhao.png) no-repeat 0 0;}
+.information-disclosure-images3{background:url(/static/images/article/pingtai.png) no-repeat 0 0;}
+em{font-style:normal}
+.cf:after,.cf:before{display:table;content:" "}
+.aboutus-icons-items .icons-circle1-box>p{margin-top:40px;text-align:center;font-size:14px}
+.version-abus-Mission{color:#333;font-size:14px;line-height:28px}
+.version-abus-Mission,.version-abus-milestone{margin:22px 22px 15px}
+.version-abus-Mission,.version-abus-milestone{margin:22px 22px 15px}
+.version-abus-milestone .version-abus-timeaxis{margin-left:68px;border-left:solid 1px #ececec}
+.version-abus-milestone .version-abus-timeaxis .timexis-node{margin-top:33px;vertical-align:middle}
+.version-abus-milestone .version-abus-timeaxis .timexis-node .timexis-node-time{float:left;margin-top:-6px;margin-left:-36px;color:#999;font-size:14px}
+.version-abus-milestone .version-abus-timeaxis .timexis-node .timexis-node-article{position:relative;float:left;margin:-25px 0 30px 20px;padding:16px 20px;border-radius:5px;background:#f8f8f8;font-size:14px;line-height:28px}
+.version-abus-milestone .version-abus-timeaxis .timexis-node .timexis-node-article .timexis-node-arrow{position:absolute;top:20px;left:-14px;width:0;height:0;border:7px solid;border-color:#fff #f8f8f8 #fff #fff;font-size:0}
+.version-abus-milestone .version-abus-timeaxis .timexis-node .timexis-node-time.date{margin-left:-70px}
+.version-abus-honor{margin:22px 22px 40px;height:245px}
+.version-abus-honor .honor-items{overflow:hidden;margin:0 0 0 38px;width:768px;height:255px}
+.version-abus-honor .honor-items ul{width:1152px}
+.version-abus-honor .honor-items .honor-item{float:left;margin-right:14px;margin-left:14px}
+.version-abus-honor .honor-items .honor-item .honor-item-img{width:165px;height:210px}
+.version-abus-honor .honor-items .honor-item .honor-item-article{width:165px;text-align:center;font-size:14px;line-height:24px}
+ul li{list-style:none}
+.version1-mask{z-index:2;display:block;opacity:.3;filter:alpha(opacity=30)}
+.version-popup .version-popup-mask,.version1-mask{position:absolute;top:0;left:0;background-color:#000}

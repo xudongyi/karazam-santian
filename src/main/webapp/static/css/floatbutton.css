@@ -1,0 +1,72 @@
+.fixed-download-link {
+    position: fixed;
+    bottom: 120px;
+    right: 10px;
+    z-index: 1001;
+}
+
+.fixed-download-link .download-link-wrap {
+    width: 66px;
+}
+
+.fixed-download-link .download-link-wrap .calc img {
+    width: 26px;
+    height: 26px;
+    left: 50%;
+    top: 50%;
+    margin: -13px 0 0 -13px;
+}
+
+.fixed-download-link .download-link-wrap .calc > img, .fixed-download-link .download-link-wrap .help > img, .fixed-download-link .download-link-wrap .download > img, .fixed-download-link .download-link-wrap .top > img {
+    position: absolute;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+.fixed-download-link .download-link-wrap .hover {
+    background: #6f81dd;
+    color: #fff;
+    font-size: 14px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "alpha(Opacity=0)";
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 12px 10px 10px 18px;
+}
+
+.fixed-download-link .download-link-wrap .top {
+    margin-top: 20px;
+    display: none;
+}
+
+.fixed-download-link .download-link-wrap .calc, .fixed-download-link .download-link-wrap .help, .fixed-download-link .download-link-wrap .download, .fixed-download-link .download-link-wrap .top {
+    float: left;
+    position: relative;
+}
+
+.fixed-download-link .download-link-wrap > a {
+    height: 64px;
+    width: 64px;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, .08);
+    cursor: pointer;
+    position: relative;
+}
+
+.fixed-download-link .download-link-wrap .top img {
+    width: 25px;
+    height: 14px;
+    left: 50%;
+    top: 50%;
+    margin: -7px 0 0 -13px;
+}
+
+.fixed-download-link .download-link-wrap > a:hover .hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -ms-filter: "alpha(Opacity=100)"
+}

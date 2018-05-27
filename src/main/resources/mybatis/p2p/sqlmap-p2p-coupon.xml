@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  ~ Copyright (c) 2016 klzan.com. All rights reserved.
+  ~ Support: http://www.klzan.com
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.klzan.p2p.mapper.CouponMapper">
+
+    <select id="findCoupons" resultType="com.klzan.p2p.vo.coupon.CouponVo" parameterType="java.util.Map">
+        SELECT
+          c.id as id,
+          c.coupon_type as couponTypeStr,
+          c.amount as amount,
+          c.rule as rule,
+          c.is_random_amount as isRandomAmount,
+          c.create_date as createDate,
+          c.available as available,
+          c.coupon_source as couponSourceStr,
+          c.random_amount_mix as randomAmountMix,
+          c.random_amount_max as randomAmountMax,
+          c.invalid_date as invalidDate,
+          c.coupon_number as couponNumber,
+          c.available_By_Category as availableByCategory
+        FROM karazam_coupon c
+        WHERE
+        c.deleted = FALSE
+        <if test="type != null and type!=''">
+            AND c.coupon_type = #{type}
+        </if>
+        <if test="couponSource != null and couponSource!=''">
+            AND c.coupon_source = #{couponSource}
+        </if>
+    </select>
+</mapper>

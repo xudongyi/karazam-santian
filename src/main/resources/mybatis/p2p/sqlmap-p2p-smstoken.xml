@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  ~ Copyright (c) 2016 klzan.com. All rights reserved.
+  ~ Support: http://www.klzan.com
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.klzan.p2p.mapper.SmsTokenMapper">
+
+    <select id="findSmsTokens" resultType="com.klzan.p2p.model.SmsToken" parameterType="java.util.Map">
+        SELECT
+          c.id as id,
+          c.addr as addr,
+          c.code as code,
+          c.count as count,
+          c.expiry as expiry,
+          c.retry as retry,
+          c.create_date as createDate,
+          c.deleted as deleted,
+          c.version as version,
+          c.type as type
+        FROM karazam_sms_token c
+        ORDER BY createDate ASC
+    </select>
+</mapper>

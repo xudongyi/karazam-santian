@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  ~ Copyright (c) 2016 klzan.com. All rights reserved.
+  ~ Support: http://www.klzan.com
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.klzan.p2p.mapper.UserCouponMapper">
+
+    <select id="findUserCoupons" resultType="com.klzan.p2p.vo.coupon.UserCouponVo" parameterType="java.util.Map">
+        SELECT
+          uc.id as id,
+          uc.coupon_state as couponStateStr,
+          uc.invalid_date as userInvalidDate,
+          uc.rule as userRule,
+          uc.create_date as createDate,
+          uc.amount as amount,
+          uc.title as title,
+          u.mobile as mobile,
+          ui.real_name as realName,
+          c.invalid_date as couponInvalidDate,
+          c.rule as couponRule,
+          c.available_by_category as availableByCategory,
+          c.coupon_type as couponTypeStr,
+          c.coupon_source as couponSourceStr,
+          uc.used_date as usedDate
+        FROM karazam_user_coupon uc
+        LEFT JOIN karazam_user u ON uc.user=u.id
+        LEFT JOIN karazam_user_info ui ON uc.user=ui.user_id AND u.id=ui.user_id
+        LEFT JOIN karazam_coupon c ON uc.coupon=c.id
+        WHERE
+        uc.deleted = FALSE
+        <if test="mobile != null and mobile!=''">
+            AND u.mobile LIKE '%$mobile%'
+        </if>
+        <if test="realName != null and realName!=''">
+            AND ui.real_name LIKE '%realName%'
+        </if>
+        <if test="state != null and state!=''">
+            AND uc.coupon_state = #{state}
+        </if>
+        <if test="userId != null and userId!=''">
+            AND uc.user = #{userId}
+        </if>
+        <if test="couponState != null and couponState!=''">
+            AND uc.coupon_state = #{couponState}
+        </if>
+    </select>
+</mapper>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         id="WebApp_ID" version="3.0">
+
+    <!-- 系统名称、系统描述 -->
+    <display-name>karazam</display-name>
+    <description>karazam V1.0</description>
+
+    <!-- 上下文参数: 上下文配置位置 -->
+    <!-- *** Spring配置文件位置 *** -->
+    <context-param>
+        <param-name>spring.profiles.active</param-name>
+        <param-value>test</param-value>
+    </context-param>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath*:spring-bean.xml</param-value>
+    </context-param>
+
+    <!-- 监听器: 上下文加载监听器 -->
+    <!-- *** WEB应用启动时实例化Spring-容器 *** -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <!-- 监听器: 内存清理监听器 -->
+    <!-- *** WEB应用关闭时清理Java内存 *** -->
+    <listener>
+        <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+    </listener>
+
+    <!-- 过滤器: 编码过滤器/字符集过滤器 -->
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <!-- 编码 -->
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <!-- 强制编码 -->
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <!-- URL过滤模式 -->
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- 过滤器: Apache Shiro过滤器 -->
+    <filter>
+        <filter-name>shiroFilter</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+    <!-- URL过滤模式 -->
+    <filter-mapping>
+        <filter-name>shiroFilter</filter-name>
+        <url-pattern>/admin/*</url-pattern>
+    </filter-mapping>
+
+    <!-- 支持GET、POST、PUT、DELETE -->
+    <filter>
+        <filter-name>HttpMethodFilter</filter-name>
+        <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>HttpMethodFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- 控制器: SpringMVC -->
+    <servlet>
+        <servlet-name>Dispatcher</servlet-name>
+        <servlet-class>com.klzan.core.web.DefaultDispatcherServlet</servlet-class>
+        <!-- SpringMVC配置文件 -->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath*:spring-mvc.xml</param-value>
+        </init-param>
+        <init-param>
+            <param-name>version</param-name>
+            <param-value>1.0</param-value>
+        </init-param>
+        <!-- WEB应用启动时启动 -->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <!-- URL控制模式 -->
+    <servlet-mapping>
+        <servlet-name>Dispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <!-- Session配置 -->
+    <!-- *** 有效时间30分钟 *** -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+    <!-- 默认访问页 -->
+    <welcome-file-list>
+        <welcome-file>/</welcome-file>
+    </welcome-file-list>
+
+    <!-- 错误页面 -->
+    <!-- *** 资源未找到 *** -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/html/404.html</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/html/404.html</location>
+    </error-page>
+
+</web-app>

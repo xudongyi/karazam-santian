@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  ~ Copyright (c) 2016 klzan.com. All rights reserved.
+  ~ Support: http://www.klzan.com
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.klzan.p2p.mapper.UserMapper">
+    <select id="findUserDetailPage" resultType="com.klzan.p2p.vo.user.UserVo" parameterType="java.util.Map">
+        SELECT
+            a.id AS id,
+            b.id AS userInfoId,
+            b.real_name AS realName,
+            b.id_no AS idNo,
+            NULL AS corpName,
+            NULL AS corpLicenseNo,
+            b.id_issue_date AS idIssueDate,
+            b.id_expiry_date AS idExpiryDate,
+            b.qq AS qq,
+            b.educ AS educ,
+            b.univ AS univ,
+            b.marriage AS marriageStr,
+            b.child AS childStr,
+            b.birthplace AS birthplace,
+            b.domicile_place AS domicilePlace,
+            b.abode_place AS abodePlace,
+            b.addr AS addr,
+            b.zipcode AS zipcode,
+            b.occup AS occup,
+            b.work_email AS workEmail,
+            b.work_mobile AS workMobile,
+            b.work_phone AS workPhone,
+            b.work_qq AS workQq,
+            b.own_house AS ownHouse,
+            b.with_house_loan AS withHouseLoan,
+            b.own_car AS ownCar,
+            b.with_car_loan AS withCarLoan,
+            b.monthly_credit_card_statement AS monthlyCreditCardStatement,
+            b.educ_id AS educId,
+            b.post AS post,
+            b.work_years AS workYears,
+            b.income AS income,
+            b.intro AS intro,
+            a.mobile AS mobile,
+            a.birthday AS birthday,
+            a.login_Name AS loginName,
+            a.name AS name,
+            a.gender AS gender,
+            a.type AS typeStr,
+            a.pay_password AS payPassword,
+            a.create_date AS createDate,
+            a.modify_date AS modifyDate,
+            a.last_visit as lastVisit,
+            a.avatar as avatar,
+            p.account_number as payAccountNo,
+            p.account_state as acctStatus,
+            a.legal_mobile as legalMobile
+        FROM
+              karazam_user a
+        LEFT JOIN karazam_user_info b ON a.id = b.user_id
+        LEFT JOIN karazam_cpcn_trustee_info p ON a.id = p.user_id
+        WHERE
+            a.deleted = FALSE
+        AND a.type = 'GENERAL'
+        <if test="loginName != null and loginName!='' ">
+            AND a.login_name LIKE '%${loginName}%'
+        </if>
+        <if test="mobile != null and mobile!='' ">
+            AND a.mobile LIKE '%${mobile}%'
+        </if>
+        <if test="type != null and type!=''">
+            AND a.type = #{type}
+        </if>
+        <if test="id != null and id!=''">
+            AND a.id = ${id}
+        </if>
+        UNION
+        SELECT
+            a.id AS id,
+            b.id AS userInfoId,
+            b.corporation_name AS realName,
+            b.corporation_id_card AS idNo,
+            c.corp_name AS corpName,
+            c.corp_license_no AS corpLicenseNo,
+            NULL AS idIssueDate,
+            NULL AS idExpiryDate,
+            NULL AS qq,
+            NULL AS educ,
+            NULL AS univ,
+            NULL AS marriageStr,
+            NULL AS childStr,
+            NULL AS birthplace,
+            NULL AS domicilePlace,
+            NULL AS abodePlace,
+            NULL AS addr,
+            NULL AS zipcode,
+            NULL AS occup,
+            NULL AS workEmail,
+            NULL AS workMobile,
+            NULL AS workPhone,
+            NULL AS workQq,
+            NULL AS ownHouse,
+            NULL AS withHouseLoan,
+            NULL AS ownCar,
+            NULL AS withCarLoan,
+            NULL AS monthlyCreditCardStatement,
+            NULL AS educId,
+            NULL AS post,
+            NULL AS workYears,
+            NULL AS income,
+            NULL AS intro,
+            a.mobile AS mobile,
+            a.birthday AS birthday,
+            a.login_Name AS loginName,
+            a.name AS name,
+            a.gender AS gender,
+            a.type AS typeStr,
+            a.pay_password AS payPassword,
+            a.create_date AS createDate,
+            a.modify_date AS modifyDate,
+            a.last_visit as lastVisit,
+            a.avatar as avatar,
+            p.account_number as payAccountNo,
+            p.account_state as acctStatus,
+            a.legal_mobile as legalMobile
+        FROM
+            karazam_user a
+        LEFT JOIN karazam_corporation_legal b ON a.id = b.user_id
+        LEFT JOIN karazam_corporation c ON c.legal_id = b.id
+        LEFT JOIN karazam_cpcn_trustee_info p ON a.id = p.user_id
+        WHERE
+        a.deleted = FALSE
+        AND a.type != 'GENERAL'
+        <if test="loginName != null and loginName!='' ">
+            AND a.login_name LIKE '%${loginName}%'
+        </if>
+        <if test="mobile != null and mobile!='' ">
+            AND a.mobile LIKE '%${mobile}%'
+        </if>
+        <if test="type != null and type!=''">
+            AND a.type = #{type}
+        </if>
+        <if test="id != null and id!=''">
+            AND a.id = ${id}
+        </if>
+    </select>
+    <select id="findAllUser" resultType="com.klzan.p2p.vo.user.UserVo" parameterType="java.util.Map">
+        SELECT
+            a.id AS id,
+            b.id AS userInfoId,
+            b.real_name AS realName,
+            b.id_no AS idNo,
+            NULL AS corpName,
+            NULL AS corpLicenseNo,
+            b.id_issue_date AS idIssueDate,
+            b.id_expiry_date AS idExpiryDate,
+            b.qq AS qq,
+            b.educ AS educ,
+            b.univ AS univ,
+            b.marriage AS marriageStr,
+            b.child AS childStr,
+            b.birthplace AS birthplace,
+            b.domicile_place AS domicilePlace,
+            b.abode_place AS abodePlace,
+            b.addr AS addr,
+            b.zipcode AS zipcode,
+            b.occup AS occup,
+            b.work_email AS workEmail,
+            b.work_mobile AS workMobile,
+            b.work_phone AS workPhone,
+            b.work_qq AS workQq,
+            b.own_house AS ownHouse,
+            b.with_house_loan AS withHouseLoan,
+            b.own_car AS ownCar,
+            b.with_car_loan AS withCarLoan,
+            b.monthly_credit_card_statement AS monthlyCreditCardStatement,
+            b.educ_id AS educId,
+            b.post AS post,
+            b.work_years AS workYears,
+            b.income AS income,
+            b.intro AS intro,
+            a.mobile AS mobile,
+            a.birthday AS birthday,
+            a.login_Name AS loginName,
+            a.name AS name,
+            a.gender AS genderDisplay,
+            a.type AS typeStr,
+            a.status AS statusStr,
+            a.pay_password as payPassword,
+            a.deleted as deleted,
+            a.create_date AS createDate,
+            a.modify_date AS modifyDate,
+            a.last_visit as lastVisit,
+            a.avatar as avatar,
+            p.account_number as payAccountNo,
+            p.account_state as acctStatus,
+            a.legal_mobile as legalMobile,
+            p.charge_agreement_no as chargeAgreementNo
+        FROM
+            karazam_user a
+        LEFT JOIN karazam_user_info b ON a.id = b.user_id
+        LEFT JOIN karazam_cpcn_trustee_info p ON a.id = p.user_id
+        WHERE
+          1 = 1
+        AND a.type = 'GENERAL'
+        <if test="loginName != null and loginName!='' ">
+            AND a.login_name LIKE CONCAT('%',#{loginName},'%')
+        </if>
+        <if test="mobile != null and mobile!='' ">
+            AND a.mobile LIKE CONCAT('%',#{mobile},'%')
+        </if>
+        <if test="type != null and type!=''">
+            AND a.type = #{type}
+        </if>
+        <if test="id != null and id!=''">
+            AND a.id = ${id}
+        </if>
+        <if test="realName != null and realName!=''">
+            AND b.real_name LIKE CONCAT('%',#{realName},'%')
+        </if>
+        <if test="openAcct == true">
+            AND p.account_number is not null
+        </if>
+        <if test="nameOrMobile != null and nameOrMobile!=''">
+            AND (b.real_name LIKE CONCAT('%',#{nameOrMobile},'%') OR a.mobile LIKE CONCAT('%',#{nameOrMobile},'%'))
+        </if>
+        UNION
+        SELECT
+            a.id AS id,
+            b.id AS userInfoId,
+            b.corporation_name AS realName,
+            b.corporation_id_card AS idNo,
+            c.corp_name AS corpName,
+            c.corp_license_no AS corpLicenseNo,
+            NULL AS idIssueDate,
+            NULL AS idExpiryDate,
+            NULL AS qq,
+            NULL AS educ,
+            NULL AS univ,
+            NULL AS marriageStr,
+            NULL AS childStr,
+            NULL AS birthplace,
+            NULL AS domicilePlace,
+            NULL AS abodePlace,
+            NULL AS addr,
+            NULL AS zipcode,
+            NULL AS occup,
+            NULL AS workEmail,
+            NULL AS workMobile,
+            NULL AS workPhone,
+            NULL AS workQq,
+            NULL AS ownHouse,
+            NULL AS withHouseLoan,
+            NULL AS ownCar,
+            NULL AS withCarLoan,
+            NULL AS monthlyCreditCardStatement,
+            NULL AS educId,
+            NULL AS post,
+            NULL AS workYears,
+            NULL AS income,
+            NULL AS intro,
+            a.mobile AS mobile,
+            a.birthday AS birthday,
+            a.login_Name AS loginName,
+            a.name AS name,
+            a.gender AS genderDisplay,
+            a.type AS typeStr,
+            a.status AS statusStr,
+            a.pay_password as payPassword,
+            a.deleted as deleted,
+            a.create_date AS createDate,
+            a.modify_date AS modifyDate,
+            a.last_visit as lastVisit,
+            a.avatar as avatar,
+            p.account_number as payAccountNo,
+            p.account_state as acctStatus,
+            a.legal_mobile as legalMobile,
+            p.charge_agreement_no as chargeAgreementNo
+        FROM
+            karazam_user a
+        LEFT JOIN karazam_corporation_legal b ON a.id = b.user_id
+        LEFT JOIN karazam_corporation c ON c.legal_id = b.id
+        LEFT JOIN karazam_cpcn_trustee_info p ON a.id = p.user_id
+        WHERE
+          1 = 1
+        AND a.type != 'GENERAL'
+        <if test="loginName != null and loginName!='' ">
+            AND a.login_name LIKE CONCAT('%',#{loginName},'%')
+        </if>
+        <if test="mobile != null and mobile!='' ">
+            AND a.mobile LIKE CONCAT('%',#{mobile},'%')
+        </if>
+        <if test="type != null and type!=''">
+            AND a.type = #{type}
+        </if>
+        <if test="id != null and id!=''">
+            AND a.id = ${id}
+        </if>
+        <if test="realName != null and realName!=''">
+            AND b.corporation_name LIKE CONCAT('%',#{realName},'%')
+        </if>
+        <if test="openAcct == true">
+            AND p.account_number is not null
+        </if>
+        <if test="nameOrMobile != null and nameOrMobile!=''">
+            AND (b.corporation_name LIKE CONCAT('%',#{nameOrMobile},'%') OR a.mobile LIKE CONCAT('%',#{nameOrMobile},'%'))
+        </if>
+        ORDER BY id DESC
+    </select>
+</mapper>

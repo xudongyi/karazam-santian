@@ -1,0 +1,107 @@
+{
+  "userId": "7671E6CC-3F3E-4680-B94A-853E8197B04A",
+  "user": {
+    "id": "7671E6CC-3F3E-4680-B94A-853E8197B04A",
+    "name": null,
+    "loginName": "69281754",
+    "idNumber": null,
+    "mobile": "15982266928",
+    "email": "limate@163.com",
+    "source": "WEB",
+    "employeeId": null,
+    "lastModifiedBy": null,
+    "channel": "",
+    "lastLoginDate": null,
+    "registerDate": 1496739528000,
+    "enabled": true,
+    "referralEntity": {
+      "realm": null,
+      "entityId": null
+    },
+    "enterprise": false,
+    "registryRewarded": false,
+    "referralRewarded": false,
+    "inviteCode": "AI3QKwtt"
+  },
+  "personal": {
+    "male": true,
+    "constellation": null,
+    "zodiac": null,
+    "ethnic": null,
+    "dateOfBirth": null,
+    "maritalStatus": null,
+    "children": false,
+    "education": {
+      "educationLevel": null,
+      "enrollmentYear": null,
+      "school": null
+    },
+    "place": {
+      "nativeProvince": null,
+      "nativeCity": null,
+      "hukouProvince": null,
+      "hukouCity": null,
+      "currentAddress": "四川 成都市",
+      "currentPhone": "15982266928",
+      "currentZip": "610000",
+      "currentCarrier": "移动"
+    },
+    "avatar": null,
+    "hukouType": null,
+    "houseStatus": null,
+    "cardValidDate": null,
+    "cardExpDate": null
+  },
+  "finance": {
+    "house": false,
+    "houseNumber": 0,
+    "houseLoan": false,
+    "car": false,
+    "carNumber": 0,
+    "carLoan": false
+  },
+  "career": {
+    "careerStatus": null,
+    "company": {
+      "name": null,
+      "type": null,
+      "industry": null,
+      "companySize": null,
+      "phone": null,
+      "address": null
+    },
+    "province": null,
+    "city": null,
+    "position": null,
+    "salary": null,
+    "yearOfService": null,
+    "workMail": null,
+    "totalYearOfService": null
+  },
+  "contact": {
+    "emergency": {
+      "name": null,
+      "relation": null,
+      "mobile": null
+    },
+    "colleague": {
+      "name": null,
+      "relation": null,
+      "mobile": null
+    },
+    "other": {
+      "name": null,
+      "relation": null,
+      "mobile": null
+    }
+  },
+  "social": {
+    "weibo": null,
+    "wechat": null
+  },
+  "riskAppetite": {
+    "appetitelevel": 0,
+    "appetiteName": "您还未进行测评"
+  },
+  "priv": null
+}

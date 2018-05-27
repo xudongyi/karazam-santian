@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+    <bean id="scheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="quartzProperties">
+            <props>
+                <prop key="org.quartz.scheduler.instanceName">KarazamScheduler</prop>
+                <prop key="org.quartz.scheduler.instanceId">AUTO</prop>
+                <!-- 线程池配置 -->
+                <prop key="org.quartz.threadPool.class">org.quartz.simpl.SimpleThreadPool</prop>
+                <prop key="org.quartz.threadPool.threadCount">20</prop>
+                <prop key="org.quartz.threadPool.threadPriority">5</prop>
+                <!-- JobStore 配置 -->
+                <prop key="org.quartz.jobStore.class">org.quartz.impl.jdbcjobstore.JobStoreTX</prop>
+                <!-- 集群配置 -->
+                <prop key="org.quartz.jobStore.isClustered">true</prop>
+                <prop key="org.quartz.jobStore.clusterCheckinInterval">15000</prop>
+                <prop key="org.quartz.jobStore.maxMisfiresToHandleAtATime">1</prop>
+
+                <prop key="org.quartz.jobStore.misfireThreshold">12000</prop>
+                <!-- 表前缀 -->
+                <prop key="org.quartz.jobStore.tablePrefix">qrtz_</prop>
+            </props>
+        </property>
+
+        <property name="schedulerName" value="KarazamScheduler" />
+
+        <!--延时启动 -->
+        <property name="startupDelay" value="30" />
+
+        <property name="applicationContextSchedulerContextKey" value="applicationContextKey" />
+
+        <!--可选，QuartzScheduler 启动时更新己存在的Job，这样就不用每次修改targetObject后删除qrtz_job_details表对应记录了 -->
+        <property name="overwriteExistingJobs" value="true" />
+
+        <!-- 设置自动启动   默认为true -->
+        <property name="autoStartup" value="true" />
+
+    </bean>
+
+    <bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+        <!-- 核心线程数 -->
+        <property name="corePoolSize" value="${task.core_pool_size}" />
+        <!-- 最大线程数 -->
+        <property name="maxPoolSize" value="${task.max_pool_size}" />
+        <!-- 队列最大长度 -->
+        <property name="queueCapacity" value="${task.queue_capacity}" />
+        <!-- 线程池维护线程所允许的空闲时间，默认为60s -->
+        <property name="keepAliveSeconds" value="${task.keep_alive_seconds}" />
+    </bean>
+
+    <!-- 注解式 -->
+    <task:annotation-driven executor="taskExecutor" proxy-target-class="true"/>
+
+</beans>

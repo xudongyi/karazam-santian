@@ -1,0 +1,103 @@
+.orderBox .tit, .orderTime {
+    padding-left: 30px;
+    color: #000
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto
+}
+
+.breakCust {
+    height: 46px;
+    line-height: 46px;
+    color: #797979;
+    font-size: 12px
+}
+
+.breakCust span {
+    margin: 0 8px
+}
+
+.orderTime {
+    height: 58px;
+    background: #fffceb;
+    border: 1px solid #eed97c;
+    line-height: 58px
+}
+
+.orderTime .orderNO, .orderTime .orderT {
+    margin-right: 81px
+}
+
+.orderBox {
+    border: 1px solid #e6e6e6;
+    margin-top: 20px;
+    margin-bottom: 50px
+}
+
+.orderBox .tit {
+    height: 60px;
+    line-height: 60px;
+    background: #f6f6f6;
+    font-size: 20px
+}
+
+.orderBox .box {
+    padding: 0 30px
+}
+
+.orderBox .box .personInfo {
+    border-bottom: 1px solid #e6e6e6;
+    padding: 11px 0
+}
+
+.orderBox .box .personInfo .t1 {
+    height: 37px;
+    line-height: 38px;
+    font-size: 16px;
+    color: #000;
+    font-weight: 700
+}
+
+.orderBox .box .personInfo .t2 {
+    height: 30px;
+    line-height: 30px;
+    color: #909090
+}
+
+.orderBox .box .personInfo .t2 .v {
+    margin-left: 18px
+}
+
+.orderBox .box .productInfor {
+    border-bottom: none
+}
+
+.orderBox .box .jf {
+    height: 100px;
+    line-height: 100px;
+    text-align: right
+}
+
+.orderBox .box .jf .big {
+    font-size: 24px
+}
+
+.orderBox .productF {
+    border: 1px solid #e6e6e6;
+    width: 1137px
+}
+
+.orderBox .productF thead tr td {
+    height: 40px;
+    line-height: 40px;
+    background: #f6f6f6;
+    text-align: center
+}
+
+.orderBox .productF tbody tr td {
+    height: 100px;
+    line-height: 100px;
+    text-align: center
+}

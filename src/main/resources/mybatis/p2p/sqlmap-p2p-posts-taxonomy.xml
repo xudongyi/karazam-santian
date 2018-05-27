@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  ~ Copyright (c) 2016 klzan.com. All rights reserved.
+  ~ Support: http://www.klzan.com
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.klzan.p2p.mapper.PostsTaxonomyMapper">
+    <select id="findList" resultType="com.klzan.p2p.model.PostsTaxonomy" parameterType="com.klzan.p2p.vo.posts.PostsTaxonomyVo">
+        SELECT
+          t.*,
+          CASE
+            WHEN COUNT(t1.id) > 0 THEN
+            'closed'
+            ELSE
+            'open'
+          END as state
+        FROM karazam_posts_taxonomy t
+        LEFT JOIN karazam_posts_taxonomy t1 ON t1.parent_id = t.id AND t1.deleted=0
+        WHERE t.deleted=0
+        AND t.type = #{type}
+        <if test="parentId ==null ">
+            AND t.parent_id is null
+        </if>
+        <if test="parentId !=null ">
+            AND t.parent_id = #{parentId}
+        </if>
+        <if test="parentId ==null ">
+            GROUP BY
+              t.id
+        </if>
+    </select>
+    <select id="findChildren" resultType="com.klzan.p2p.model.PostsTaxonomy" parameterType="com.klzan.p2p.vo.posts.PostsTaxonomyVo">
+        SELECT
+          t.*
+        FROM karazam_posts_taxonomy t
+        LEFT JOIN karazam_posts_taxonomy t1 ON t1.id=t.parent_id
+        WHERE t.deleted=0
+        <if test="parentId !=null ">
+            AND t.parent_id = #{parentId}
+        </if>
+        <if test="slug != null and slug != ''">
+            AND t1.slug = #{slug}
+        </if>
+        <if test="type !=null and type != ''">
+            AND t1.type = #{type}
+        </if>
+        <if test="display !=null">
+            AND t1.display = #{display}
+            AND t.display = #{display}
+        </if>
+    </select>
+
+    <select id="findByCriteria" resultType="com.klzan.p2p.model.PostsTaxonomy" parameterType="com.klzan.p2p.vo.posts.PostsTaxonomyVo">
+        SELECT
+          t.*
+        FROM karazam_posts_taxonomy t
+        WHERE t.deleted=0
+        <if test="slug != null and slug != ''">
+            AND t.slug = #{slug}
+        </if>
+        <if test="type !=null and type != ''">
+            AND t.type = #{type}
+        </if>
+
+    </select>
+    <select id="existSlug" resultType="com.klzan.p2p.model.PostsTaxonomy" parameterType="com.klzan.p2p.vo.posts.PostsTaxonomyVo">
+        SELECT
+          t.*
+        FROM karazam_posts_taxonomy t
+        WHERE t.deleted=0
+        <if test="slug != null and slug != ''">
+            AND t.slug = #{slug}
+        </if>
+        <if test="type !=null and type != ''">
+            AND t.type = #{type}
+        </if>
+        <if test="id !=null">
+            AND t.id != #{id}
+        </if>
+
+    </select>
+
+    <select id="findContentTaxonomy" resultType="com.klzan.p2p.model.PostsTaxonomy" parameterType="java.util.Map">
+        SELECT
+          t.*
+        FROM
+          karazam_posts_taxonomy t
+        LEFT JOIN karazam_posts_mapping m ON m.taxonomy_id = t.id
+        WHERE
+            t.deleted=0
+        <if test="taxonomyType !=null and taxonomyType != ''">
+            AND t.type = #{taxonomyType}
+        </if>
+        <if test="contentId !=null">
+            AND m.content_id = #{contentId}
+        </if>
+
+    </select>
+</mapper>

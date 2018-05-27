@@ -1,0 +1,26 @@
+{
+  "data":{
+    "signinStat":
+      {
+      "signinCount":7
+      },
+    "signinSatus": "SIGNIN_DRAW_END",
+    "lotteryPrizeInfo": [
+      {
+        "questionBank": null,
+        "prizeId": "c75f4d3f-e564-4c0d-8bbd-581d167d6d58",
+        "prizeName": "积分",
+        "faceValue": "3",
+        "prizeType": "WEEKEND_REBATE",
+        "expireDesc": "3天",
+        "durationDesc": "1天",
+        "lottery": true,
+        "creditAssign": false
+      }
+    ],
+    "invest": 1000
+  },
+  "error": [],
+
+  "success": true
+}
